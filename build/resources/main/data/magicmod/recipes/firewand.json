@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B",
+    "S",
+    "S"
+  ],
+  "key": {
+    "B": {
+      "item": "magicmod:blacite"
+    },
+    "S": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:firewand"
+  }
+
+
+}
