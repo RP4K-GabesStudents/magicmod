@@ -1,4 +1,5 @@
 run/saves/
+run/logs/
 run/config/
 run/defaultconfigs/
 .gradle/7.4.2/checksums/checksums.lock
