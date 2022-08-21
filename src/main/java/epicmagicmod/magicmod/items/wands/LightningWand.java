@@ -3,9 +3,14 @@ package epicmagicmod.magicmod.items.wands;
 import com.mojang.math.Vector3d;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 
 public class LightningWand extends WandParent{
 
@@ -14,6 +19,7 @@ public class LightningWand extends WandParent{
         super(p_41383_, 75);
     }
 
+    @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         activate(level, player);
         return super.use(level, player, hand);
@@ -23,12 +29,32 @@ public class LightningWand extends WandParent{
     @Override
     public void ability(Level level, Player player) {
 
-        double x = player.getEyePosition().x;
-        double y = player.getEyePosition().y;
-        double z = player.getEyePosition().z;
+        //RAY END POINT - TO WHERE IT WILL TRAVEL TO
+        Double rayLength = new Double(100);
+        Vec3 playerRotation = player.getViewVector(0);
+        Vec3 rayPath = playerRotation.scale(rayLength);
 
-        //player.setPos(x, y ,z);
+        //RAY START AND END POINTS
+        Vec3 from = player.getEyePosition(0);
+        Vec3 to = from.add(rayPath);
 
+        //CREATE THE RAY
+        ClipContext rayCtx = new ClipContext(from, to, ClipContext.Block.OUTLINE, ClipContext.Fluid.ANY, null);
+        //CAST THE RAY
+        BlockHitResult rayHit = level.clip(rayCtx);
+
+        //CHECK THE RESULTS
+        if (rayHit.getType() == BlockHitResult.Type.MISS){
+            //IF RAY MISSED
+        }
+        else {
+            //IF RAY HIT SOMETHING
+            Vec3 hitLocation = rayHit.getLocation();
+
+            LightningBolt lightningBolt = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+            lightningBolt.setPos(hitLocation);
+
+        }
 
     }
 }
