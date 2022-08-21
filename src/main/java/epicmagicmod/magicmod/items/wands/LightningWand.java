@@ -1,5 +1,6 @@
 package epicmagicmod.magicmod.items.wands;
 
+import com.mojang.math.Vector3d;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -18,8 +19,16 @@ public class LightningWand extends WandParent{
         return super.use(level, player, hand);
     }
 
+
     @Override
     public void ability(Level level, Player player) {
+
+        double x = player.getEyePosition().x;
+        double y = player.getEyePosition().y;
+        double z = player.getEyePosition().z;
+
+        //player.setPos(x, y ,z);
+
 
     }
 }

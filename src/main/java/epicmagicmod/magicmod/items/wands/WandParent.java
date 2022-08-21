@@ -1,15 +1,12 @@
 package epicmagicmod.magicmod.items.wands;
 
-import epicmagicmod.magicmod.mana.PlayerMana;
 import epicmagicmod.magicmod.mana.PlayerManaProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.event.level.NoteBlockEvent;
+
 
 public abstract class WandParent extends Item {
 

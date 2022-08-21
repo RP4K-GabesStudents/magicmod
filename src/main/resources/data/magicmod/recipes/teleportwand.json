@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B",
+    "S",
+    "S"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:ender_pearl"
+    },
+    "S": {
+      "item": "minecraft:end_rod"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:teleportwand"
+  }
+
+
+}
