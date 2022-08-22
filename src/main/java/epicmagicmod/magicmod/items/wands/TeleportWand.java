@@ -48,7 +48,7 @@ public class TeleportWand extends WandParent{
             //IF RAY HIT SOMETHING
             Vec3 hitLocation = rayHit.getLocation();
 
-            player.setPos(hitLocation);
+            player.teleportTo(hitLocation.x, hitLocation.y, hitLocation.z);
 
         }
 

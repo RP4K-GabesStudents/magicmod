@@ -1,0 +1,26 @@
+{
+
+  "structures": [
+
+    {
+
+      "structure": "magicmod:building",
+      "weight": 1
+
+    }
+
+
+  ],
+  "placement": {
+
+    "type": "minecraft:random_spread",
+    "salt": 888888888,
+    "spacing": 2,
+    "separation": 1
+  }
+
+
+
+
+
+}

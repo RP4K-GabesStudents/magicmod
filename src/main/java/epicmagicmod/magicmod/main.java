@@ -6,6 +6,7 @@ import epicmagicmod.magicmod.items.ModItems;
 import epicmagicmod.magicmod.networking.ModMessages;
 import epicmagicmod.magicmod.world.feature.ModConfiguredFeatures;
 import epicmagicmod.magicmod.world.feature.ModPlacedFeatures;
+import epicmagicmod.magicmod.world.structure.ModStructures;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -66,6 +67,7 @@ public class main {
         MinecraftForge.EVENT_BUS.register(this);
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
+        ModStructures.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

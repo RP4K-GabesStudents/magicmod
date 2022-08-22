@@ -1,0 +1,23 @@
+{
+
+  "name": "magicmod:example",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "magicmod:example",
+        "processors": "magicmod:randomized_blocks",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+
+    }
+  ]
+
+
+
+
+
+
+}
