@@ -1,6 +1,5 @@
 package epicmagicmod.magicmod.items.wands;
 
-import com.mojang.math.Vector3d;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EntityType;
@@ -53,6 +52,8 @@ public class LightningWand extends WandParent{
 
             LightningBolt lightningBolt = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
             lightningBolt.setPos(hitLocation);
+
+            level.addFreshEntity(lightningBolt);
 
         }
 
