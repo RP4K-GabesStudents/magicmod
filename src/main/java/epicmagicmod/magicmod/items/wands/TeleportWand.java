@@ -15,7 +15,7 @@ public class TeleportWand extends WandParent{
 
 
     public TeleportWand(Properties p_41383_) {
-        super(p_41383_, 100);
+        super(p_41383_, 10000);
     }
 
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {

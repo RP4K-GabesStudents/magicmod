@@ -1,5 +1,6 @@
 package epicmagicmod.magicmod.block;
 
+import epicmagicmod.magicmod.fluid.ModFluids;
 import epicmagicmod.magicmod.items.ModCreativeModeTab;
 import epicmagicmod.magicmod.items.ModItems;
 import epicmagicmod.magicmod.main;
@@ -8,7 +9,9 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -41,5 +44,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block>BlaciteOre = registerBlock("blaciteore", ()->new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(3).requiresCorrectToolForDrops(), UniformInt.of(10, 20)), ModCreativeModeTab.CREATIVETAB_TAB);
 
+
+    public static final RegistryObject<LiquidBlock> PURPLE_SOURCE_BLOCK = BLOCKS.register("mana_source_block",
+            ()-> new ManaLiquidBlock(ModFluids.SOURCE_PURPLE_MANA, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
 }

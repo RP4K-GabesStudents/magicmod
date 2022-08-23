@@ -12,7 +12,7 @@ public class GappleWand extends WandParent{
 
 
     public GappleWand(Properties p_41383_) {
-        super(p_41383_, 500);
+        super(p_41383_, 50000);
     }
 
     @Override

@@ -15,7 +15,7 @@ public class LightningWand extends WandParent{
 
 
     public LightningWand(Properties p_41383_) {
-        super(p_41383_, 75);
+        super(p_41383_, 7500);
     }
 
     @Override

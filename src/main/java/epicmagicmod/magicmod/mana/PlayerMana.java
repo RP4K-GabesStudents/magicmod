@@ -11,7 +11,7 @@ public class PlayerMana {
     private int manaPerTick = 3;
 
     public static final int MIN_MANA = 0;
-    public static final int DEFAULT_MAX_MANA = 1000;
+    public static final int DEFAULT_MAX_MANA = 100000;
     public static int MAX_MANA = DEFAULT_MAX_MANA;
 
 

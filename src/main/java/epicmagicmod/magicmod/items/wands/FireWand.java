@@ -13,7 +13,7 @@ public class FireWand extends WandParent{
 
 
     public FireWand(Properties p_41383_) {
-        super(p_41383_, 100);
+        super(p_41383_, 10000);
     }
 
 

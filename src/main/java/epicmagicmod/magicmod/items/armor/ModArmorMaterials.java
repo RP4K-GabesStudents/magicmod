@@ -1,6 +1,6 @@
 package epicmagicmod.magicmod.items.armor;
 
-import epicmagicmod.magicmod.items.ModItems;
+
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;
@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
 
-    ROBES("magicmod:wrp", 5, new int[]{1, 2, 3, 1}, 25, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, new int [] {1, 1, 2, 1}, new int [] {50, 125, 250, 75
+    ROBES("magicmod:wrp", 5, new int[]{1, 2, 3, 1}, 25, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, new int [] {100, 100, 200, 100}, new int [] {5000, 12500, 25000, 7500
     }, () -> {
         return Ingredient.of(Items.LEATHER);
     });

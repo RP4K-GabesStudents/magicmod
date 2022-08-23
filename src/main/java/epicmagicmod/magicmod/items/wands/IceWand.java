@@ -20,7 +20,7 @@ public class IceWand extends WandParent{
 
 
     public IceWand(Properties p_41383_) {
-        super(p_41383_, 25);
+        super(p_41383_, 2500);
     }
 
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
