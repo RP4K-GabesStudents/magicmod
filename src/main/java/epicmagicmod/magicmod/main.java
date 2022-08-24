@@ -2,11 +2,13 @@ package epicmagicmod.magicmod;
 
 import com.mojang.logging.LogUtils;
 import epicmagicmod.magicmod.block.ModBlocks;
+import epicmagicmod.magicmod.block.entity.ModBlockEntities;
 import epicmagicmod.magicmod.effect.ModEffects;
 import epicmagicmod.magicmod.fluid.ModFluidTypes;
 import epicmagicmod.magicmod.fluid.ModFluids;
 import epicmagicmod.magicmod.items.ModItems;
 import epicmagicmod.magicmod.networking.ModMessages;
+import epicmagicmod.magicmod.screen.ModMenuType;
 import epicmagicmod.magicmod.world.feature.ModConfiguredFeatures;
 import epicmagicmod.magicmod.world.feature.ModPlacedFeatures;
 import epicmagicmod.magicmod.world.structure.ModStructures;
@@ -74,6 +76,8 @@ public class main {
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
         ModEffects.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
+        ModMenuType.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

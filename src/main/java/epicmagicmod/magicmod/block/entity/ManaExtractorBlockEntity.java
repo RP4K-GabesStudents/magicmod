@@ -1,0 +1,259 @@
+package epicmagicmod.magicmod.block.entity;
+
+import epicmagicmod.magicmod.block.ShardOreItem;
+import epicmagicmod.magicmod.fluid.ModFluidTypes;
+import epicmagicmod.magicmod.items.ModItems;
+import epicmagicmod.magicmod.screen.ManaExtractionMenu;
+import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.Containers;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.fluids.FluidType;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvider {
+
+    private int progress;
+    private int maxProgress = 9999999;
+    private int milliBuckets;
+    private final int maxMilliBuckets = 4000;
+    private FluidType manaType;
+    private final ContainerData data;
+    // Box 0 = Ore input(s)
+    // Box 1 = Input empty bucket(s)
+    // Box 2 - 4 = Output shard(s)
+    // Box 5 = Output Mana Bucket(s)
+    private final ItemStackHandler itemHandler = new ItemStackHandler(6){
+        @Override
+        protected void onContentsChanged(int slot) {
+            setChanged();
+        }
+    };
+    private LazyOptional<IItemHandler>lazyItemHandler = LazyOptional.empty();
+
+
+
+    public ManaExtractorBlockEntity(BlockPos pPos, BlockState pBlockState) {
+        super(ModBlockEntities.MANA_EXTRACTOR.get(), pPos, pBlockState);
+        data = new ContainerData() {
+            @Override
+            public int get(int pIndex) {
+                return switch (pIndex){
+
+                    case 0 -> ManaExtractorBlockEntity.this.progress;
+
+                    case 1 -> ManaExtractorBlockEntity.this.maxProgress;
+
+                    case 2 -> ManaExtractorBlockEntity.this.milliBuckets;
+
+                    case 4 -> ManaExtractorBlockEntity.this.maxMilliBuckets;
+
+                    case 3 -> getFluid();
+
+                    default -> 0;
+                };
+
+            }
+
+            @Override
+            public void set(int pIndex, int pValue) {
+                switch (pIndex){
+
+                    case 0 -> ManaExtractorBlockEntity.this.progress = pValue;
+
+                    case 1 -> ManaExtractorBlockEntity.this.maxProgress = pValue;
+
+                    case 2 -> ManaExtractorBlockEntity.this.milliBuckets = pValue;
+
+                    case 3 -> setFluid(pValue);
+
+                }
+
+            }
+
+            @Override
+            public int getCount() {
+
+                return 5;
+            }
+        };
+    }
+
+
+    @Override
+    public Component getDisplayName() {
+        return Component.literal("Mana Extractor");
+    }
+
+    @Nullable
+    @Override
+    public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
+        return new ManaExtractionMenu(pContainerId, pPlayerInventory, this, this.data);
+    }
+
+    @Override
+    public void onLoad() {
+        super.onLoad();
+        lazyItemHandler = LazyOptional.of(()-> itemHandler);
+    }
+
+    @Override
+    public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap) {
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY){
+
+            return lazyItemHandler.cast();
+
+        }
+        return super.getCapability(cap);
+    }
+
+    @Override
+    public void invalidateCaps() {
+        super.invalidateCaps();
+        lazyItemHandler.invalidate();
+    }
+
+    @Override
+    protected void saveAdditional(CompoundTag pTag) {
+
+        pTag.put("inventory", itemHandler.serializeNBT());
+        pTag.putInt("progress", progress);
+        pTag.putInt("millibuckets", milliBuckets);
+        pTag.putInt("fluid_type", getFluid());
+
+        super.saveAdditional(pTag);
+    }
+
+    @Override
+    public void load(CompoundTag pTag) {
+        super.load(pTag);
+        itemHandler.deserializeNBT(pTag.getCompound("inventory"));
+        progress = pTag.getInt("progress");
+        milliBuckets = pTag.getInt("millibuckets");
+        setFluid(pTag.getInt("fluid_type"));
+    }
+
+    private void setFluid(int id){
+
+         switch (id){
+
+            case 0 -> manaType = ModFluidTypes.PURPLE_MANA.get();
+
+
+        };
+
+    }
+
+    private int getFluid(){
+
+        if (manaType == ModFluidTypes.PURPLE_MANA.get()){
+            return 0;
+        }
+        return -1;
+    }
+
+    public void onDestroy(){
+
+        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
+
+        for (int i = 0; i < itemHandler.getSlots(); i++){
+
+            inventory.setItem(i, itemHandler.getStackInSlot(i));
+
+        }
+        Containers.dropContents(this.level, this.worldPosition, inventory);
+
+    }
+
+    public static void tick(Level level, BlockPos blockPos, BlockState blockstate, ManaExtractorBlockEntity blockEntity){
+
+        if (canProgress(blockEntity)){
+            blockEntity.milliBuckets++;
+            if (blockEntity.progress++ >= blockEntity.maxProgress){
+                complete(blockEntity);
+            }
+
+        }
+        else {
+            blockEntity.progress = 0;
+        }
+        setChanged(level, blockPos, blockstate);
+
+    }
+
+    private static boolean canProgress(ManaExtractorBlockEntity blockEntity) {
+
+
+        if (blockEntity.itemHandler.getStackInSlot(5).getMaxStackSize() == blockEntity.itemHandler.getStackInSlot(5).getCount() && blockEntity.milliBuckets < blockEntity.maxMilliBuckets && blockEntity.itemHandler.getStackInSlot(0).getItem()instanceof ShardOreItem shardOreItem && blockEntity.manaType == shardOreItem.fluid){
+
+            for(int i = 2; i <= 4; i++){
+                ItemStack itemStack = blockEntity.itemHandler.getStackInSlot(i);
+                if(itemStack.isEmpty() || itemStack.getItem() == shardOreItem.shard && itemStack.getCount() + shardOreItem.maxDrop <= itemStack.getMaxStackSize())
+                    return true;
+            }
+
+        }
+        return false;
+    }
+
+    private static void complete(ManaExtractorBlockEntity blockEntity) {
+
+
+        if (blockEntity.milliBuckets >= 1000 && blockEntity.itemHandler.getStackInSlot(1).getItem() == Items.BUCKET){
+
+            blockEntity.itemHandler.getStackInSlot(1).shrink(1);
+
+            if(blockEntity.itemHandler.getStackInSlot(5).isEmpty()){
+                blockEntity.itemHandler.setStackInSlot(5, ModItems.PURPLE_MANA_BUCKET.get().getDefaultInstance());
+            }
+            else{
+                blockEntity.itemHandler.getStackInSlot(5).grow(1);
+            }
+
+        }
+        ShardOreItem shardOreItem = (ShardOreItem) blockEntity.itemHandler.getStackInSlot(1).getItem();
+        blockEntity.itemHandler.getStackInSlot(0).shrink(1);
+        int x = shardOreItem.generateDrops();
+            for(int i = 2; i <= 4; i++){
+                ItemStack itemStack = blockEntity.itemHandler.getStackInSlot(i);
+                if(itemStack.isEmpty()){
+                    blockEntity.itemHandler.setStackInSlot(i, new ItemStack(shardOreItem.shard, x));
+                    return;
+                }
+                int difference = itemStack.getMaxStackSize() - itemStack.getCount();
+                if (difference > 0 && itemStack.getItem() == shardOreItem.shard) {
+                   if (difference >= x ){
+                       itemStack.grow(x);
+                       return;
+                   }
+                   else{
+
+                       itemStack.grow(difference);
+                       x -= difference;
+                   }
+
+                }
+
+            }
+
+    }
+}
