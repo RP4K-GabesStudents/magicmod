@@ -1,0 +1,141 @@
+---- Minecraft Crash Report ----
+// But it works on my machine.
+
+Time: 2022-08-25 13:35:37
+Description: Ticking block entity
+
+java.lang.RuntimeException: Slot 5 not in valid range - [0,5)
+	at net.minecraftforge.items.ItemStackHandler.validateSlotIndex(ItemStackHandler.java:206) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23180%23187!/:?] {re:classloading}
+	at net.minecraftforge.items.ItemStackHandler.getStackInSlot(ItemStackHandler.java:58) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23180%23187!/:?] {re:classloading}
+	at epicmagicmod.magicmod.block.entity.ManaExtractorBlockEntity.canProgress(ManaExtractorBlockEntity.java:219) ~[%23186!/:?] {re:classloading}
+	at epicmagicmod.magicmod.block.entity.ManaExtractorBlockEntity.tick(ManaExtractorBlockEntity.java:203) ~[%23186!/:?] {re:classloading}
+	at net.minecraft.world.level.chunk.LevelChunk$BoundTickingBlockEntity.tick(LevelChunk.java:687) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading}
+	at net.minecraft.world.level.chunk.LevelChunk$RebindableTickingBlockEntityWrapper.tick(LevelChunk.java:780) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading}
+	at net.minecraft.world.level.Level.tickBlockEntities(Level.java:483) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:334) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:896) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:836) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:90) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:672) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:244) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:833) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraftforge.items.ItemStackHandler.validateSlotIndex(ItemStackHandler.java:206) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23180%23187!/:?] {re:classloading}
+	at net.minecraftforge.items.ItemStackHandler.getStackInSlot(ItemStackHandler.java:58) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23180%23187!/:?] {re:classloading}
+	at epicmagicmod.magicmod.block.entity.ManaExtractorBlockEntity.canProgress(ManaExtractorBlockEntity.java:219) ~[%23186!/:?] {re:classloading}
+	at epicmagicmod.magicmod.block.entity.ManaExtractorBlockEntity.tick(ManaExtractorBlockEntity.java:203) ~[%23186!/:?] {re:classloading}
+	at net.minecraft.world.level.chunk.LevelChunk$BoundTickingBlockEntity.tick(LevelChunk.java:687) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading}
+	at net.minecraft.world.level.chunk.LevelChunk$RebindableTickingBlockEntityWrapper.tick(LevelChunk.java:780) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading}
+	at net.minecraft.world.level.Level.tickBlockEntities(Level.java:483) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:334) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+-- Block entity being ticked --
+Details:
+	Name: magicmod:mana_extractor // epicmagicmod.magicmod.block.entity.ManaExtractorBlockEntity
+	Block: Block{magicmod:mana_extractor}
+	Block location: World: (-142,70,50), Section: (at 2,6,2 in -9,4,3; chunk contains blocks -144,-64,48 to -129,319,63), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,-64,0 to -1,319,511)
+	Block: Block{magicmod:mana_extractor}
+	Block location: World: (-142,70,50), Section: (at 2,6,2 in -9,4,3; chunk contains blocks -144,-64,48 to -129,319,63), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,-64,0 to -1,319,511)
+Stacktrace:
+	at net.minecraft.world.level.chunk.LevelChunk$BoundTickingBlockEntity.tick(LevelChunk.java:687) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading}
+	at net.minecraft.world.level.chunk.LevelChunk$RebindableTickingBlockEntityWrapper.tick(LevelChunk.java:780) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading}
+	at net.minecraft.world.level.Level.tickBlockEntities(Level.java:483) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:334) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:896) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:836) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:90) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:672) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:244) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:833) [?:?] {}
+
+
+-- Affected level --
+Details:
+	All players: 0 total; []
+	Chunk stats: 2209
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-144,64,0), Section: (at 0,0,0 in -9,4,0; chunk contains blocks -144,-64,0 to -129,319,15), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,-64,0 to -1,319,511)
+	Level time: 47134 game time, 7452 day time
+	Level name: Im still crying
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+	Level weather: Rain time: 125984 (now: false), thunder time: 99165 (now: false)
+	Known server brands: forge
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:896) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:836) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:90) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:672) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:244) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23181!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:833) [?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.19.2
+	Minecraft Version ID: 1.19.2
+	Operating System: Mac OS X (x86_64) version 12.4
+	Java Version: 17.0.4, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 2436380160 bytes (2323 MiB) / 3707764736 bytes (3536 MiB) up to 8589934592 bytes (8192 MiB)
+	CPUs: 10
+	Processor Vendor: Apple Inc.
+	Processor Name: Apple M1 Pro
+	Identifier: Apple Inc. Family 0x1b588bb3 Model 0 Stepping 0
+	Microarchitecture: ARM64 SoC: Firestorm + Icestorm
+	Frequency (GHz): 24.00
+	Number of physical packages: 1
+	Number of physical CPUs: 10
+	Number of logical CPUs: 10
+	Graphics card #0 name: Apple M1 Pro
+	Graphics card #0 vendor: Apple (0x106b)
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Memory slot #0 capacity (MB): 0.00
+	Memory slot #0 clockSpeed (GHz): 0.00
+	Memory slot #0 type: unknown
+	Virtual memory max (MB): 32768.00
+	Virtual memory used (MB): 18719.09
+	Swap memory total (MB): 0.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 1 total; -Xss1M
+	Server Running: true
+	Player Count: 0 / 8; []
+	Data Packs: vanilla, mod:magicmod, mod:forge
+	World Generation: Experimental
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'; Server brand changed to 'forge'
+	Launched Version: MOD_DEV
+	ModLauncher: 10.0.8+10.0.8+main.0ef7e830
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.3.jar eventbus PLUGINSERVICE 
+		fmlloader-1.19.2-43.0.11.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.19.2-43.0.11.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.19.2-43.0.11.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.19.2-43.0.11.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.19.2-43.0.11.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.8.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.8.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1|Minecraft                     |minecraft                     |1.19.2              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		main                                              |Sorcerers of Eldinburg        |magicmod                      |0.0NONE             |DONE      |Manifest: NOSIGNATURE
+		                                                  |Forge                         |forge                         |43.0.11             |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 35198c61-041b-463c-bbc8-5b3b1186b317
+	FML: 43.0
+	Forge: net.minecraftforge:43.0.11

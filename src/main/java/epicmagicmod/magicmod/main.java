@@ -10,6 +10,7 @@ import epicmagicmod.magicmod.fluid.ModFluids;
 import epicmagicmod.magicmod.items.ModCreativeModeTab;
 import epicmagicmod.magicmod.items.ModItems;
 import epicmagicmod.magicmod.networking.ModMessages;
+import epicmagicmod.magicmod.potion.ModPotions;
 import epicmagicmod.magicmod.screen.ManaExtractionScreen;
 import epicmagicmod.magicmod.screen.ModMenuType;
 import epicmagicmod.magicmod.world.feature.ModConfiguredFeatures;
@@ -85,6 +86,7 @@ public class main {
         ModBlockEntities.register(modEventBus);
         ModMenuType.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModPotions.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

@@ -1,8 +1,6 @@
 package epicmagicmod.magicmod.items;
 
-import epicmagicmod.magicmod.block.ModBlocks;
-import epicmagicmod.magicmod.block.ShardOreItem;
-import epicmagicmod.magicmod.fluid.ModFluidTypes;
+
 import epicmagicmod.magicmod.fluid.ModFluids;
 import epicmagicmod.magicmod.items.armor.ModArmorMaterials;
 import epicmagicmod.magicmod.items.utilities.ManaBucket;

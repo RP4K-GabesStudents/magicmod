@@ -17,7 +17,22 @@ public class ManaModifyEffect extends MobEffect {
 
             pLivingEntity.getCapability(PlayerManaProvider.PLAYER_MANA).ifPresent(playerMana -> {
 
-                playerMana.augmentMana(20, (ServerPlayer) pLivingEntity);
+                switch(pAmplifier){
+
+                    case 1:
+                        playerMana.augmentMana(2000, (ServerPlayer) pLivingEntity);
+                        break;
+
+
+                    case 2:
+                        playerMana.augmentMana(5000, (ServerPlayer) pLivingEntity);
+                        break;
+
+
+                }
+
+
+
 
             });
 

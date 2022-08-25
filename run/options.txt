@@ -29,11 +29,11 @@ gamma:1.0
 renderDistance:8
 simulationDistance:12
 entityDistanceScaling:1.0
-guiScale:2
+guiScale:4
 particles:0
 maxFps:120
 graphicsMode:0
-ao:2
+ao:1
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
 renderClouds:"false"
