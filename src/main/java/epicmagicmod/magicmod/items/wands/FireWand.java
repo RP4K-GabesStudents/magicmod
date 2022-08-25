@@ -1,6 +1,5 @@
 package epicmagicmod.magicmod.items.wands;
 
-import epicmagicmod.magicmod.mana.PlayerManaProvider;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -12,8 +11,8 @@ import net.minecraft.world.level.Level;
 public class FireWand extends WandParent{
 
 
-    public FireWand(Properties p_41383_) {
-        super(p_41383_, 10000);
+    public FireWand(Properties properties) {
+        super(properties, 10000,10000);
     }
 
 
@@ -24,7 +23,7 @@ public class FireWand extends WandParent{
     }
 
     @Override
-    public void ability(Level level, Player player) {
+    public void mainAbility(Level level, Player player) {
 
         int randomExplosion = RandomSource.createNewThreadLocalInstance().nextInt(5,10);
 
@@ -33,6 +32,11 @@ public class FireWand extends WandParent{
         level.addFreshEntity(fireball);
         fireball.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0f, 5, 1.0f);
 
+
+    }
+
+    @Override
+    public void altAbility(Level level, Player player) {
 
     }
 }

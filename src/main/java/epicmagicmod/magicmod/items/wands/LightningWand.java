@@ -13,23 +13,26 @@ import net.minecraft.world.phys.Vec3;
 
 public class LightningWand extends WandParent{
 
-
-    public LightningWand(Properties p_41383_) {
-        super(p_41383_, 7500);
+    final double rayLength = 100;
+    public LightningWand(Properties properties) {
+        super(properties, 7500, 7500);
     }
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+
+
         activate(level, player);
+
+
         return super.use(level, player, hand);
     }
 
 
     @Override
-    public void ability(Level level, Player player) {
+    public void mainAbility(Level level, Player player) {
 
         //RAY END POINT - TO WHERE IT WILL TRAVEL TO
-        Double rayLength = new Double(100);
         Vec3 playerRotation = player.getViewVector(0);
         Vec3 rayPath = playerRotation.scale(rayLength);
 
@@ -56,6 +59,10 @@ public class LightningWand extends WandParent{
             level.addFreshEntity(lightningBolt);
 
         }
+    }
+
+    @Override
+    public void altAbility(Level level, Player player) {
 
     }
 }

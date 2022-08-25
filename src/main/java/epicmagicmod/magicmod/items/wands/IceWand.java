@@ -19,8 +19,8 @@ import net.minecraft.world.phys.AABB;
 public class IceWand extends WandParent{
 
 
-    public IceWand(Properties p_41383_) {
-        super(p_41383_, 2500);
+    public IceWand(Properties properties) {
+        super(properties, 2500, 2500);
     }
 
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
@@ -29,7 +29,7 @@ public class IceWand extends WandParent{
     }
 
     @Override
-    public void ability(Level level, Player player) {
+    public void mainAbility(Level level, Player player) {
         //(x,y,z,x,y,z) middle is the player
         double f = 4;
         BlockPos playerPos = player.blockPosition();
@@ -52,5 +52,10 @@ public class IceWand extends WandParent{
         for(BlockPos blockpos : BlockPos.betweenClosed(playerPos.offset((-f), -1.0D, (-f)), playerPos.offset(f, -1.0D, f))) {
             level.setBlockAndUpdate(blockpos, blockstate);
         }
+    }
+
+    @Override
+    public void altAbility(Level level, Player player) {
+
     }
 }

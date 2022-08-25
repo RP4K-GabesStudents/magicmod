@@ -11,8 +11,8 @@ import net.minecraft.world.level.Level;
 public class GappleWand extends WandParent{
 
 
-    public GappleWand(Properties p_41383_) {
-        super(p_41383_, 50000);
+    public GappleWand(Properties properties) {
+        super(properties, 50000, 50000);
     }
 
     @Override
@@ -22,9 +22,14 @@ public class GappleWand extends WandParent{
     }
 
     @Override
-    public void ability(Level level, Player player) {
+    public void mainAbility(Level level, Player player) {
 
         player.forceAddEffect(new MobEffectInstance(MobEffects.SATURATION, 100, 5), player);
+
+    }
+
+    @Override
+    public void altAbility(Level level, Player player) {
 
     }
 }

@@ -11,10 +11,12 @@ import net.minecraft.world.level.Level;
 public abstract class WandParent extends Item {
 
 
-    int manaUsage;
-    public WandParent(Properties p_41383_, int manaUsage) {
-        super(p_41383_);
-        this.manaUsage = manaUsage;
+    private final int mainManaUsage;
+    private final int altManaUsage;
+    public WandParent(Properties properties, int mainManaUsage, int altManaUsage) {
+        super(properties);
+        this.mainManaUsage = mainManaUsage;
+        this.altManaUsage = altManaUsage;
     }
 
 
@@ -26,15 +28,26 @@ public abstract class WandParent extends Item {
         }
         player.getCapability(PlayerManaProvider.PLAYER_MANA).ifPresent(playerMana -> {
 
-            if (playerMana.getMana() >= manaUsage || player.isCreative()){
+            if(!player.isCrouching())
+            {
+                if (playerMana.getMana() >= mainManaUsage || player.isCreative()){
 
-                ability(level, player);
-                player.sendSystemMessage(Component.literal("we did a thing hopefully"));
+                    mainAbility(level, player);
+                    player.sendSystemMessage(Component.literal("MAIN ATTACK"));
 
-                playerMana.augmentMana(-manaUsage, (ServerPlayer) player);
+                    playerMana.augmentMana(-mainManaUsage, (ServerPlayer) player);
+                }
             }
+            else
+            {
+                if (playerMana.getMana() >= mainManaUsage || player.isCreative()){
 
+                    altAbility(level, player);
+                    player.sendSystemMessage(Component.literal("ALT ATTACK"));
 
+                    playerMana.augmentMana(-mainManaUsage, (ServerPlayer) player);
+                }
+            }
         });
 
 
@@ -43,7 +56,8 @@ public abstract class WandParent extends Item {
 
 
 
-    public abstract void ability(Level level, Player player);
+    public abstract void mainAbility(Level level, Player player);
+    public abstract void altAbility(Level level, Player player);
 
 
 
