@@ -13,6 +13,7 @@ import epicmagicmod.magicmod.networking.ModMessages;
 import epicmagicmod.magicmod.potion.ModPotions;
 import epicmagicmod.magicmod.screen.ManaExtractionScreen;
 import epicmagicmod.magicmod.screen.ModMenuType;
+import epicmagicmod.magicmod.util.BetterBrewingRecipe;
 import epicmagicmod.magicmod.world.feature.ModConfiguredFeatures;
 import epicmagicmod.magicmod.world.feature.ModPlacedFeatures;
 import epicmagicmod.magicmod.world.structure.ModStructures;
@@ -20,14 +21,15 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.brewing.BrewingRecipe;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -94,6 +96,9 @@ public class main {
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
         ModMessages.register();
+
+        //BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.EMPTY,
+                //ModItems.PURPLE_MANA_BUCKET.get(), ))
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
