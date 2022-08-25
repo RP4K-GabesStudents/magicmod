@@ -30,6 +30,8 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.logging.Logger;
+
 public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvider {
 
     private int progress;
@@ -45,6 +47,18 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
     private final ItemStackHandler itemHandler = new ItemStackHandler(6){
         @Override
         protected void onContentsChanged(int slot) {
+
+            switch (slot)
+            {
+                case 0:
+                    if(itemHandler.getStackInSlot(0).getItem() instanceof ShardOreItem so)
+                    {
+                        maxProgress = so.crushTime;
+                    }
+                    break;
+            }
+
+
             setChanged();
         }
     };
@@ -93,7 +107,7 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
             @Override
             public int getCount() {
 
-                return 5;
+                return 6;
             }
         };
     }
@@ -188,6 +202,7 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
 
         if (canProgress(blockEntity)){
             blockEntity.milliBuckets++;
+            Logger.getAnonymousLogger().info("Progress: " +  blockEntity.progress + " / " + blockEntity.maxProgress);
             if (blockEntity.progress++ >= blockEntity.maxProgress){
                 complete(blockEntity);
             }
@@ -201,23 +216,29 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
     }
 
     private static boolean canProgress(ManaExtractorBlockEntity blockEntity) {
+        ItemStack filledBuckets = blockEntity.itemHandler.getStackInSlot(5);
+
+        //Logger.getAnonymousLogger().info("TEST: " + (filledBuckets.getMaxStackSize() != filledBuckets.getCount()) + " -- " + (blockEntity.milliBuckets < blockEntity.maxMilliBuckets) + " -- " +  (blockEntity.itemHandler.getStackInSlot(0).getItem()instanceof ShardOreItem SO && (blockEntity.manaType == null || blockEntity.manaType == SO.getFluid())));
 
 
-        if (blockEntity.itemHandler.getStackInSlot(5).getMaxStackSize() == blockEntity.itemHandler.getStackInSlot(5).getCount() && blockEntity.milliBuckets < blockEntity.maxMilliBuckets && blockEntity.itemHandler.getStackInSlot(0).getItem()instanceof ShardOreItem shardOreItem && blockEntity.manaType == shardOreItem.fluid){
+        if ( (filledBuckets.getMaxStackSize() != filledBuckets.getCount()) && blockEntity.milliBuckets < blockEntity.maxMilliBuckets && blockEntity.itemHandler.getStackInSlot(0).getItem()instanceof ShardOreItem shardOreItem && (blockEntity.manaType == null || blockEntity.manaType == shardOreItem.getFluid())){
 
             for(int i = 2; i <= 4; i++){
                 ItemStack itemStack = blockEntity.itemHandler.getStackInSlot(i);
-                if(itemStack.isEmpty() || itemStack.getItem() == shardOreItem.shard && itemStack.getCount() + shardOreItem.maxDrop <= itemStack.getMaxStackSize())
+                if(itemStack.isEmpty() || (itemStack.getItem() == shardOreItem.getShard() && itemStack.getCount() + shardOreItem.maxDrop <= itemStack.getMaxStackSize())) {
+                    //Logger.getAnonymousLogger().info("true");
                     return true;
+                }
             }
 
         }
+        //Logger.getAnonymousLogger().info("false");
+
         return false;
     }
 
     private static void complete(ManaExtractorBlockEntity blockEntity) {
-
-
+        blockEntity.progress = 0;
         if (blockEntity.milliBuckets >= 1000 && blockEntity.itemHandler.getStackInSlot(1).getItem() == Items.BUCKET){
 
             blockEntity.itemHandler.getStackInSlot(1).shrink(1);
@@ -230,17 +251,17 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
             }
 
         }
-        ShardOreItem shardOreItem = (ShardOreItem) blockEntity.itemHandler.getStackInSlot(1).getItem();
+        ShardOreItem shardOreItem = (ShardOreItem) blockEntity.itemHandler.getStackInSlot(0).getItem();
         blockEntity.itemHandler.getStackInSlot(0).shrink(1);
         int x = shardOreItem.generateDrops();
             for(int i = 2; i <= 4; i++){
                 ItemStack itemStack = blockEntity.itemHandler.getStackInSlot(i);
                 if(itemStack.isEmpty()){
-                    blockEntity.itemHandler.setStackInSlot(i, new ItemStack(shardOreItem.shard, x));
+                    blockEntity.itemHandler.setStackInSlot(i, new ItemStack(shardOreItem.getShard(), x));
                     return;
                 }
                 int difference = itemStack.getMaxStackSize() - itemStack.getCount();
-                if (difference > 0 && itemStack.getItem() == shardOreItem.shard) {
+                if (difference > 0 && itemStack.getItem() == shardOreItem.getShard()) {
                    if (difference >= x ){
                        itemStack.grow(x);
                        return;

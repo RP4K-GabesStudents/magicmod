@@ -1,5 +1,8 @@
 package epicmagicmod.magicmod.items;
 
+import epicmagicmod.magicmod.block.ModBlocks;
+import epicmagicmod.magicmod.block.ShardOreItem;
+import epicmagicmod.magicmod.fluid.ModFluidTypes;
 import epicmagicmod.magicmod.fluid.ModFluids;
 import epicmagicmod.magicmod.items.armor.ModArmorMaterials;
 import epicmagicmod.magicmod.items.utilities.ManaBucket;
@@ -34,4 +37,5 @@ public class ModItems {
     public static final RegistryObject<Item>PURPLE_WIZARD_ROBE_CHEST = ITEMS.register("purplewizardchest", ()->new ArmorItem(ModArmorMaterials.ROBES, EquipmentSlot.CHEST, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));
     public static final RegistryObject<Item>PURPLE_WIZARD_ROBE_HELMET = ITEMS.register("purplewizardhelmet", ()->new ArmorItem(ModArmorMaterials.ROBES, EquipmentSlot.HEAD, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));
     public static final RegistryObject<ManaBucket>PURPLE_MANA_BUCKET = ITEMS.register("mana_gain_fluid", ()->new ManaBucket(()-> ModFluids.SOURCE_PURPLE_MANA.get(), new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(16).fireResistant(), 32));
+
 }

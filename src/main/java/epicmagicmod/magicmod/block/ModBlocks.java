@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.LiquidBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -43,7 +42,9 @@ public class ModBlocks {
         return ModItems.ITEMS.register(oreName, ()->new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
 
-    public static final RegistryObject<Block>BlaciteOre = registerBlock("blaciteore", ()->new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(3).requiresCorrectToolForDrops(), UniformInt.of(10, 20)), ModCreativeModeTab.CREATIVETAB_TAB);
+    //Register as Blocks.Register and then create an item ore variant
+    public static final RegistryObject<Block>BlaciteOre = BLOCKS.register("blaciteore", ()->new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(3).requiresCorrectToolForDrops(), UniformInt.of(10, 20)));
+    public static final RegistryObject<Item>BlaciteOreItem = ModItems.ITEMS.register("blaciteore", ()-> new ShardOreItem(BlaciteOre.get(), new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB), 3, 1, 12, ShardOreItem.EOreType.Blacite));
 
 
     public static final RegistryObject<LiquidBlock> PURPLE_SOURCE_BLOCK = BLOCKS.register("mana_source_block",

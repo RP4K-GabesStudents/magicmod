@@ -2,17 +2,23 @@ package epicmagicmod.magicmod;
 
 import com.mojang.logging.LogUtils;
 import epicmagicmod.magicmod.block.ModBlocks;
+import epicmagicmod.magicmod.block.ShardOreItem;
 import epicmagicmod.magicmod.block.entity.ModBlockEntities;
 import epicmagicmod.magicmod.effect.ModEffects;
 import epicmagicmod.magicmod.fluid.ModFluidTypes;
 import epicmagicmod.magicmod.fluid.ModFluids;
+import epicmagicmod.magicmod.items.ModCreativeModeTab;
 import epicmagicmod.magicmod.items.ModItems;
 import epicmagicmod.magicmod.networking.ModMessages;
+import epicmagicmod.magicmod.screen.ManaExtractionScreen;
 import epicmagicmod.magicmod.screen.ModMenuType;
 import epicmagicmod.magicmod.world.feature.ModConfiguredFeatures;
 import epicmagicmod.magicmod.world.feature.ModPlacedFeatures;
 import epicmagicmod.magicmod.world.structure.ModStructures;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -56,13 +62,14 @@ public class main {
 
     public main() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+        ModFluids.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
-        ModBlocks.register(modEventBus);
+
         // Register the Deferred Register to the mod event bus so items get registered
         ITEMS.register(modEventBus);
         ModItems.register(modEventBus);
@@ -73,11 +80,11 @@ public class main {
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
         ModStructures.register(modEventBus);
-        ModFluids.register(modEventBus);
-        ModFluidTypes.register(modEventBus);
+
         ModEffects.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenuType.register(modEventBus);
+        ModBlocks.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -100,9 +107,18 @@ public class main {
 
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_PURPLE_MANA.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_PURPLE_MANA.get(), RenderType.translucent());
+
+            MenuScreens.register(ModMenuType.MANA_MENU.get(), ManaExtractionScreen::new);
+
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }
     }
+
+
+
 }
