@@ -4,6 +4,8 @@ import epicmagicmod.magicmod.mana.PlayerManaProvider;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 
 public class ManaModifyEffect extends MobEffect {
@@ -26,6 +28,7 @@ public class ManaModifyEffect extends MobEffect {
 
                     case 1:
                         playerMana.augmentMana(5000, (ServerPlayer) pLivingEntity);
+                        pLivingEntity.forceAddEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 5, 3), pLivingEntity);
                         break;
 
 

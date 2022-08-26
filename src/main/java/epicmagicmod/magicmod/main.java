@@ -97,9 +97,27 @@ public class main {
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
         ModMessages.register();
 
-        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.EMPTY,
-                ModItems.BLACITE.get(), ModPotions.MANA_MODIFY_POTION.get()));
+        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
+                ModItems.PURPLE_MANA_BUCKET.get(), ModPotions.MANA_MODIFY_POTION.get()));
+        /*BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.MANA_MODIFY_POTION,
+                ModItems.ICE_SHARD.get(), ModPotions.MANA_MODIFY_POTION_2.get()));*/
+
+        /*BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
+                ModItems.LIGHTNING_MANA_BUCKET.get(), ModPotions.LIGHTNING_POTION.get()));*/
+        /*BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.LIGHTNING_POTION,
+                ModItems.LIGHTNING_SHARD.get(), ModPotions.LIGHTNING_POTION_2.get()));*/
+
+        /*BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
+                ModItems.FIRE_MANA_BUCKET.get(), ModPotions.BLAST_PUNCH_POTION.get()));*/
+        /*BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLAST_PUNCH_POTION,
+                ModItems.FIRE_SHARD.get(), ModPotions.BLAST_PUNCH_POTION_2.get()));*/
+
+        /*BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
+                ModItems.DARK_MANA_BUCKET.get(), ModPotions.DARKNESS_POTION.get()));*/
+        /*BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.DARKNESS_POTION,
+                ModItems.DARK_SHARD.get(), ModPotions.DARKNESS_POTION_2.get()));*/
     }
+
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
