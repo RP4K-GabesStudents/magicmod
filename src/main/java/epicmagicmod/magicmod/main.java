@@ -97,7 +97,8 @@ public class main {
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
         ModMessages.register();
 
-
+        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.EMPTY,
+                ModItems.BLACITE.get(), ModPotions.MANA_MODIFY_POTION.get()));
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
