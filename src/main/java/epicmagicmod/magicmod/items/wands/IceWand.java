@@ -48,9 +48,9 @@ public class IceWand extends WandParent{
     public class SavedBlocks
     {
         int duration;
-        List<BlockPos> oldPos;
+        Iterable<BlockPos> oldPos;
         List<BlockState> old;
-        public SavedBlocks(int duration, List<BlockPos> oldPos, List<BlockState> old)
+        public SavedBlocks(int duration, Iterable<BlockPos> oldPos, List<BlockState> old)
         {
             this.duration = duration;
             this.oldPos = oldPos;
@@ -89,9 +89,9 @@ public class IceWand extends WandParent{
 
         }
         List<BlockState> blockStates = new ArrayList<>();
-        List<BlockPos> blockPoses = new ArrayList<>();
+        Iterable<BlockPos> blockPoses = BlockPos.betweenClosed(playerPos.offset((-f), -1.0D, (-f)), playerPos.offset(f, -1.0D, f));
         //investigate manhattan block pos
-        for(BlockPos blockpos : BlockPos.betweenClosed(playerPos.offset((-f), -1.0D, (-f)), playerPos.offset(f, -1.0D, f))) {
+        for(BlockPos blockpos : blockPoses) {
 
             Block B = level.getBlockState(blockpos).getBlock();
             boolean allowed = true;
@@ -100,14 +100,16 @@ public class IceWand extends WandParent{
                 if(B == x)
                 {
                     allowed = false;
+                    break;
                 }
             }
 
             if(allowed)
             {
                 blockStates.add(level.getBlockState(blockpos));
-                Logger.getAnonymousLogger().info("Added: " + level.getBlockState(blockpos).getBlock().getName());
-                blockPoses.add(blockpos);
+
+                Logger.getAnonymousLogger().info("Adding block at (" + blockpos.getX() + ", " + blockpos.getY() + ", " + blockpos.getZ() + ") to: " + level.getBlockState(blockpos).getBlock().getName() + " --> ");
+
                 level.setBlockAndUpdate(blockpos, Blocks.PACKED_ICE.defaultBlockState());
             }
         }
@@ -137,7 +139,7 @@ public class IceWand extends WandParent{
         if(!pLevel.isClientSide()) {
             for (int x = savedBlocks.size()-1; x >= 0; x--) {
                 SavedBlocks s = savedBlocks.get(x);
-                Logger.getAnonymousLogger().info("Checking:  " + s.duration +" - " + s.old.size());
+                Logger.getAnonymousLogger().info("Checking:  " + s.duration );
                 //s.old.get()
                 if (s.duration-- <= 0) {
                     ResetBlocks(pLevel, s);
@@ -148,9 +150,16 @@ public class IceWand extends WandParent{
 
     public void ResetBlocks(Level level, SavedBlocks s)
     {
-        for (int i = s.old.size()-1; i >=0 ; i--) {
-            Logger.getAnonymousLogger().info("Settings block to: " + s.old.get(i).getBlock().getName() + " --> " + i);
-            level.setBlockAndUpdate(s.oldPos.get(i), s.old.get(i));
+        int i =0;
+        Logger.getAnonymousLogger().info("Attempting Destroy");
+
+        for (BlockPos pos : s.oldPos) {
+            Block B = level.getBlockState(pos).getBlock();
+            if(B == Blocks.PACKED_ICE) {
+                Logger.getAnonymousLogger().info("Settings block at (" + pos.getX() + ", " + pos.getY() + ", " + pos.getZ() + ") to: " + s.old.get(i).getBlock().getName() + " --> " + i);
+                level.setBlockAndUpdate(pos, s.old.get(i));
+                i++;
+            }
         }
         savedBlocks.remove(s);
     }
