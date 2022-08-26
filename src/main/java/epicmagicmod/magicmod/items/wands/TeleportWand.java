@@ -17,6 +17,10 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
+
 public class TeleportWand extends WandParent{
 
 
@@ -31,7 +35,7 @@ public class TeleportWand extends WandParent{
     }
 
     @Override
-    public void mainAbility(Level level, Player player) {
+    public boolean mainAbility(Level level, Player player) {
 
         //RAY END POINT - TO WHERE IT WILL TRAVEL TO
         Vec3 playerRotation = player.getViewVector(0);
@@ -52,73 +56,23 @@ public class TeleportWand extends WandParent{
             Vec3 hitLocation = rayHit.getLocation();
 
             player.teleportTo(hitLocation.x, hitLocation.y, hitLocation.z);
-
+            return true;
         }
+        return false;
     }
 
     @Override
-    public void altAbility(Level level, Player player) {
-
-        //RAY END POINT - TO WHERE IT WILL TRAVEL TO
-        Vec3 playerRotation = player.getViewVector(0);
-        Vec3 rayPath = playerRotation.scale(rayLength);
-
-        //RAY START AND END POINTS
-        Vec3 from = player.getEyePosition(0);
-        Vec3 to = from.add(rayPath);
-
-
-        //CREATE THE RAY
-        ClipContext rayCtx = new ClipContext(from, to, ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, null);
-        //CAST THE RAY
-        BlockHitResult rayHit = level.clip(rayCtx);
-
-        //Store the players previous position
-        Vec3 playerPos = player.position();
-
-        BlockPos rayPos = rayHit.getBlockPos();
-
-        AABB debug = new AABB(player.getX()-2, player.getY()-2, player.getZ()-2, rayPos.getX()+2, rayPos.getY()+2, rayPos.getZ()+2);
-
-        LivingEntity closestToPlayer = null;
-        double distToPlayer = 100000000;
-        LivingEntity closestToTarget = null;
-        double distToTarget = 100000000;
-
-        for (Entity e : level.getEntities(player, debug))
+    public boolean altAbility(Level level, Player player) {
+        LivingEntity target = GetLookAtTarget(level, player, rayLength, false);
+        if (target != null)
         {
-            if(e instanceof LivingEntity le)
-            {
-                double pt = le.distanceToSqr(player);
-                if(pt < distToPlayer)
-                {
-                    distToPlayer = pt;
-                    closestToPlayer = le;
-                }
-                pt = le.distanceToSqr(rayPos.getX(), rayPos.getY(), rayPos.getZ());
-                if(pt < distToTarget)
-                {
-                    distToTarget = pt;
-                    closestToTarget = le;
-                }
-            }
-        }
-
-
-        if (rayHit.getType() == BlockHitResult.Type.MISS && closestToPlayer != null) {
-            player.teleportTo(closestToPlayer.getX(), closestToPlayer.getY(), closestToPlayer.getZ());
-            player.sendSystemMessage(Component.literal("TELEPORT MISS"));
-            closestToPlayer.teleportTo(playerPos.x, playerPos.y, playerPos.z);
-        }
-        else if (closestToTarget != null)
-        {
-            player.teleportTo(closestToTarget.getX(), closestToTarget.getY(), closestToTarget.getZ());
+            Vec3 playerPos = player.position();
+            player.teleportTo(target.getX(), target.getY(), target.getZ());
             player.sendSystemMessage(Component.literal("TELEPORT HIT"));
-            closestToTarget.teleportTo(playerPos.x, playerPos.y, playerPos.z);
+            target.teleportTo(playerPos.x, playerPos.y, playerPos.z);
+            return true;
+
         }
-
-
-
-
+        return false;
     }
 }

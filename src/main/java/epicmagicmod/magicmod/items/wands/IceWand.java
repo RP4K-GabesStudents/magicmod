@@ -29,6 +29,7 @@ import java.util.logging.Logger;
 public class IceWand extends WandParent{
 
 
+    final double rayLength = 100;
     private static Block [] unreplaceableBlocks = new Block[]
         {
                 Blocks.PACKED_ICE,
@@ -71,7 +72,7 @@ public class IceWand extends WandParent{
     }
 
     @Override
-    public void mainAbility(Level level, Player player) {
+    public boolean mainAbility(Level level, Player player) {
         //(x,y,z,x,y,z) middle is the player
         double f = 4;
         BlockPos playerPos = player.blockPosition();
@@ -114,6 +115,7 @@ public class IceWand extends WandParent{
             }
         }
         savedBlocks.add(new SavedBlocks(60,blockPoses, blockStates));
+        return blockStates.size() != 0;
     }
 
     @Override
@@ -165,7 +167,41 @@ public class IceWand extends WandParent{
     }
 
     @Override
-    public void altAbility(Level level, Player player) {
+    public boolean altAbility(Level level, Player player) {
+        Player other = (Player) GetLookAtTarget(level, player, rayLength,true);
 
+        if(other != null)
+        {
+            BlockPos playerPos = player.blockPosition();
+            double f = 4;
+            List<BlockState> blockStates = new ArrayList<>();
+            Iterable<BlockPos> blockPoses = BlockPos.betweenClosed(playerPos.offset((-f), -1.0D, (-f)), playerPos.offset(f, -1.0D, f));
+            //investigate manhattan block pos
+            for(BlockPos blockpos : blockPoses) {
+
+                Block B = level.getBlockState(blockpos).getBlock();
+                boolean allowed = true;
+                for(Block x : unreplaceableBlocks)
+                {
+                    if(B == x)
+                    {
+                        allowed = false;
+                        break;
+                    }
+                }
+
+                if(allowed)
+                {
+                    blockStates.add(level.getBlockState(blockpos));
+
+                    Logger.getAnonymousLogger().info("Adding block at (" + blockpos.getX() + ", " + blockpos.getY() + ", " + blockpos.getZ() + ") to: " + level.getBlockState(blockpos).getBlock().getName() + " --> ");
+
+                    level.setBlockAndUpdate(blockpos, Blocks.PACKED_ICE.defaultBlockState());
+                }
+            }
+            savedBlocks.add(new SavedBlocks(60,blockPoses, blockStates));
+            return true;
+        }
+        return false;
     }
 }

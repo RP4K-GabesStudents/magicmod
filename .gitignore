@@ -29,3 +29,9 @@ run/logs/2022-08-20-5.log.gz
 *.log
 build/tmp/compileJava/previous-compilation-data.bin
 run/options.txt
+.gradle/7.4.2/executionHistory/executionHistory.bin
+.gradle/7.4.2/executionHistory/executionHistory.lock
+run/logs/debug.log
+run/logs/latest.log
+run/options.txt
+.gradle/7.4.2/fileHashes/resourceHashesCache.bin

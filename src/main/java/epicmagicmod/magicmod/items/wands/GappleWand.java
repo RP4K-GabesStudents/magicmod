@@ -22,14 +22,14 @@ public class GappleWand extends WandParent{
     }
 
     @Override
-    public void mainAbility(Level level, Player player) {
+    public boolean mainAbility(Level level, Player player) {
 
         player.forceAddEffect(new MobEffectInstance(MobEffects.SATURATION, 100, 5), player);
-
+        return true;
     }
 
     @Override
-    public void altAbility(Level level, Player player) {
-
+    public boolean altAbility(Level level, Player player) {
+        return true;
     }
 }

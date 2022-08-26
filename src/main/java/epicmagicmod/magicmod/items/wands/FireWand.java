@@ -23,7 +23,7 @@ public class FireWand extends WandParent{
     }
 
     @Override
-    public void mainAbility(Level level, Player player) {
+    public boolean mainAbility(Level level, Player player) {
 
         int randomExplosion = RandomSource.createNewThreadLocalInstance().nextInt(5,10);
 
@@ -32,11 +32,12 @@ public class FireWand extends WandParent{
         level.addFreshEntity(fireball);
         fireball.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0f, 5, 1.0f);
 
+        return true;
 
     }
 
     @Override
-    public void altAbility(Level level, Player player) {
-
+    public boolean altAbility(Level level, Player player) {
+        return false;
     }
 }
