@@ -98,7 +98,6 @@ public class ModEvents {
    @SubscribeEvent
    public static void onLivingDeath(LivingDeathEvent event){
 
-       event.getEntity().sendSystemMessage(Component.literal("idk what htis iss usposed to do"));
        if (event.getEntity() instanceof Player player){
 
            player.getCapability(PlayerManaProvider.PLAYER_MANA).ifPresent(mana ->{

@@ -20,7 +20,9 @@ public class ModPotions {
             = DeferredRegister.create(ForgeRegistries.POTIONS, main.MODID);
 
     public static final RegistryObject<Potion> MANA_MODIFY_POTION = POTIONS.register("mana_modify_potion",
-            () -> new Potion(new MobEffectInstance(ModEffects.MANA_MODIFY_EFFECT.get(), 900, 1)));
+            () -> new Potion(new MobEffectInstance(ModEffects.MANA_MODIFY_EFFECT.get(), 900, 0)));
+    public static final RegistryObject<Potion> MANA_MODIFY_POTION_2 = POTIONS.register("mana_modify_potion_2",
+            () -> new Potion(new MobEffectInstance(ModEffects.MANA_MODIFY_EFFECT.get(), 420, 1)));
 
 
     public static void register(IEventBus eventBus) {

@@ -19,12 +19,12 @@ public class ManaModifyEffect extends MobEffect {
 
                 switch(pAmplifier){
 
-                    case 1:
+                    case 0:
                         playerMana.augmentMana(2000, (ServerPlayer) pLivingEntity);
                         break;
 
 
-                    case 2:
+                    case 1:
                         playerMana.augmentMana(5000, (ServerPlayer) pLivingEntity);
                         break;
 

@@ -6,11 +6,18 @@
   "item.magicmod.icewand": "Ice Wand",
   "item.magicmod.teleportwand": "Teleportation Wand",
   "item.magicmod.lightningwand": "Lightning Wand",
-  "item.magicmod.gapplewand": "Nutrition Wand"
+  "item.magicmod.gapplewand": "Nutrition Wand",
 
+  "item.minecraft.potion.effect.mana_modify_potion": "Potion of Mana Regeneration",
+  "item.minecraft.splash_potion.effect.mana_modify_potion": "Splash Potion of Mana Regeneration",
+  "item.minecraft.lingering_potion.effect.mana_modify_potion": "Lingering Potion of Mana Regeneration",
 
+  "item.minecraft.potion.effect.mana_modify_potion_2": "Potion of Mana Regeneration",
+  "item.minecraft.splash_potion.effect.mana_modify_potion_2": "Splash Potion of Mana Regeneration",
+  "item.minecraft.lingering_potion.effect.mana_modify_potion_2": "Lingering Potion of Mana Regeneration",
 
+  "item.minecraft.tipped_arrow.effect.mana_modify_potion": "Arrow of Mana Regeneration",
+  "item.minecraft.tipped_arrow.effect.mana_modify_potion_2": "Arrow of Mana Regeneration",
 
-
-
+  "effect.magicmod.mana_modify_effect": "Mana Regen"
 }

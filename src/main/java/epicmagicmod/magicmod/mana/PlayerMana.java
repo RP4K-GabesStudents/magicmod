@@ -8,7 +8,7 @@ import net.minecraft.server.level.ServerPlayer;
 public class PlayerMana {
 
     private int mana;
-    private int manaPerTick = 3;
+    private int manaPerTick = 1;
 
     public static final int MIN_MANA = 0;
     public static final int DEFAULT_MAX_MANA = 100000;
