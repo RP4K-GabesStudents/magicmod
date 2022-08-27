@@ -35,3 +35,5 @@ run/logs/debug.log
 run/logs/latest.log
 run/options.txt
 .gradle/7.4.2/fileHashes/resourceHashesCache.bin
+run/logs/latest.log
+run/options.txt

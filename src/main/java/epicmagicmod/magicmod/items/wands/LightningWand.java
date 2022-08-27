@@ -2,6 +2,7 @@ package epicmagicmod.magicmod.items.wands;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
@@ -9,6 +10,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -75,8 +77,29 @@ public class LightningWand extends WandParent{
         return false;
     }
 
+    private final int range = 4;
+
     @Override
     public boolean altAbility(Level level, Player player) {
-        return true;
+
+        Vec3 p = player.position();
+        AABB inRange = new AABB(p.x - range, p.y - range, p.z - range, p.x + range, p.y + range, p.z + range);
+        boolean ret = false;
+        for (Entity e : level.getEntities(player, inRange))
+        {
+            if(e instanceof LivingEntity le)
+            {
+                Vec3 hitLocation = le.getPosition(0f);
+
+                LightningBolt lightningBolt = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+                lightningBolt.setPos(hitLocation);
+                ret = true;
+                level.addFreshEntity(lightningBolt);
+            }
+        }
+
+
+
+        return ret;
     }
 }
