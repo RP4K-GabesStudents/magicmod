@@ -124,9 +124,6 @@ public class ModEvents {
 
                     ManaHudOverlay.SetOriginalColor();
                 }
-                else{
-                    ManaHudOverlay.ModifyColors();
-                }
             });
 
         }

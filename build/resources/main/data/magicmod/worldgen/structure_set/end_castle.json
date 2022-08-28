@@ -1,0 +1,23 @@
+{
+
+  "structures": [
+    {
+      "structure": "magicmod:end_castle",
+      "weight": 1
+    }
+
+
+  ],
+  "placement": {
+
+    "type": "minecraft:random_spread",
+    "salt": 299239234,
+    "spacing": 1,
+    "separation": 0
+  }
+
+
+
+
+
+}

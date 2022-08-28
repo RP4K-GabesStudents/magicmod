@@ -1,6 +1,7 @@
 package epicmagicmod.magicmod.world.structure;
 
 import epicmagicmod.magicmod.main;
+import epicmagicmod.magicmod.world.structure.structures.EndCastle;
 import epicmagicmod.magicmod.world.structure.structures.ExampleStructure;
 import net.minecraft.core.Registry;
 import net.minecraft.world.level.levelgen.structure.StructureType;
@@ -20,7 +21,7 @@ public class ModStructures {
 
     public static final RegistryObject<StructureType<ExampleStructure>>EXAMPLE_STRUCTURE = STRUCTURES.register("example_structure", ()-> ()-> ExampleStructure.CODEC);
 
-
+    public static final RegistryObject<StructureType<EndCastle>>END_CASTLE = STRUCTURES.register("end_castle", ()-> ()-> EndCastle.CODEC);
 
 
 

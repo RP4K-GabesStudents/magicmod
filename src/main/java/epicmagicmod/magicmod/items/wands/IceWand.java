@@ -1,12 +1,8 @@
 package epicmagicmod.magicmod.items.wands;
 
 
-import com.mojang.math.Vector3f;
 import epicmagicmod.magicmod.block.ModBlocks;
-import epicmagicmod.magicmod.block.TempIceBlock;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -18,9 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
@@ -150,7 +144,7 @@ public class IceWand extends WandParent{
     @Override
     public boolean altAbility(Level level, Player player) {
         //Player other = (Player) GetLookAtTarget(level, player, rayLength,true);
-        LivingEntity other = GetLookAtTarget(level, player, rayLength,false); // DEBUG
+        LivingEntity other = getLookAtTarget(level, player, rayLength,false); // DEBUG
 
 
         if(other != null)
@@ -180,7 +174,7 @@ public class IceWand extends WandParent{
             blockPoses.addAll(BuildWall(playerPos, new Vec3(0,0,-1), trueDist));
 
             //investigate manhattan block pos
-            CreateBlockSet(level, blockStates, blockPoses, 60);
+            CreateBlockSet(level, blockStates, blockPoses, 600);
 
             return true;
         }
@@ -210,7 +204,7 @@ public class IceWand extends WandParent{
                 level.setBlockAndUpdate(blockpos, Blocks.PACKED_ICE.defaultBlockState());
             }
         }
-        savedBlocks.add(new SavedBlocks(600,blockPoses, blockStates));
+        savedBlocks.add(new SavedBlocks(duration,blockPoses, blockStates));
     }
 
     private List<BlockPos> BuildWall(Vec3 origin, Vec3 forward, int extent)
@@ -245,9 +239,7 @@ public class IceWand extends WandParent{
                 //Right is right and left
                 // UP is up and down
                 BlockPos added = new BlockPos(origin.add(right.scale(trueX)).add(up.scale(trueY)).add(forward.scale(extent-1-trueDif))); // .add(forward.scale(extent-dif*2))
-                Logger.getAnonymousLogger().info("Added Position: (" + added.getX() +", " + added.getY() + ", " + added.getZ()+")");
-                wall.add(added);
-
+               wall.add(added);
             }
         }
 

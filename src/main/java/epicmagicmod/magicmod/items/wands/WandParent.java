@@ -14,8 +14,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
-import java.util.logging.Logger;
-
 
 public abstract class WandParent extends Item {
 
@@ -68,7 +66,7 @@ public abstract class WandParent extends Item {
         });
     }
 
-    protected static LivingEntity GetLookAtTarget(Level level, Player player, double rayLength, boolean playerOnly)
+    protected static LivingEntity getLookAtTarget(Level level, Player player, double rayLength, boolean playerOnly)
     {
         //RAY END POINT - TO WHERE IT WILL TRAVEL TO
         Vec3 playerRotation = player.getViewVector(1f).normalize();
@@ -83,8 +81,6 @@ public abstract class WandParent extends Item {
         BlockHitResult rayHit = level.clip(rayCtx);
         int scalar = 2;
         int casts = (int)Math.ceil(rayHit.getLocation().distanceTo(from) /  scalar);
-
-        Logger.getAnonymousLogger().info("Created #" + casts + "arrays");
 
 
         LivingEntity target = null;

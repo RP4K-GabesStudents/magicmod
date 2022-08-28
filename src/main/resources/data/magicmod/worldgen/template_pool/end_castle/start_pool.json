@@ -1,0 +1,22 @@
+{
+
+  "name": "magicmod:end_castle/start_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "magicmod:end_castle/end_deadend",
+        "processors": "magicmod:randomized_blocks",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+
+
+
+
+
+
+}

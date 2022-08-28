@@ -15,8 +15,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
-import javax.sound.sampled.Clip;
-
 public class LightningWand extends WandParent{
 
     final double rayLength = 100;
@@ -38,7 +36,7 @@ public class LightningWand extends WandParent{
     @Override
     public boolean mainAbility(Level level, Player player) {
 
-        LivingEntity le = GetLookAtTarget(level, player, rayLength, false);
+        LivingEntity le = getLookAtTarget(level, player, rayLength, false);
         if(le != null) {
             //IF RAY HIT SOMETHING
             Vec3 hitLocation = le.getPosition(1f);

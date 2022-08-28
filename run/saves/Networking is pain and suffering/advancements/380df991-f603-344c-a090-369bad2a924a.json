@@ -65,6 +65,12 @@
     },
     "done": true
   },
+  "minecraft:end/root": {
+    "criteria": {
+      "entered_end": "2022-08-26 23:03:47 -0400"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/black_wool": {
     "criteria": {
       "has_white_wool": "2022-08-22 13:30:33 -0400"
@@ -153,6 +159,7 @@
       "minecraft:desert": "2022-08-19 13:45:26 -0400",
       "minecraft:jungle": "2022-08-19 13:43:49 -0400",
       "minecraft:warm_ocean": "2022-08-21 12:38:43 -0400",
+      "minecraft:deep_lukewarm_ocean": "2022-08-26 23:02:38 -0400",
       "minecraft:savanna": "2022-08-18 15:57:40 -0400",
       "minecraft:plains": "2022-08-19 00:40:06 -0400"
     },
@@ -329,6 +336,12 @@
   "minecraft:recipes/building_blocks/bookshelf": {
     "criteria": {
       "has_book": "2022-08-20 21:37:37 -0400"
+    },
+    "done": true
+  },
+  "minecraft:story/enter_the_end": {
+    "criteria": {
+      "entered_end": "2022-08-26 23:03:47 -0400"
     },
     "done": true
   },

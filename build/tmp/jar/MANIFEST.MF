@@ -3,7 +3,7 @@ Implementation-Title: magicmod
 Implementation-Version: 1.0-SNAPSHOT
 Specification-Vendor: DeceasedWolf, FlamingoEzPz
 Specification-Title: sorcerersofeldinburg
-Implementation-Timestamp: 2022-08-16T14:38:04-0400
+Implementation-Timestamp: 2022-08-27T19:50:52-0400
 Specification-Version: 1
 Implementation-Vendor: DeceasedWolf, FlamingoEzPz
 

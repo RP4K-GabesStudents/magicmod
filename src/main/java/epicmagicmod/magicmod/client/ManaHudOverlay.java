@@ -32,7 +32,7 @@ public class ManaHudOverlay {
     }
     public static void ModifyColors(){
 
-        float speed = 0.05f;
+        float speed = 0.01f;
         if(red >= 1 && blue <= 0){
             green += speed;
         }
@@ -74,6 +74,10 @@ public class ManaHudOverlay {
             int maxBarWidth = 80;
 
             int fillWidth = (int) ((ClientManaData.getPlayerMana() * 1.0f / mana.MAX_MANA) * maxBarWidth);
+
+            if(fillWidth == maxBarWidth)
+                ModifyColors();
+
             gui.getMinecraft().player.sendSystemMessage(Component.literal("Val: " + ClientManaData.getPlayerMana() + " / " + PlayerMana.MAX_MANA + " -->" + ((ClientManaData.getPlayerMana() * 1f / PlayerMana.MAX_MANA) * 180f) + " - " + fillWidth).withStyle(ChatFormatting.AQUA));
 
             //drawing the filled bar
