@@ -21,7 +21,7 @@ public class ManaFluid extends FluidType {
     private final ResourceLocation stillTexture;
     private final ResourceLocation flowingTexture;
     private final ResourceLocation overlayTexture;
-    private final int tintColor;
+    public final int tintColor;
     private final Vector3f fogColor;
 
 

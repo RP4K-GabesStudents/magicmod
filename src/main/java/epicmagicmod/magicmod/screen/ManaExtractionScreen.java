@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import epicmagicmod.magicmod.main;
+import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.player.Inventory;
 
 public class ManaExtractionScreen extends AbstractContainerScreen<ManaExtractionMenu>{
@@ -32,15 +33,30 @@ public class ManaExtractionScreen extends AbstractContainerScreen<ManaExtraction
         int y = (height-imageHeight)/2;
 
         this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
-        renderProgresdsArrow(pPoseStack, x, y);
+        renderProgressArrow(pPoseStack, x, y);
+
+
+        int fluidColor = FastColor.ARGB32.color(102, 117,248,255);
+
+        RenderSystem.setShaderColor(
+                FastColor.ARGB32.red(fluidColor) / 255f,
+                FastColor.ARGB32.green(fluidColor) /255f,
+                FastColor.ARGB32.blue(fluidColor) / 255f,
+                FastColor.ARGB32.alpha(fluidColor) / 255f);
+        renderFluidBar(pPoseStack, x, y);
 
     }
 
-    private void renderProgresdsArrow(PoseStack pPoseStack, int x, int y) {
+    private void renderProgressArrow(PoseStack pPoseStack, int x, int y) {
         if(menu.isCrafting())
         {
-            blit(pPoseStack, x + 105, y + 33, 176, 0, 8,menu.getScaledProgress());
+            blit(pPoseStack, x + 49, y + 19, 176, 0, 8,menu.getScaledArrowProgress());
+            blit(pPoseStack, x + 78, y + 19, 176, 0, 8,menu.getScaledArrowProgress());
         }
+    }
+
+    private void renderFluidBar(PoseStack pPoseStack, int x, int y) {
+        blit(pPoseStack, x + 156, y + 13, 176, 18, 8, menu.getScaledFluidProgress());
     }
 
     @Override

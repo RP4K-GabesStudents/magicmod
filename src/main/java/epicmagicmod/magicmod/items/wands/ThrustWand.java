@@ -15,7 +15,7 @@ import net.minecraft.world.phys.Vec3;
 public class ThrustWand extends WandParent{
 
     final int RayLength = 100;
-    final int Force = 5;
+    final int Force = 1;
 
     public ThrustWand(Properties properties) {
         super(properties, 200, 200);

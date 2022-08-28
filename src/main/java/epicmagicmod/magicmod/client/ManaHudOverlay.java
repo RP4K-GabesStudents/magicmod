@@ -78,7 +78,7 @@ public class ManaHudOverlay {
             if(fillWidth == maxBarWidth)
                 ModifyColors();
 
-            gui.getMinecraft().player.sendSystemMessage(Component.literal("Val: " + ClientManaData.getPlayerMana() + " / " + PlayerMana.MAX_MANA + " -->" + ((ClientManaData.getPlayerMana() * 1f / PlayerMana.MAX_MANA) * 180f) + " - " + fillWidth).withStyle(ChatFormatting.AQUA));
+            //gui.getMinecraft().player.sendSystemMessage(Component.literal("Val: " + ClientManaData.getPlayerMana() + " / " + PlayerMana.MAX_MANA + " -->" + ((ClientManaData.getPlayerMana() * 1f / PlayerMana.MAX_MANA) * 180f) + " - " + fillWidth).withStyle(ChatFormatting.AQUA));
 
             //drawing the filled bar
             RenderSystem.setShaderColor(red, green, blue, 1);

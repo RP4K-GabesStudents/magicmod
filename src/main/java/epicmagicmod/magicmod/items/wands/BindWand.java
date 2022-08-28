@@ -48,12 +48,25 @@ public class BindWand extends WandParent{
     }
 
     @Override
+    public boolean onDroppedByPlayer(ItemStack item, Player player) {
+        A = null;
+        B = null;
+        return super.onDroppedByPlayer(item, player);
+    }
+
+    @Override
     public boolean mainAbility(Level level, Player player) {
         LivingEntity setA = getLookAtTarget(level, player, RayLength, false);
 
         if(setA != null) {
             player.sendSystemMessage(Component.literal("Set target to: " + setA.getDisplayName().getString()));
             A = setA;
+
+            if(A instanceof Player targetPly)
+            {
+                targetPly.sendSystemMessage(Component.literal(player.getDisplayName().getString() + " has bound your soul"));
+            }
+
             if(B != null)
             {
                 player.sendSystemMessage(Component.literal(A.getDisplayName().getString() + " is now linked to " + B.getDisplayName().getString()));
@@ -70,6 +83,12 @@ public class BindWand extends WandParent{
         if(setB != null) {
             player.sendSystemMessage(Component.literal("Set target to: " + setB.getDisplayName().getString()));
             B = setB;
+
+            if(B instanceof Player targetPly)
+            {
+                targetPly.sendSystemMessage(Component.literal(player.getDisplayName().getString() + " has bound your soul"));
+            }
+
             if(A != null)
             {
                 player.sendSystemMessage(Component.literal(A.getDisplayName().getString() + " is now linked to " + B.getDisplayName().getString()));

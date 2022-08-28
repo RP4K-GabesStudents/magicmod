@@ -5,7 +5,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="magicmod.main" options="--add-modules java.logging" />
+      <module name="magicmod.main" options="--add-modules java.logging,java.datatransfer --add-exports java.datatransfer/java.awt=ALL-UNNAMED" />
     </option>
   </component>
 </project>

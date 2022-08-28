@@ -6,13 +6,14 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.SlotItemHandler;
-import org.jetbrains.annotations.Nullable;
+
+import java.util.logging.Logger;
 
 public class ManaExtractionMenu extends AbstractContainerMenu {
 
@@ -40,15 +41,17 @@ public class ManaExtractionMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(iItemHandler -> {
-            addSlot(new SlotItemHandler(iItemHandler, 0, 12, 15));
-            addSlot(new SlotItemHandler(iItemHandler, 1, 86, 15));
-            addSlot(new SlotItemHandler(iItemHandler, 2, 56, 60));
-            addSlot(new SlotItemHandler(iItemHandler, 3, 86, 60));
-            addSlot(new SlotItemHandler(iItemHandler, 4, 116, 60));
-            addSlot(new SlotItemHandler(iItemHandler, 5, 146, 60));
+            addSlot(new RestrictedSlot(iItemHandler, 0, 59, 14, new Item[] {ModBlocks.BlaciteOreItem.get()}));
+            addSlot(new RestrictedSlot(iItemHandler, 1, 134, 14, new Item[] {Items.BUCKET}));
+            addSlot(new RestrictedSlot(iItemHandler, 2, 35, 60));
+            addSlot(new RestrictedSlot(iItemHandler, 3, 59, 60));
+            addSlot(new RestrictedSlot(iItemHandler, 4, 83, 60));
+            addSlot(new RestrictedSlot(iItemHandler, 5, 134, 60));
         });
         addDataSlots(data);
     }
+
+
 
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
@@ -76,7 +79,7 @@ public class ManaExtractionMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 6;  // must be the number of slots you have!
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);
@@ -98,7 +101,6 @@ public class ManaExtractionMenu extends AbstractContainerMenu {
                 return ItemStack.EMPTY;
             }
         } else {
-            System.out.println("Invalid slotIndex:" + index);
             return ItemStack.EMPTY;
         }
         // If stack size == 0 (the entire stack was moved) set slot contents to null
@@ -110,6 +112,8 @@ public class ManaExtractionMenu extends AbstractContainerMenu {
         sourceSlot.onTake(playerIn, sourceStack);
         return copyOfSourceStack;
     }
+
+
 
     private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
@@ -127,14 +131,25 @@ public class ManaExtractionMenu extends AbstractContainerMenu {
         return data.get(0) > 0; // If progress is > 0
     }
 
-    public int getScaledProgress()
+    public int getScaledArrowProgress()
     {
         int progress = data.get(0);
         int max = data.get(1);
-        int arrowSize = 26;
+        int arrowSize = 18;
         return  max != 0 && progress != 0 ? progress * arrowSize / max : 0;
     }
 
+    public int getScaledFluidProgress()
+    {
+        int progress = data.get(2);
+        int max = data.get(3);
+        int arrowSize = 64;
+        return  max != 0 && progress != 0 ? progress * arrowSize / max : 0;
+    }
 
+    public int getFluidColor()
+    {
+        return data.get(4);
+    }
 
 }

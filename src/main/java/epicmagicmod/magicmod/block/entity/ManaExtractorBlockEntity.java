@@ -2,6 +2,7 @@ package epicmagicmod.magicmod.block.entity;
 
 import epicmagicmod.magicmod.block.ShardOreItem;
 import epicmagicmod.magicmod.fluid.ModFluidTypes;
+import epicmagicmod.magicmod.fluid.fluids.ManaFluid;
 import epicmagicmod.magicmod.items.ModItems;
 import epicmagicmod.magicmod.screen.ManaExtractionMenu;
 import net.minecraft.core.BlockPos;
@@ -34,7 +35,7 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
 
     private int progress;
     private int maxProgress = 9999999;
-    private int milliBuckets;
+    public int milliBuckets = 1500;
     private final int maxMilliBuckets = 4000;
     private FluidType manaType;
     private final ContainerData data;
@@ -42,6 +43,7 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
     // Box 1 = Input empty bucket(s)
     // Box 2 - 4 = Output shard(s)
     // Box 5 = Output Mana Bucket(s)
+    // Box 6 = CLEAR button.
     private final ItemStackHandler itemHandler = new ItemStackHandler(6){
         @Override
         protected void onContentsChanged(int slot) {
@@ -53,6 +55,10 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
                     {
                         maxProgress = so.crushTime;
                     }
+                    break;
+
+                case 1:
+                    //craftBucket(this);
                     break;
             }
 
@@ -69,20 +75,27 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
         data = new ContainerData() {
             @Override
             public int get(int pIndex) {
-                return switch (pIndex){
 
-                    case 0 -> ManaExtractorBlockEntity.this.progress;
+                int val;
+                switch (pIndex) {
 
-                    case 1 -> ManaExtractorBlockEntity.this.maxProgress;
+                    case 0 -> {val = ManaExtractorBlockEntity.this.progress;
+                   ;
+                }
 
-                    case 2 -> ManaExtractorBlockEntity.this.milliBuckets;
+                    case 1 -> val = ManaExtractorBlockEntity.this.maxProgress;
 
-                    case 4 -> ManaExtractorBlockEntity.this.maxMilliBuckets;
+                    case 2 -> {
+                        val = ManaExtractorBlockEntity.this.milliBuckets;
+                    }
 
-                    case 3 -> getFluid();
+                    case 3 -> val = ManaExtractorBlockEntity.this.maxMilliBuckets;
 
-                    default -> 0;
+                    case 4 -> val = getFluidColor();
+
+                    default -> val = 0;
                 };
+                return val;
 
             }
 
@@ -94,18 +107,17 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
 
                     case 1 -> ManaExtractorBlockEntity.this.maxProgress = pValue;
 
-                    case 2 -> ManaExtractorBlockEntity.this.milliBuckets = pValue;
+                    case 2 -> {
+                        ManaExtractorBlockEntity.this.milliBuckets = pValue;
 
-                    case 3 -> setFluid(pValue);
-
+                    }
+                    case 4 -> setFluid(pValue);
                 }
-
             }
 
             @Override
             public int getCount() {
-
-                return 6;
+                return 5;
             }
         };
     }
@@ -115,6 +127,8 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
     public Component getDisplayName() {
         return Component.literal("Mana Extractor");
     }
+
+
 
     @Nullable
     @Override
@@ -150,7 +164,7 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
         pTag.put("inventory", itemHandler.serializeNBT());
         pTag.putInt("progress", progress);
         pTag.putInt("millibuckets", milliBuckets);
-        pTag.putInt("fluid_type", getFluid());
+        pTag.putInt("fluid_type", getFluidColor());
 
         super.saveAdditional(pTag);
     }
@@ -162,6 +176,11 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
         progress = pTag.getInt("progress");
         milliBuckets = pTag.getInt("millibuckets");
         setFluid(pTag.getInt("fluid_type"));
+
+        if(itemHandler.getStackInSlot(0).getItem() instanceof ShardOreItem so)
+        {
+            maxProgress = so.crushTime;
+        }
     }
 
     private void setFluid(int id){
@@ -175,12 +194,11 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
 
     }
 
-    private int getFluid(){
+    private int getFluidColor(){
 
-        if (manaType == ModFluidTypes.PURPLE_MANA.get()){
-            return 0;
-        }
-        return -1;
+        if(manaType instanceof ManaFluid fluid)
+            return fluid.tintColor;
+        return 0;
     }
 
     public void onDestroy(){
@@ -198,17 +216,20 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
 
     public static void tick(Level level, BlockPos blockPos, BlockState blockstate, ManaExtractorBlockEntity blockEntity){
 
+
+        if(level.isClientSide())
+            return;
         if (canProgress(blockEntity)){
-            blockEntity.milliBuckets++;
+            blockEntity.milliBuckets+= 100 / blockEntity.maxProgress;
             Logger.getAnonymousLogger().info("Progress: " +  blockEntity.progress + " / " + blockEntity.maxProgress);
             if (blockEntity.progress++ >= blockEntity.maxProgress){
                 complete(blockEntity);
             }
-
         }
         else {
             blockEntity.progress = 0;
         }
+        craftBucket(blockEntity);
         setChanged(level, blockPos, blockstate);
 
     }
@@ -219,12 +240,17 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
         //Logger.getAnonymousLogger().info("TEST: " + (filledBuckets.getMaxStackSize() != filledBuckets.getCount()) + " -- " + (blockEntity.milliBuckets < blockEntity.maxMilliBuckets) + " -- " +  (blockEntity.itemHandler.getStackInSlot(0).getItem()instanceof ShardOreItem SO && (blockEntity.manaType == null || blockEntity.manaType == SO.getFluid())));
 
 
-        if ( (filledBuckets.getMaxStackSize() != filledBuckets.getCount()) && blockEntity.milliBuckets < blockEntity.maxMilliBuckets && blockEntity.itemHandler.getStackInSlot(0).getItem()instanceof ShardOreItem shardOreItem && (blockEntity.manaType == null || blockEntity.manaType == shardOreItem.getFluid())){
-
+        if ( (filledBuckets.getMaxStackSize() != filledBuckets.getCount()) && blockEntity.milliBuckets < blockEntity.maxMilliBuckets && blockEntity.itemHandler.getStackInSlot(0).getItem()instanceof ShardOreItem shardOreItem){
             for(int i = 2; i <= 4; i++){
                 ItemStack itemStack = blockEntity.itemHandler.getStackInSlot(i);
                 if(itemStack.isEmpty() || (itemStack.getItem() == shardOreItem.getShard() && itemStack.getCount() + shardOreItem.maxDrop <= itemStack.getMaxStackSize())) {
                     //Logger.getAnonymousLogger().info("true");
+
+                    if(blockEntity.manaType != shardOreItem.getFluid()) {
+                        blockEntity.manaType = shardOreItem.getFluid();
+                        blockEntity.milliBuckets = 0;
+                    }
+
                     return true;
                 }
             }
@@ -237,18 +263,7 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
 
     private static void complete(ManaExtractorBlockEntity blockEntity) {
         blockEntity.progress = 0;
-        if (blockEntity.milliBuckets >= 1000 && blockEntity.itemHandler.getStackInSlot(1).getItem() == Items.BUCKET){
-
-            blockEntity.itemHandler.getStackInSlot(1).shrink(1);
-
-            if(blockEntity.itemHandler.getStackInSlot(5).isEmpty()){
-                blockEntity.itemHandler.setStackInSlot(5, ModItems.PURPLE_MANA_BUCKET.get().getDefaultInstance());
-            }
-            else{
-                blockEntity.itemHandler.getStackInSlot(5).grow(1);
-            }
-
-        }
+        craftBucket(blockEntity);
         ShardOreItem shardOreItem = (ShardOreItem) blockEntity.itemHandler.getStackInSlot(0).getItem();
         blockEntity.itemHandler.getStackInSlot(0).shrink(1);
         int x = shardOreItem.generateDrops();
@@ -274,5 +289,19 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
 
             }
 
+    }
+
+    private static void craftBucket(ManaExtractorBlockEntity blockEntity) {
+        if (blockEntity.milliBuckets >= 1000 && blockEntity.itemHandler.getStackInSlot(1).getItem() == Items.BUCKET){
+            blockEntity.milliBuckets -= 1000;
+            blockEntity.itemHandler.getStackInSlot(1).shrink(1);
+
+            if(blockEntity.itemHandler.getStackInSlot(5).isEmpty()){
+                blockEntity.itemHandler.setStackInSlot(5, ModItems.PURPLE_MANA_BUCKET.get().getDefaultInstance());
+            }
+            else{
+                blockEntity.itemHandler.getStackInSlot(5).grow(1);
+            }
+        }
     }
 }
