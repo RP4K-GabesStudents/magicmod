@@ -22,6 +22,7 @@ public class ClientEvents {
 
         }
 
+
         @SubscribeEvent
         public static void registerGUIOverlays(RegisterGuiOverlaysEvent event){
 
