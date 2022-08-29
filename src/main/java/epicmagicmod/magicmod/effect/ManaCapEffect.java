@@ -21,29 +21,6 @@ public class ManaCapEffect extends MobEffect {
         super(pCategory, pColor);
     }
 
-    @Override
-    public void removeAttributeModifiers(LivingEntity pLivingEntity, AttributeMap pAttributeMap, int pAmplifier) {
-
-
-        super.removeAttributeModifiers(pLivingEntity, pAttributeMap, pAmplifier);
-    }
-
-    @Override
-    public void addAttributeModifiers(LivingEntity pLivingEntity, AttributeMap pAttributeMap, int pAmplifier) {
-
-
-        super.addAttributeModifiers(pLivingEntity, pAttributeMap, pAmplifier);
-    }
-
-    private void changeManaCap(LivingEntity pLivingEntity, int newAmt){
-
-        pLivingEntity.getCapability(PlayerManaProvider.PLAYER_MANA).ifPresent(playerMana ->{
-
-
-
-        });
-
-    }
 
     @Override
     public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
@@ -54,14 +31,16 @@ public class ManaCapEffect extends MobEffect {
                 switch(pAmplifier){
 
                     case 0:
-                        PlayerMana.MAX_MANA = PlayerMana.MAX_MANA + 25000;
+                        pLivingEntity.forceAddEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 2), pLivingEntity);
+                        pLivingEntity.forceAddEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 5, 1), pLivingEntity);
                         break;
 
 
                     case 1:
-                        PlayerMana.MAX_MANA = PlayerMana.MAX_MANA + 60000;
                         pLivingEntity.forceAddEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 4), pLivingEntity);
                         pLivingEntity.forceAddEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 5, 2), pLivingEntity);
+                        pLivingEntity.forceAddEffect(new MobEffectInstance(MobEffects.REGENERATION, 5, 3), pLivingEntity);
+                        pLivingEntity.forceAddEffect(new MobEffectInstance(MobEffects.JUMP, 5, 5), pLivingEntity);
                         break;
 
                 }
