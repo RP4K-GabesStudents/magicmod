@@ -10,6 +10,7 @@ import epicmagicmod.magicmod.main;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.player.Inventory;
 
+
 public class ManaExtractionScreen extends AbstractContainerScreen<ManaExtractionMenu>{
 
 
@@ -36,13 +37,11 @@ public class ManaExtractionScreen extends AbstractContainerScreen<ManaExtraction
         renderProgressArrow(pPoseStack, x, y);
 
 
-        int fluidColor = FastColor.ARGB32.color(102, 117,248,255);
-
         RenderSystem.setShaderColor(
-                FastColor.ARGB32.red(fluidColor) / 255f,
-                FastColor.ARGB32.green(fluidColor) /255f,
-                FastColor.ARGB32.blue(fluidColor) / 255f,
-                FastColor.ARGB32.alpha(fluidColor) / 255f);
+                FastColor.ARGB32.red(menu.getFluidColor()) / 255f,
+                FastColor.ARGB32.green(menu.getFluidColor()) /255f,
+                FastColor.ARGB32.blue(menu.getFluidColor()) / 255f,
+                FastColor.ARGB32.alpha(menu.getFluidColor()) / 255f);
         renderFluidBar(pPoseStack, x, y);
 
     }

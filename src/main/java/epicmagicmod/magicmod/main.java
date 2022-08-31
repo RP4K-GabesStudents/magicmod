@@ -2,12 +2,10 @@ package epicmagicmod.magicmod;
 
 import com.mojang.logging.LogUtils;
 import epicmagicmod.magicmod.block.ModBlocks;
-import epicmagicmod.magicmod.block.ShardOreItem;
 import epicmagicmod.magicmod.block.entity.ModBlockEntities;
 import epicmagicmod.magicmod.effect.ModEffects;
 import epicmagicmod.magicmod.fluid.ModFluidTypes;
 import epicmagicmod.magicmod.fluid.ModFluids;
-import epicmagicmod.magicmod.items.ModCreativeModeTab;
 import epicmagicmod.magicmod.items.ModItems;
 import epicmagicmod.magicmod.networking.ModMessages;
 import epicmagicmod.magicmod.potion.ModPotions;
@@ -28,16 +26,12 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.brewing.BrewingRecipe;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -96,26 +90,28 @@ public class main {
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
         ModMessages.register();
+        //------------------------------POTIONS-------------------------------------//
+        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
+                ModItems.GRAZINOUS_MANA_BUCKET.get(), ModPotions.MANA_MODIFY_POTION.get()));
+        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.MANA_MODIFY_POTION.get(),
+                ModItems.GRAZINOUS_SHARD.get(), ModPotions.MANA_MODIFY_POTION_2.get()));
+
+        /*
+        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
+                ModItems.TORINTRIN_MANA_BUCKET.get(), ModPotions.LIGHTNING_POTION.get()));
+        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.LIGHTNING_POTION.get(),
+                ModItems.TORINTRIN_SHARD.get(), ModPotions.LIGHTNING_POTION_2.get()));
 
         BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
-                ModItems.PURPLE_MANA_BUCKET.get(), ModPotions.MANA_MODIFY_POTION.get()));
-        /*BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.MANA_MODIFY_POTION,
-                ModItems.ICE_SHARD.get(), ModPotions.MANA_MODIFY_POTION_2.get()));*/
+                ModItems.BLACITE_MANA_BUCKET.get(), ModPotions.BLAST_PUNCH_POTION.get()));
+        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLAST_PUNCH_POTION.get(),
+                ModItems.BLACITE_SHARD.get(), ModPotions.BLAST_PUNCH_POTION_2.get()));
 
-        /*BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
-                ModItems.LIGHTNING_MANA_BUCKET.get(), ModPotions.LIGHTNING_POTION.get()));*/
-        /*BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.LIGHTNING_POTION,
-                ModItems.LIGHTNING_SHARD.get(), ModPotions.LIGHTNING_POTION_2.get()));*/
-
-        /*BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
-                ModItems.FIRE_MANA_BUCKET.get(), ModPotions.BLAST_PUNCH_POTION.get()));*/
-        /*BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLAST_PUNCH_POTION,
-                ModItems.FIRE_SHARD.get(), ModPotions.BLAST_PUNCH_POTION_2.get()));*/
-
-        /*BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
-                ModItems.DARK_MANA_BUCKET.get(), ModPotions.DARKNESS_POTION.get()));*/
-        /*BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.DARKNESS_POTION,
-                ModItems.DARK_SHARD.get(), ModPotions.DARKNESS_POTION_2.get()));*/
+        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
+                ModItems.MALLUMON_MANA_BUCKET.get(), ModPotions.DARKNESS_POTION.get()));
+        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.DARKNESS_POTION.get(),
+                ModItems.MALLUMON_SHARD.get(), ModPotions.DARKNESS_POTION_2.get()));
+         */
     }
 
 
@@ -133,8 +129,17 @@ public class main {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
-            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_PURPLE_MANA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_PURPLE_MANA.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_GRAZINOUS_MANA.get(), RenderType.solid());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_GRAZINOUS_MANA.get(), RenderType.solid());
+
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_TORINTRIN_MANA.get(), RenderType.solid());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_TORINTRIN_MANA.get(), RenderType.solid());
+
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_BLACITE_MANA.get(), RenderType.solid());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_BLACITE_MANA.get(), RenderType.solid());
+
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_MALLUMON_MANA.get(), RenderType.solid());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MALLUMON_MANA.get(), RenderType.solid());
 
             MenuScreens.register(ModMenuType.MANA_MENU.get(), ManaExtractionScreen::new);
 

@@ -21,8 +21,20 @@ public class ModFluids {
 
     }
 
-    public static final RegistryObject<FlowingFluid> SOURCE_PURPLE_MANA = FLUIDS.register("source_purple_mana", () -> new ForgeFlowingFluid.Source(ModFluids.PURPLE_MANA_PROPS));
-    public static final RegistryObject<FlowingFluid> FLOWING_PURPLE_MANA = FLUIDS.register("flowing_purple_mana", () -> new ForgeFlowingFluid.Flowing(ModFluids.PURPLE_MANA_PROPS));
-    public static final ForgeFlowingFluid.Properties PURPLE_MANA_PROPS = new ForgeFlowingFluid.Properties(ModFluidTypes.PURPLE_MANA, SOURCE_PURPLE_MANA, FLOWING_PURPLE_MANA).bucket(ModItems.PURPLE_MANA_BUCKET).slopeFindDistance(2).levelDecreasePerBlock(2).block(ModBlocks.PURPLE_SOURCE_BLOCK);
+    public static final RegistryObject<FlowingFluid> SOURCE_GRAZINOUS_MANA = FLUIDS.register("source_grazinous_mana", () -> new ForgeFlowingFluid.Source(ModFluids.GRAZINOUS_MANA_PROPS));
+    public static final RegistryObject<FlowingFluid> FLOWING_GRAZINOUS_MANA = FLUIDS.register("flowing_grazinous_mana", () -> new ForgeFlowingFluid.Flowing(ModFluids.GRAZINOUS_MANA_PROPS));
+    public static final ForgeFlowingFluid.Properties GRAZINOUS_MANA_PROPS = new ForgeFlowingFluid.Properties(ModFluidTypes.GRAZINOUS_MANA, SOURCE_GRAZINOUS_MANA, FLOWING_GRAZINOUS_MANA).bucket(ModItems.GRAZINOUS_MANA_BUCKET).slopeFindDistance(2).levelDecreasePerBlock(2).block(ModBlocks.GRAZINOUS_SOURCE_BLOCK);
+
+    public static final RegistryObject<FlowingFluid> SOURCE_TORINTRIN_MANA = FLUIDS.register("source_torintrin_mana", () -> new ForgeFlowingFluid.Source(ModFluids.TORINTRIN_MANA_PROPS));
+    public static final RegistryObject<FlowingFluid> FLOWING_TORINTRIN_MANA = FLUIDS.register("flowing_torintrin_mana", () -> new ForgeFlowingFluid.Flowing(ModFluids.TORINTRIN_MANA_PROPS));
+    public static final ForgeFlowingFluid.Properties TORINTRIN_MANA_PROPS = new ForgeFlowingFluid.Properties(ModFluidTypes.TORINTRIN_MANA, SOURCE_TORINTRIN_MANA, FLOWING_TORINTRIN_MANA).bucket(ModItems.TORINTRIN_MANA_BUCKET).slopeFindDistance(2).levelDecreasePerBlock(2).block(ModBlocks.TORINTRIN_SOURCE_BLOCK);
+
+    public static final RegistryObject<FlowingFluid> SOURCE_BLACITE_MANA = FLUIDS.register("source_blacite_mana", () -> new ForgeFlowingFluid.Source(ModFluids.BLACITE_MANA_PROPS));
+    public static final RegistryObject<FlowingFluid> FLOWING_BLACITE_MANA = FLUIDS.register("flowing_blacite_mana", () -> new ForgeFlowingFluid.Flowing(ModFluids.BLACITE_MANA_PROPS));
+    public static final ForgeFlowingFluid.Properties BLACITE_MANA_PROPS = new ForgeFlowingFluid.Properties(ModFluidTypes.BLACITE_MANA, SOURCE_BLACITE_MANA, FLOWING_BLACITE_MANA).bucket(ModItems.BLACITE_MANA_BUCKET).slopeFindDistance(2).levelDecreasePerBlock(2).block(ModBlocks.BLACITE_SOURCE_BLOCK);
+
+    public static final RegistryObject<FlowingFluid> SOURCE_MALLUMON_MANA = FLUIDS.register("source_mallumon_mana", () -> new ForgeFlowingFluid.Source(ModFluids.MALLUMON_MANA_PROPS));
+    public static final RegistryObject<FlowingFluid> FLOWING_MALLUMON_MANA = FLUIDS.register("flowing_mallumon_mana", () -> new ForgeFlowingFluid.Flowing(ModFluids.MALLUMON_MANA_PROPS));
+    public static final ForgeFlowingFluid.Properties MALLUMON_MANA_PROPS = new ForgeFlowingFluid.Properties(ModFluidTypes.MALLUMON_MANA, SOURCE_MALLUMON_MANA, FLOWING_MALLUMON_MANA).bucket(ModItems.MALLUMON_MANA_BUCKET).slopeFindDistance(2).levelDecreasePerBlock(2).block(ModBlocks.MALLUMON_SOURCE_BLOCK);
 
 }

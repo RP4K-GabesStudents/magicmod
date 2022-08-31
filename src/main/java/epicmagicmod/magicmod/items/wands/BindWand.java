@@ -3,8 +3,10 @@ package epicmagicmod.magicmod.items.wands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
+import net.minecraft.world.entity.boss.wither.WitherBoss;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -18,9 +20,11 @@ public class BindWand extends WandParent{
     LivingEntity A;
     LivingEntity B;
 
+    Player ply;
 
-    public BindWand(Properties properties) {
-        super(properties, 500, 500);
+
+    public BindWand(Properties properties, int mainManaUsage, int altManaUsage, int level) {
+        super(properties, mainManaUsage, altManaUsage, level);
     }
 
     @Override
@@ -35,13 +39,20 @@ public class BindWand extends WandParent{
         super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
         if(!pLevel.isClientSide() && A != null && B != null)
         {
-            if(A.isDeadOrDying() || B.isDeadOrDying())
+            if(A.isDeadOrDying() || B.isDeadOrDying() || (lvl == 1  && ply.isDeadOrDying()))
             {
                 Logger.getAnonymousLogger().info("Killed entities");
                 A.kill();
                 B.kill();
+
                 A = null;
                 B = null;
+
+                if(lvl == 1 ) {
+                    ply.kill();
+                    ply = null;
+                }
+
                 setDamage(pStack, (int)(getDamage(pStack) * 1.25f));
             }
         }
@@ -56,11 +67,25 @@ public class BindWand extends WandParent{
 
     @Override
     public boolean mainAbility(Level level, Player player) {
-        LivingEntity setA = getLookAtTarget(level, player, RayLength, false);
+        LivingEntity target = getLookAtTarget(level, player, RayLength, false);
 
-        if(setA != null) {
-            player.sendSystemMessage(Component.literal("Set target to: " + setA.getDisplayName().getString()));
-            A = setA;
+        if(target != null) {
+
+            if(!CanCast(target))
+            {
+                player.sendSystemMessage(Component.literal("THIS WAND IS NOT POWERFUL ENOUGH TO BIND TO: " + target.getDisplayName().getString()));
+                return false;
+            }
+            if(lvl == 1)
+            {
+                ply = player;
+                player.sendSystemMessage(Component.literal("Set target to: " + target.getDisplayName().getString() + " AND YOU DUE TO LOW POWER WAND"));
+            }
+            else
+            {
+                player.sendSystemMessage(Component.literal("Set target to: " + target.getDisplayName().getString()));
+            }
+            A = target;
 
             if(A instanceof Player targetPly)
             {
@@ -78,17 +103,29 @@ public class BindWand extends WandParent{
 
     @Override
     public boolean altAbility(Level level, Player player) {
-        LivingEntity setB = getLookAtTarget(level, player, RayLength, false);
+        LivingEntity target = getLookAtTarget(level, player, RayLength, false);
+        if(target != null) {
 
-        if(setB != null) {
-            player.sendSystemMessage(Component.literal("Set target to: " + setB.getDisplayName().getString()));
-            B = setB;
+            if(!CanCast(target))
+            {
+                player.sendSystemMessage(Component.literal("THIS WAND IS NOT POWERFUL ENOUGH TO BIND TO: " + target.getDisplayName().getString()));
+                return false;
+            }
+            if(lvl == 1)
+            {
+                ply = player;
+                player.sendSystemMessage(Component.literal("Set target to: " + target.getDisplayName().getString() + " AND YOU DUE TO LOW POWER WAND"));
+            }
+            else
+            {
+                player.sendSystemMessage(Component.literal("Set target to: " + target.getDisplayName().getString()));
+            }
+            B = target;
 
             if(B instanceof Player targetPly)
             {
                 targetPly.sendSystemMessage(Component.literal(player.getDisplayName().getString() + " has bound your soul"));
             }
-
             if(A != null)
             {
                 player.sendSystemMessage(Component.literal(A.getDisplayName().getString() + " is now linked to " + B.getDisplayName().getString()));
@@ -98,4 +135,7 @@ public class BindWand extends WandParent{
 
         return false;
     }
+
+
+
 }

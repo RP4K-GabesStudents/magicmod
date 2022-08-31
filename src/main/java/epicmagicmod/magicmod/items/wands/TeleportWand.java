@@ -15,8 +15,8 @@ public class TeleportWand extends WandParent{
 
 
     final double rayLength = 100;
-    public TeleportWand(Properties properties) {
-        super(properties, 10000, 10000);
+    public TeleportWand(Properties properties, int mainManaUsage, int altManaUsage, int level) {
+        super(properties, mainManaUsage, altManaUsage, level);
     }
 
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {

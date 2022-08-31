@@ -15,11 +15,26 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.*;
+
 public class LightningWand extends WandParent{
 
     final double rayLength = 100;
-    public LightningWand(Properties properties) {
-        super(properties, 7500, 7500);
+    final int aoe;
+    final int restrikeNum;
+
+    int curTime;
+
+    int funcID = -1;
+    int amt = 0;
+
+    Player ply;
+
+    public LightningWand(Properties properties, int mainManaUsage, int altManaUsage, int level, int aoe, int restrikeNum) {
+        super(properties, mainManaUsage, altManaUsage, level);
+        this.aoe=aoe;
+        this.restrikeNum = restrikeNum;
+        curTime = 0;
     }
 
     @Override
@@ -32,54 +47,100 @@ public class LightningWand extends WandParent{
         return super.use(level, player, hand);
     }
 
+    //RESTRIKE LOGIC
+    @Override
+    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
+
+        if(!pLevel.isClientSide()) {
+            if (ply != null &&  funcID != -1 && curTime-- <= 0 && amt != 0) {
+                curTime = 5;
+                switch (funcID)
+                {
+                    case 0 -> mainAbility(pLevel, ply);
+                    case 1 -> altAbility(pLevel, ply);
+                }
+                if(--amt == 0)
+                {
+                    funcID = -1;
+                }
+            }
+        }
+
+    }
 
     @Override
     public boolean mainAbility(Level level, Player player) {
-
-        LivingEntity le = getLookAtTarget(level, player, rayLength, false);
-        if(le != null) {
-            //IF RAY HIT SOMETHING
-            Vec3 hitLocation = le.getPosition(1f);
-
-            LightningBolt lightningBolt = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
-            lightningBolt.setPos(hitLocation);
-
-            level.addFreshEntity(lightningBolt);
+        ply = player;
+        boolean check = false;
+        for (Entity e : getEntitiesInAOE(level, player, rayLength, false, aoe)) {
+            if (e instanceof LivingEntity le) {
+                //IF RAY HIT SOMETHING
+                for(int i = 0; i < aoe; i ++) {
+                    Vec3 hitLocation = le.getPosition(1f);
+                    LightningBolt lightningBolt = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+                    lightningBolt.setPos(hitLocation);
+                    level.addFreshEntity(lightningBolt);
+                }
+             check = true;
+            }
+        }
+        if(check) {
+            if (funcID == -1) {
+                funcID = 0;
+                amt = restrikeNum;
+                curTime = 5;
+            }
             return true;
         }
-        else
-        {
-            Vec3 playerRotation = player.getViewVector(1f).normalize();
-            Vec3 rayPath = playerRotation.scale(rayLength);
+        Vec3 playerRotation = player.getViewVector(1f).normalize();
+        Vec3 rayPath = playerRotation.scale(rayLength);
 
-            Vec3 from = player.getEyePosition(0);
-            Vec3 to = from.add(rayPath);
+        Vec3 from = player.getEyePosition(0);
+        Vec3 to = from.add(rayPath);
 
-            //CREATE THE RAY
-            ClipContext rayCtx = new ClipContext(from, to, ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, player);
-            //CAST THE RAY
-            BlockHitResult rayHit = level.clip(rayCtx);
+        //CREATE THE RAY
+        ClipContext rayCtx = new ClipContext(from, to, ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, player);
+        //CAST THE RAY
+        BlockHitResult rayHit = level.clip(rayCtx);
 
-            if(rayHit.getType() != HitResult.Type.MISS)
+        if(rayHit.getType() != HitResult.Type.MISS) {
+
+            Vec3 hitLocation = new Vec3(rayHit.getLocation().x - aoe/2, rayHit.getLocation().y, rayHit.getLocation().z - aoe/2);
+
+            for (int x = 0; x < aoe; x++)
             {
-                Vec3 hitLocation = rayHit.getLocation();
 
-                LightningBolt lightningBolt = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
-                lightningBolt.setPos(hitLocation);
+                for (int y = 0; y < aoe; y++)
+                {
+                    Vec3 trueHit = hitLocation.add(new Vec3(x, 0, y));
 
-                level.addFreshEntity(lightningBolt);
-                return true;
+                    LightningBolt lightningBolt = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+                    lightningBolt.setPos(trueHit);
+                    level.addFreshEntity(lightningBolt);
+
+                }
             }
 
+
+
+
+
+
+            if(funcID==-1) {
+                funcID = 0;
+                amt = restrikeNum;
+                curTime = 5;
+            }
+            return true;
         }
         return false;
     }
 
-    private final int range = 4;
-
     @Override
     public boolean altAbility(Level level, Player player) {
-
+        ply = player;
+        int range = aoe * 3;
         Vec3 p = player.position();
         AABB inRange = new AABB(p.x - range, p.y - range, p.z - range, p.x + range, p.y + range, p.z + range);
         boolean ret = false;
@@ -95,9 +156,11 @@ public class LightningWand extends WandParent{
                 level.addFreshEntity(lightningBolt);
             }
         }
-
-
-
+        if(ret && funcID==-1) {
+            funcID = 1;
+            amt = restrikeNum;
+            curTime = 5;
+        }
         return ret;
     }
 }

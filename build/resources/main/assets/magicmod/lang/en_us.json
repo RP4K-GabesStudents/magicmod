@@ -1,12 +1,58 @@
 {
-  "item.magicmod.blacite": "Blacite",
   "itemGroup.Sorcery": "Sorcery",
+
+  "item.magicmod.grazinous": "Grazinous Shard",
+  "item.magicmod.torintrin": "Torintrin Shard",
+  "item.magicmod.blacite": "Blacite Shard",
+  "item.magicmod.mallumon": "Mallumon Shard",
+
+  "item.magicmod.grazinous_mana_fluid": "Grazinous Bucket",
+  "item.magicmod.torintrin_mana_fluid": "Torintrin Bucket",
+  "item.magicmod.blacite_mana_fluid": "Blacite Bucket",
+  "item.magicmod.mallumon_mana_fluid": "Mallumon Bucket",
+
+  "block.magicmod.grazinousore": "Grazinous Ore",
+  "block.magicmod.torintrinore": "Torintrin Ore",
   "block.magicmod.blaciteore": "Blacite Ore",
-  "item.magicmod.firewand": "Fire Wand",
-  "item.magicmod.icewand": "Ice Wand",
-  "item.magicmod.teleportwand": "Teleportation Wand",
-  "item.magicmod.lightningwand": "Lightning Wand",
-  "item.magicmod.gapplewand": "Nutrition Wand",
+  "block.magicmod.mallumonore": "Mallumon Ore",
+
+  "item.magicmod.timedial": "Sylvrs' Time Dial",
+
+  "item.magicmod.firewand": "Novice Fire Wand",
+  "item.magicmod.firewand1": "Adept Fire Wand",
+  "item.magicmod.firewand2": "Empowered Fire Wand",
+
+  "item.magicmod.icewand": "Novice Ice Wand",
+  "item.magicmod.icewand1": "Adept Ice Wand",
+  "item.magicmod.icewand2": "Empowered Ice Wand",
+
+  "item.magicmod.teleportwand": "Novice Teleportation Wand",
+  "item.magicmod.teleportwand1": "Adept Teleportation Wand",
+  "item.magicmod.teleportwand2": "Empowered Teleportation Wand",
+
+  "item.magicmod.lightningwand": "Novice Lightning Wand",
+  "item.magicmod.lightningwand1": "Adept Lightning Wand",
+  "item.magicmod.lightningwand2": "Empowered Lightning Wand",
+
+  "item.magicmod.gapplewand": "Novice Nutrition Wand",
+  "item.magicmod.gapplewand1": "Adept Nutrition Wand",
+  "item.magicmod.gapplewand2": "Empowered Nutrition Wand",
+
+  "item.magicmod.thrustwand": "Novice Thrust Wand",
+  "item.magicmod.thrustwand1": "Adept Thrust Wand",
+  "item.magicmod.thrustwand2": "Empowered Thrust Wand",
+
+  "item.magicmod.bindwand": "Novice Bind Wand",
+  "item.magicmod.bindwand1": "Adept Bind Wand",
+  "item.magicmod.bindwand2": "Empowered Bind Wand",
+
+  "item.magicmod.purplewizardboots": "Novice Boots",
+  "item.magicmod.purplewizardlegs": "Novice Leggings",
+  "item.magicmod.purplewizardchest": "Novice Robe",
+  "item.magicmod.purplewizardhelmet": "Novice Hood",
+
+  "block.magicmod.mana_extractor" : "Shard Extractor",
+
 
   "item.minecraft.potion.effect.mana_modify_potion": "Potion of Mana Regeneration",
   "item.minecraft.splash_potion.effect.mana_modify_potion": "Splash Potion of Mana Regeneration",

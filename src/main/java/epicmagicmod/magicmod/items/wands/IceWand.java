@@ -21,12 +21,17 @@ import net.minecraft.world.phys.Vec3;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Stack;
 import java.util.logging.Logger;
 
 public class IceWand extends WandParent{
 
 
     final double rayLength = 100;
+
+    final int mainDuration;
+    final int altDuration;
+
     private static Block [] unreplaceableBlocks = new Block[]
         {
                 Blocks.PACKED_ICE,
@@ -38,7 +43,12 @@ public class IceWand extends WandParent{
                 Blocks.BLAST_FURNACE,
                 Blocks.CAMPFIRE,
                 Blocks.SOUL_CAMPFIRE,
-                Blocks.BREWING_STAND
+                Blocks.BREWING_STAND,
+                Blocks.BEDROCK,
+                Blocks.END_PORTAL_FRAME,
+                Blocks.OBSIDIAN,
+                Blocks.END_PORTAL,
+                Blocks.NETHER_PORTAL
         };
 
     List<SavedBlocks> savedBlocks = new ArrayList<>();
@@ -46,9 +56,9 @@ public class IceWand extends WandParent{
     public class SavedBlocks
     {
         int duration;
-        Iterable<BlockPos> oldPos;
-        List<BlockState> old;
-        public SavedBlocks(int duration, Iterable<BlockPos> oldPos, List<BlockState> old)
+        Stack<BlockPos> oldPos;
+        Stack<BlockState> old;
+        public SavedBlocks(int duration, Stack<BlockPos> oldPos, Stack<BlockState> old)
         {
             this.duration = duration;
             this.oldPos = oldPos;
@@ -59,8 +69,10 @@ public class IceWand extends WandParent{
 
 
 
-    public IceWand(Properties properties) {
-        super(properties, 2500, 2500);
+    public IceWand(Properties properties, int mainManaUsage, int altManaUsage, int level, int mainDuration, int altDuration) {
+        super(properties, mainManaUsage, altManaUsage, level);
+        this.mainDuration = mainDuration;
+        this.altDuration = altDuration;
     }
 
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
@@ -71,26 +83,28 @@ public class IceWand extends WandParent{
     @Override
     public boolean mainAbility(Level level, Player player) {
         //(x,y,z,x,y,z) middle is the player
-        double f = 4;
+        int f = lvl * 2;
         BlockPos playerPos = player.blockPosition();
 
-        AABB area = new AABB(playerPos.getX()-f, playerPos.getY()-1.0D, playerPos.getZ()-f, playerPos.getX()+f, playerPos.getY()+2.0D, playerPos.getZ()+f);
+        AABB area = new AABB(playerPos.getX()-f, playerPos.getY()-1, playerPos.getZ()-f, playerPos.getX()+f, playerPos.getY()+2, playerPos.getZ()+f);
 
         for(Entity e : level.getEntities(player, area)){
 
             if (e instanceof LivingEntity living){
              //   player.sendSystemMessage(Component.literal("we did a different thing hopefully to" + living.getName()));
 
-                living.forceAddEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80, 2), living);
-                living.forceAddEffect(new MobEffectInstance(MobEffects.BLINDNESS, 80, 2), living);
+                living.forceAddEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, mainDuration, lvl * 2), living);
+                if(lvl == 3)
+                {
+                    living.forceAddEffect(new MobEffectInstance(MobEffects.BLINDNESS, mainDuration, lvl), living);
+                }
             }
 
         }
-        List<BlockState> blockStates = new ArrayList<>();
-
-
+        Stack<BlockState> blockStates = new Stack<>();
+        HashSet<BlockPos> pos = new HashSet<>(BuildWall(player.position().add(new Vec3(0,f - 1,0)), new Vec3(0,-1,0), f + 1));
         //investigate manhattan block pos
-        CreateBlockSet(level, blockStates,  BlockPos.betweenClosed(playerPos.offset((-f), -1.0D, (-f)), playerPos.offset(f, -1.0D, f)), 60);
+        CreateBlockSet(level, blockStates,  pos, mainDuration);
         return blockStates.size() != 0;
     }
 
@@ -130,11 +144,14 @@ public class IceWand extends WandParent{
     {
         int i =0;
        // Logger.getAnonymousLogger().info("Attempting Destroy");
-        for (BlockPos pos : s.oldPos) {
+        while(s.oldPos.size() > 0)
+        {
+            BlockPos pos = s.oldPos.pop();
+            BlockState state = s.old.pop();
             Block B = level.getBlockState(pos).getBlock();
-            if(B == Blocks.PACKED_ICE && i < s.old.size()) {
+            if(B == Blocks.PACKED_ICE ) {
                 //Logger.getAnonymousLogger().info("Settings block at (" + pos.getX() + ", " + pos.getY() + ", " + pos.getZ() + ") to: " + s.old.get(i).getBlock().getName() + " --> " + i);
-                level.setBlockAndUpdate(pos, s.old.get(i));
+                level.setBlockAndUpdate(pos, state);
                 i++;
             }
         }
@@ -146,13 +163,23 @@ public class IceWand extends WandParent{
         //Player other = (Player) GetLookAtTarget(level, player, rayLength,true);
         LivingEntity other = getLookAtTarget(level, player, rayLength,false); // DEBUG
 
+        if(lvl >= 2)
+        {
+            other.forceAddEffect(new MobEffectInstance(MobEffects.DIG_SPEED, altDuration, lvl), other);
+        }
+
+        if(lvl == 3)
+        {
+            other.forceAddEffect(new MobEffectInstance(MobEffects.BLINDNESS, altDuration, 1), other);
+        }
+
 
         if(other != null)
         {
             //1+ x*2 where X is the distance... distance
             //This forces all spheres to be dist of 3,5,7...
 
-            int dist = 4;
+            int dist = lvl+1;
 
             int trueDist = 1 + dist * 2;
 
@@ -163,7 +190,7 @@ public class IceWand extends WandParent{
 
 
 
-            List<BlockState> blockStates = new ArrayList<>();
+            Stack<BlockState> blockStates = new Stack<>();
             HashSet<BlockPos> blockPoses = new HashSet<>();
 
             blockPoses.addAll(BuildWall(playerPos, new Vec3(1,0,0), trueDist));
@@ -174,14 +201,18 @@ public class IceWand extends WandParent{
             blockPoses.addAll(BuildWall(playerPos, new Vec3(0,0,-1), trueDist));
 
             //investigate manhattan block pos
-            CreateBlockSet(level, blockStates, blockPoses, 600);
+            CreateBlockSet(level, blockStates, blockPoses, altDuration);
 
             return true;
         }
         return false;
     }
 
-    private void CreateBlockSet(Level level, List<BlockState> blockStates, Iterable<BlockPos> blockPoses, int duration) {
+    private void CreateBlockSet(Level level, Stack<BlockState> blockStates, Iterable<BlockPos> blockPoses, int duration) {
+
+        Stack<BlockPos> pos = new Stack<>();
+
+
         for(BlockPos blockpos : blockPoses) {
 
             Block B = level.getBlockState(blockpos).getBlock();
@@ -197,14 +228,15 @@ public class IceWand extends WandParent{
 
             if(allowed)
             {
-                blockStates.add(level.getBlockState(blockpos));
+                pos.push(blockpos);
+                blockStates.push(level.getBlockState(blockpos));
 
                // Logger.getAnonymousLogger().info("Adding block at (" + blockpos.getX() + ", " + blockpos.getY() + ", " + blockpos.getZ() + ") to: " + level.getBlockState(blockpos).getBlock().getName() + " --> ");
 
                 level.setBlockAndUpdate(blockpos, Blocks.PACKED_ICE.defaultBlockState());
             }
         }
-        savedBlocks.add(new SavedBlocks(duration,blockPoses, blockStates));
+        savedBlocks.add(new SavedBlocks(duration, pos, blockStates));
     }
 
     private List<BlockPos> BuildWall(Vec3 origin, Vec3 forward, int extent)

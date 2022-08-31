@@ -22,27 +22,32 @@ public class ManaFluid extends FluidType {
     private final ResourceLocation flowingTexture;
     private final ResourceLocation overlayTexture;
     public final int tintColor;
-    private final Vector3f fogColor;
+    public final Vector3f fogColor;
+
+    public final int id;
 
 
     /**
      * Default constructor.
-     *
+     * <p>
      * the general properties of the fluid type
+     *
      * @param still_texture
      * @param flowing_texture
      * @param overlay_texture
      * @param tint_color
      * @param fog_color
      * @param properties
+     * @param id
      */
-    public ManaFluid(ResourceLocation still_texture, ResourceLocation flowing_texture, ResourceLocation overlay_texture, int tint_color, Vector3f fog_color, Properties properties) {
+    public ManaFluid(ResourceLocation still_texture, ResourceLocation flowing_texture, ResourceLocation overlay_texture, int tint_color, Vector3f fog_color, Properties properties, int id) {
         super(properties);
         stillTexture = still_texture;
         flowingTexture = flowing_texture;
         overlayTexture = overlay_texture;
         tintColor = tint_color;
         fogColor = fog_color;
+        this.id = id;
     }
 
 
@@ -52,10 +57,6 @@ public class ManaFluid extends FluidType {
 
     public ResourceLocation getFlowingTexture() {
         return flowingTexture;
-    }
-
-    public int getTintColor() {
-        return tintColor;
     }
 
     public ResourceLocation getOverlayTexture() {
@@ -104,7 +105,7 @@ public class ManaFluid extends FluidType {
             public void modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance, float partialTick,
                                         float nearDistance, float farDistance, FogShape shape) {
                 RenderSystem.setShaderFogStart(1f);
-                RenderSystem.setShaderFogEnd(6f); // distance when the fog starts
+                RenderSystem.setShaderFogEnd(3f); // distance when the fog starts
             }
         });
 

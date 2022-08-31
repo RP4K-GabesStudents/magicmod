@@ -11,14 +11,20 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.List;
+
 //Doms wand
 public class ThrustWand extends WandParent{
 
     final int RayLength = 100;
-    final int Force = 1;
+    final int Force;
 
-    public ThrustWand(Properties properties) {
-        super(properties, 200, 200);
+    final int Radius;
+
+    public ThrustWand(Properties properties, int mainManaUsage, int altManaUsage, int level, int radius, int force) {
+        super(properties, mainManaUsage, altManaUsage, level);
+        this.Radius = radius;
+        this.Force = force;
     }
 
     @Override
@@ -30,37 +36,43 @@ public class ThrustWand extends WandParent{
 
     @Override
     public boolean mainAbility(Level level, Player player) {
-        LivingEntity target = getLookAtTarget(level, player, RayLength, false);
+        List<Entity> targets = getEntitiesInAOE(level, player, RayLength, false, Radius);
 
-        if(target != null)
+        if(lvl == 1)
         {
-            target.setDeltaMovement(target.getDeltaMovement().add(new Vec3(0, Force,0)));
-            return true;
+            targets.add(player);
         }
-
-        return false;
+        for (Entity e: targets)
+        {
+            e.setDeltaMovement(e.getDeltaMovement().add(new Vec3(0, Force,0)));
+        }
+        return targets.size() > 0;
     }
 
     @Override
     public boolean altAbility(Level level, Player player) {
-        LivingEntity target = getLookAtTarget(level, player, RayLength, false);
-
-        if(target != null)
+        List<Entity> targets = getEntitiesInAOE(level, player, RayLength, false, Radius);
+        if(lvl == 1)
         {
-            target.setDeltaMovement(target.getDeltaMovement().add(new Vec3(0, -Force,0)));
-            return true;
+            targets.add(player);
         }
-
-        return false;
+        for (Entity e: targets)
+        {
+            e.setDeltaMovement(e.getDeltaMovement().add(new Vec3(0, -Force * 2,0)));
+            if(e instanceof LivingEntity le)
+            {
+                le.forceAddEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 80, lvl), le);
+            }
+        }
+        return targets.size() > 0;
     }
 
     @Override
     public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
         if(entity instanceof LivingEntity le)
         {
-            le.forceAddEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 80, 2), le);
-            le.forceAddEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 80, 2), le);
-
+            le.forceAddEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 80, lvl), le);
+            le.forceAddEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 80, lvl), le);
         }
         return super.onLeftClickEntity(stack, player, entity);
     }

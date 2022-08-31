@@ -1,6 +1,7 @@
 package epicmagicmod.magicmod.block;
 
 import epicmagicmod.magicmod.fluid.ModFluidTypes;
+import epicmagicmod.magicmod.fluid.fluids.ManaFluid;
 import epicmagicmod.magicmod.items.ModItems;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.BlockItem;
@@ -14,47 +15,31 @@ public class ShardOreItem extends BlockItem {
     private final int minDrop;
     public final int crushTime;
     private Item shard;
-    private FluidType fluid;
+    private ManaFluid fluid;
 
-    private EOreType type;
+    private final EOreType type;
 
     public Item getShard()
     {
         if(shard == null) {
             switch (type) {
-                case Mallumon -> {
-                    shard = ModItems.BLACITE.get();
-                }
-                case Blacite -> {
-                    shard = ModItems.BLACITE.get();
-                }
-                case Granizous -> {
-                    shard = ModItems.BLACITE.get();
-                }
-                case Torintrin -> {
-                    shard = ModItems.BLACITE.get();
-                }
+                case Mallumon -> shard = ModItems.MALLUMON_SHARD.get();
+                case Blacite -> shard = ModItems.BLACITE_SHARD.get();
+                case Granizous -> shard = ModItems.GRAZINOUS_SHARD.get();
+                case Torintrin -> shard = ModItems.TORINTRIN_SHARD.get();
             }
         }
         return shard;
     }
 
-    public FluidType getFluid()
+    public ManaFluid getFluid()
     {
         if(fluid == null) {
             switch (type) {
-                case Mallumon -> {
-                    fluid = ModFluidTypes.PURPLE_MANA.get();
-                }
-                case Blacite -> {
-                    fluid = ModFluidTypes.PURPLE_MANA.get();
-                }
-                case Granizous -> {
-                    fluid = ModFluidTypes.PURPLE_MANA.get();
-                }
-                case Torintrin -> {
-                    fluid = ModFluidTypes.PURPLE_MANA.get();
-                }
+                case Mallumon -> fluid = ModFluidTypes.MALLUMON_MANA.get();
+                case Blacite -> fluid = ModFluidTypes.BLACITE_MANA.get();
+                case Granizous -> fluid = ModFluidTypes.GRAZINOUS_MANA.get();
+                case Torintrin -> fluid = ModFluidTypes.TORINTRIN_MANA.get();
             }
         }
         return fluid;

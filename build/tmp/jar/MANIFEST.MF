@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
+Specification-Title: sorcerersofeldinburg
+Specification-Vendor: DeceasedWolf, FlamingoEzPz
+Specification-Version: 1
 Implementation-Title: magicmod
 Implementation-Version: 1.0-SNAPSHOT
-Specification-Vendor: DeceasedWolf, FlamingoEzPz
-Specification-Title: sorcerersofeldinburg
-Implementation-Timestamp: 2022-08-27T19:50:52-0400
-Specification-Version: 1
 Implementation-Vendor: DeceasedWolf, FlamingoEzPz
+Implementation-Timestamp: 2022-08-30T21:29:56-0400
 

@@ -13,7 +13,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 
-import java.util.logging.Logger;
 
 public class ManaExtractionMenu extends AbstractContainerMenu {
 
@@ -41,7 +40,7 @@ public class ManaExtractionMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(iItemHandler -> {
-            addSlot(new RestrictedSlot(iItemHandler, 0, 59, 14, new Item[] {ModBlocks.BlaciteOreItem.get()}));
+            addSlot(new RestrictedSlot(iItemHandler, 0, 59, 14, new Item[] {ModBlocks.GrazinousOreItem.get(), ModBlocks.TorintrinOreItem.get(), ModBlocks.BlaciteOreItem.get(),ModBlocks.MallumonOreItem.get() }));
             addSlot(new RestrictedSlot(iItemHandler, 1, 134, 14, new Item[] {Items.BUCKET}));
             addSlot(new RestrictedSlot(iItemHandler, 2, 35, 60));
             addSlot(new RestrictedSlot(iItemHandler, 3, 59, 60));

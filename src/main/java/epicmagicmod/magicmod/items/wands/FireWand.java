@@ -11,8 +11,8 @@ import net.minecraft.world.level.Level;
 public class FireWand extends WandParent{
 
 
-    public FireWand(Properties properties) {
-        super(properties, 10000,10000);
+    public FireWand(Properties properties, int mainManaUsage, int altManaUsage, int level) {
+        super(properties, mainManaUsage, altManaUsage, level);
     }
 
 

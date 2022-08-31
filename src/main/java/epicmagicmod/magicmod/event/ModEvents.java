@@ -1,5 +1,6 @@
 package epicmagicmod.magicmod.event;
 
+import epicmagicmod.magicmod.block.ManaLiquidBlock;
 import epicmagicmod.magicmod.client.ManaHudOverlay;
 import epicmagicmod.magicmod.items.armor.ModArmorMaterials;
 import epicmagicmod.magicmod.mana.PlayerMana;
@@ -9,6 +10,7 @@ import epicmagicmod.magicmod.networking.packet.ManaDataSyncS2CPacket;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
@@ -123,6 +125,19 @@ public class ModEvents {
 
 
                     ManaHudOverlay.SetOriginalColor();
+                }
+
+                if(event.player.isAffectedByFluids() && (event.player.getBlockStateOn().getBlock() instanceof ManaLiquidBlock || event.player.getFeetBlockState().getBlock() instanceof ManaLiquidBlock))
+                {
+                    ManaLiquidBlock mlb;
+                    if(event.player.getBlockStateOn().getBlock() instanceof ManaLiquidBlock a)
+                        mlb = a;
+                    else
+                        mlb = (ManaLiquidBlock)event.player.getFeetBlockState().getBlock();
+                    for (MobEffectInstance me: mlb.EFFECTS)
+                    {
+                        event.player.addEffect(new MobEffectInstance(me.getEffect(), 0, me.getAmplifier()), event.player);
+                    }
                 }
             });
 

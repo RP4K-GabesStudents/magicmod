@@ -8,7 +8,7 @@ public class ModCreativeModeTab {
     public static final CreativeModeTab CREATIVETAB_TAB = new CreativeModeTab("Sorcery") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModItems.BLACITE.get());
+            return new ItemStack(ModItems.BLACITE_SHARD.get());
         }
     };
 

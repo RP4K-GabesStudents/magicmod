@@ -11,8 +11,8 @@ import net.minecraft.world.level.Level;
 public class GappleWand extends WandParent{
 
 
-    public GappleWand(Properties properties) {
-        super(properties, 50000, 50000);
+    public GappleWand(Properties properties, int mainManaUsage, int altManaUsage, int level) {
+        super(properties, mainManaUsage, altManaUsage, level);
     }
 
     @Override
