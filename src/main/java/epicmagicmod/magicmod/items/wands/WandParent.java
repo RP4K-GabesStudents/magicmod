@@ -4,6 +4,7 @@ import epicmagicmod.magicmod.mana.PlayerManaProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
@@ -18,6 +19,7 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 
 public abstract class WandParent extends Item {
@@ -129,10 +131,18 @@ public abstract class WandParent extends Item {
         return target;
     }
 
-    protected List<Entity> getEntitiesInAOE(Level level, Player player, double rayLength, boolean playerOnly, int radius)
+    protected List<Entity> getEntitiesInAOE(Level level, Player player, double rayLength, int radius)
     {
-        List<LivingEntity> entities = new ArrayList<>();
+        return level.getEntities(player, getHitArea(level, player, rayLength, radius));
+    }
 
+    protected List<Player> getPlayersInAOE(Level level, Player player, double rayLength, int radius)
+    {
+        return level.getEntities(EntityType.PLAYER,  getHitArea(level, player, rayLength, radius), Predicate.isEqual(player).negate());
+    }
+
+    private AABB getHitArea(Level level, Player player, double rayLength, int radius)
+    {
         //RAY END POINT - TO WHERE IT WILL TRAVEL TO
         Vec3 playerRotation = player.getViewVector(1f).normalize();
         Vec3 rayPath = playerRotation.scale(rayLength * this.lvl);
@@ -168,9 +178,7 @@ public abstract class WandParent extends Item {
             }
         }
 
-        AABB hitArea = new AABB(hitLoc.x-radius, hitLoc.y-radius, hitLoc.z-radius,hitLoc.x+radius, hitLoc.y+radius, hitLoc.z+radius);
-
-        return level.getEntities(player, hitArea);
+        return new AABB(hitLoc.x-radius, hitLoc.y-radius, hitLoc.z-radius,hitLoc.x+radius, hitLoc.y+radius, hitLoc.z+radius);
     }
 
 

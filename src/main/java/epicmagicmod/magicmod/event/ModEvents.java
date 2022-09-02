@@ -1,12 +1,15 @@
 package epicmagicmod.magicmod.event;
 
 import epicmagicmod.magicmod.block.ManaLiquidBlock;
+import epicmagicmod.magicmod.block.ModBlocks;
 import epicmagicmod.magicmod.client.ManaHudOverlay;
 import epicmagicmod.magicmod.items.armor.ModArmorMaterials;
 import epicmagicmod.magicmod.mana.PlayerMana;
 import epicmagicmod.magicmod.mana.PlayerManaProvider;
 import epicmagicmod.magicmod.networking.ModMessages;
 import epicmagicmod.magicmod.networking.packet.ManaDataSyncS2CPacket;
+import net.minecraft.client.color.block.BlockColors;
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -14,6 +17,8 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.level.GrassColor;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
@@ -158,9 +163,13 @@ public class ModEvents {
             });
 
        }
-
-
    }
+
+    @SubscribeEvent
+    public static void setupBlockColors(RegisterColorHandlersEvent.Block event) {
+        BlockColors colors = event.getBlockColors();
+        colors.register((state, level, pos, tint) -> tint == 1 ? (level != null && pos != null ? BiomeColors.getAverageGrassColor(level, pos) : GrassColor.get(0.5, 1)) : -1, ModBlocks.GRASS.get());
+    }
 
 
 

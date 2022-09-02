@@ -45,5 +45,11 @@ public class ModPlacedFeatures {
 
     ));
 
+    public static final RegistryObject<PlacedFeature> GRASS_PLACED = PLACED_FEATURE.register("grass_placed",
+            ()-> new PlacedFeature(ModConfiguredFeatures.GRASS.getHolder().get(),
+                    commonOrePlacement(32, //Veins per chunk
+                            HeightRangePlacement.uniform(VerticalAnchor.absolute(40), VerticalAnchor.absolute(150))
+                    )));
+
 
 }

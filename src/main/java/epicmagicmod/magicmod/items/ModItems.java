@@ -28,7 +28,8 @@ public class ModItems {
 
     }
     //-----------------------------------------------------------------WANDS-----------------------------------------------------------------
-    //
+
+    //COMPLETED
     public static final RegistryObject<Item>FIREWANDA = ITEMS.register("firewand", ()->new FireWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.UNCOMMON), 10000, 2500, 1));
     public static final RegistryObject<Item>FIREWANDB = ITEMS.register("firewand1", ()->new FireWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.RARE), 50000, 1000, 2)); // Shoots a 2D circle of fire balls, (8 total) also gives user 50 ticks of fire resistance and resistance. Also increases force of wand
     public static final RegistryObject<Item>FIREWANDC = ITEMS.register("firewand2", ()->new FireWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.EPIC), 100000, 0, 3));
@@ -43,12 +44,12 @@ public class ModItems {
     public static final RegistryObject<Item>LIGHTNINGWANDB = ITEMS.register("lightningwand1", ()->new LightningWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.RARE), 20000, 20000, 2, 2, 1)); // Increases AOE
     public static final RegistryObject<Item>LIGHTNINGWANDC = ITEMS.register("lightningwand2", ()->new LightningWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.EPIC), 50000, 50000, 3, 3, 2)); // Increases AOE, Lightning now strikes the same place 3 times
 
-    //
+    //COMPLETED
     public static final RegistryObject<Item>TELEPORTWANDA = ITEMS.register("teleportwand", ()->new TeleportWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.UNCOMMON), 20000, 50000, 1));
     public static final RegistryObject<Item>TELEPORTWANDB = ITEMS.register("teleportwand1", ()->new TeleportWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.RARE), 10000, 40000, 2)); // gives speed boost and jump boost on teleport (for both entities) -- Removes Naseua effect
     public static final RegistryObject<Item>TELEPORTWANDC = ITEMS.register("teleportwand2", ()->new TeleportWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.EPIC), 1000, 25000, 3)); // Also allows TPing of Bosses -- Also gives swapped entites nasuea
 
-    //
+    //COMPLETED
     public static final RegistryObject<Item>GAPPLEWANDA = ITEMS.register("gapplewand", ()->new GappleWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.UNCOMMON), 10000, 2500, 1)); // Fully heals health bar
     public static final RegistryObject<Item>GAPPLEWANDB = ITEMS.register("gapplewand1", ()->new GappleWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.RARE), 10000, 2500, 2)); // Full heals hunger bar
     public static final RegistryObject<Item>GAPPLEWANDC = ITEMS.register("gapplewand2", ()->new GappleWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.EPIC), 10000, 2500, 3)); //Gives Resistance, Absorption and Regeneration

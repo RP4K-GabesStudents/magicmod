@@ -237,7 +237,8 @@ public class ManaExtractorBlockEntity extends BlockEntity implements MenuProvide
 
             if (blockEntity.progress++ >= blockEntity.maxProgress){
                 //Has to be here to prevent exploitation... :/
-                blockEntity.milliBuckets += RandomSource.create().nextInt(60,200);
+                blockEntity.milliBuckets = Math.min(RandomSource.create().nextInt(60,200) + blockEntity.milliBuckets, blockEntity.maxMilliBuckets);
+
                 complete(blockEntity);
             }
         }

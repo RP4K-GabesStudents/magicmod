@@ -33,8 +33,6 @@ public class ModBlocks {
         RegistryObject<T> XBlock = BLOCKS.register(oreName, block);
         registerBlockItem(oreName, XBlock, tab);
         return XBlock;
-
-
     }
 
     private static <T extends Block>RegistryObject<Item> registerBlockItem(String oreName, RegistryObject<T> block, CreativeModeTab tab){
@@ -51,6 +49,10 @@ public class ModBlocks {
     public static final RegistryObject<Item>BlaciteOreItem = ModItems.ITEMS.register("blaciteore", ()-> new ShardOreItem(BlaciteOre.get(), new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB), 3, 2, 84, ShardOreItem.EOreType.Blacite));
     public static final RegistryObject<Block>MallumonOre = BLOCKS.register("mallumonore", ()->new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(8).requiresCorrectToolForDrops(), UniformInt.of(50, 100)));
     public static final RegistryObject<Item>MallumonOreItem = ModItems.ITEMS.register("mallumonore", ()-> new ShardOreItem(MallumonOre.get(), new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB), 3, 1, 120, ShardOreItem.EOreType.Mallumon));
+
+    public static final RegistryObject<Block> GRASS = BLOCKS.register("grass", () -> new EpicDirt(BlockBehaviour.Properties.of(Material.GRASS).strength(0.6F).sound(SoundType.GRASS)));
+
+
     //---------------------------------------------------------------------------------------------------------------------------------------------------------
 
     //-------------------------------------------------- BLOCKS  --------------------------------------------------
@@ -89,6 +91,10 @@ public class ModBlocks {
                             new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3000, 4),
                             new MobEffectInstance(MobEffects.INVISIBILITY, 3000, 1)
                     }));
+
+    //Change texture
+
+
     public static final RegistryObject<Block> MANA_EXTRACTOR = registerBlock("mana_extractor",
             ()-> new ManaExtractorBlock(BlockBehaviour.Properties.of(Material.STONE).strength(3).requiresCorrectToolForDrops()), ModCreativeModeTab.CREATIVETAB_TAB);
 

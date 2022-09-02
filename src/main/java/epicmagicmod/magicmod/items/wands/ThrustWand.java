@@ -36,7 +36,7 @@ public class ThrustWand extends WandParent{
 
     @Override
     public boolean mainAbility(Level level, Player player) {
-        List<Entity> targets = getEntitiesInAOE(level, player, RayLength, false, Radius);
+        List<Entity> targets = getEntitiesInAOE(level, player, RayLength, Radius);
 
         if(lvl == 1)
         {
@@ -51,7 +51,7 @@ public class ThrustWand extends WandParent{
 
     @Override
     public boolean altAbility(Level level, Player player) {
-        List<Entity> targets = getEntitiesInAOE(level, player, RayLength, false, Radius);
+        List<Entity> targets = getEntitiesInAOE(level, player, RayLength, Radius);
         if(lvl == 1)
         {
             targets.add(player);

@@ -34,6 +34,14 @@ public class ModConfiguredFeatures {
 
     ));
 
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> TROLL_GRASS = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(new BlockMatchTest(Blocks.GRASS_BLOCK), ModBlocks.GRASS.get().defaultBlockState())
+    ));
+
+    public static final RegistryObject<ConfiguredFeature<?,?>> GRASS = CONFIGURED_FEATURE.register("grass",
+            ()-> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(TROLL_GRASS.get(), 3))); // second is vein size
+    //Ore may not be best but I'm lazy
+
     public static final RegistryObject<ConfiguredFeature<?,?>>CONFIGURED_BLACITE = CONFIGURED_FEATURE.register("blaciteore",()->new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORES.get(),21 /*vein size*/)));
 
 

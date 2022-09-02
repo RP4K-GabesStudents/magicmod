@@ -10,6 +10,8 @@ import epicmagicmod.magicmod.main;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.player.Inventory;
 
+import java.util.logging.Logger;
+
 
 public class ManaExtractionScreen extends AbstractContainerScreen<ManaExtractionMenu>{
 
@@ -23,6 +25,8 @@ public class ManaExtractionScreen extends AbstractContainerScreen<ManaExtraction
     @Override
     protected void init() {
         super.init();
+        imageWidth = 176; // 176 by def
+        imageHeight = 166; // 166 by def
     }
 
     @Override
@@ -55,7 +59,10 @@ public class ManaExtractionScreen extends AbstractContainerScreen<ManaExtraction
     }
 
     private void renderFluidBar(PoseStack pPoseStack, int x, int y) {
-        blit(pPoseStack, x + 156, y + 13, 176, 18, 8, menu.getScaledFluidProgress());
+        Logger.getAnonymousLogger().info("TEST: " + (18+(64-menu.getScaledFluidProgress())));
+
+        //When PV is end - cur it goes up... (13+64-scale)
+        blit(pPoseStack, x + 156, y + 77 - menu.getScaledFluidProgress(), 176, 18, 8, menu.getScaledFluidProgress());
     }
 
     @Override

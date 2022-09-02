@@ -1,146 +1,147 @@
-[31Aug.2022 00:00:52.142] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 1.19, --assetsDir, C:\Users\darry\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 43.0.11, --fml.mcVersion, 1.19.2, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20220805.130853]
-[31Aug.2022 00:00:52.160] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.8+10.0.8+main.0ef7e830 starting: java version 18.0.2 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
-[31Aug.2022 00:00:52.260] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/darry/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23120!/ Service=ModLauncher Env=CLIENT
-[31Aug.2022 00:00:52.536] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\darry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.19.2-43.0.11\56fde139f37fefbfed81bf4f4518ef19e103aa7f\javafmllanguage-1.19.2-43.0.11.jar is missing mods.toml file
-[31Aug.2022 00:00:52.539] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\darry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.19.2-43.0.11\e2474a774fb5f4fb5367a73cfd970ceaf9d88937\lowcodelanguage-1.19.2-43.0.11.jar is missing mods.toml file
-[31Aug.2022 00:00:52.541] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\darry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.19.2-43.0.11\b295e18c9b78ee26e69911f876385121efc3a028\mclanguage-1.19.2-43.0.11.jar is missing mods.toml file
-[31Aug.2022 00:00:52.543] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\darry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.19.2-43.0.11\4d20e75f2ae268510f75181dd90d6da0fa048eb5\fmlcore-1.19.2-43.0.11.jar is missing mods.toml file
-[31Aug.2022 00:00:52.605] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[31Aug.2022 00:00:53.568] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\darry\.gradle\caches\forge_gradle\assets, --assetIndex, 1.19]
-[31Aug.2022 00:00:56.077] [pool-3-thread-1/INFO] [net.minecraft.util.datafix.DataFixers/]: Building unoptimized datafixer
-[31Aug.2022 00:00:57.206] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResources/]: Assets URL 'union:/C:/Users/darry/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2/forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/assets/.mcassetsroot' uses unexpected schema
-[31Aug.2022 00:00:57.206] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResources/]: Assets URL 'union:/C:/Users/darry/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2/forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/data/.mcassetsroot' uses unexpected schema
-[31Aug.2022 00:00:57.229] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[31Aug.2022 00:00:57.234] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[31Aug.2022 00:00:57.311] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
-[31Aug.2022 00:00:57.674] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 43.0.11, for MC 1.19.2 with MCP 20220805.130853
-[31Aug.2022 00:00:57.675] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v43.0.11 Initialized
-[31Aug.2022 00:00:58.802] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: [magicmod]
-[31Aug.2022 00:00:58.929] [Render thread/INFO] [com.mojang.text2speech.NarratorWindows/]: Narrator library for x64 successfully loaded
-[31Aug.2022 00:00:58.959] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: Default, Mod Resources
-[31Aug.2022 00:00:58.991] [Worker-Main-2/INFO] [epicmagicmod.magicmod.main/]: HELLO FROM COMMON SETUP
-[31Aug.2022 00:00:58.991] [Worker-Main-2/INFO] [epicmagicmod.magicmod.main/]: DIRT BLOCK >> minecraft:dirt
-[31Aug.2022 00:00:59.160] [Worker-Main-14/ERROR] [net.minecraft.client.renderer.texture.TextureAtlas/]: Using missing texture, file magicmod:textures/mob_effect/mana_cap_effect.png not found
-[31Aug.2022 00:00:59.161] [Worker-Main-15/ERROR] [net.minecraft.client.renderer.texture.TextureAtlas/]: Using missing texture, file magicmod:textures/mob_effect/mana_modify_effect.png not found
-[31Aug.2022 00:00:59.282] [Worker-Main-13/INFO] [epicmagicmod.magicmod.main/]: HELLO FROM CLIENT SETUP
-[31Aug.2022 00:00:59.283] [Worker-Main-13/INFO] [epicmagicmod.magicmod.main/]: MINECRAFT NAME >> Dev
-[31Aug.2022 00:00:59.323] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
-[31Aug.2022 00:00:59.582] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 43.0.11 Target: 43.1.1
-[31Aug.2022 00:01:01.878] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/example_block.json' missing model for variant: 'magicmod:example_block#'
-[31Aug.2022 00:01:01.879] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinousore.json' missing model for variant: 'magicmod:grazinousore#'
-[31Aug.2022 00:01:01.879] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrinore.json' missing model for variant: 'magicmod:torintrinore#'
-[31Aug.2022 00:01:01.880] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumonore.json' missing model for variant: 'magicmod:mallumonore#'
-[31Aug.2022 00:01:01.880] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=12'
-[31Aug.2022 00:01:01.880] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=11'
-[31Aug.2022 00:01:01.880] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=8'
-[31Aug.2022 00:01:01.880] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=10'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=9'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=15'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=14'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=13'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=2'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=3'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=0'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=1'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=6'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=7'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=4'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=5'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=1'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=2'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=3'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=4'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=15'
-[31Aug.2022 00:01:01.881] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=14'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=0'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=9'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=11'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=10'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=13'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=12'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=5'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=6'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=7'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=8'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=1'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=0'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=5'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=15'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=4'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=3'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=2'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=9'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=11'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=8'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=12'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=7'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=13'
-[31Aug.2022 00:01:01.882] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=6'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=14'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=10'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=0'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=4'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=3'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=2'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=1'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=8'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=7'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=6'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=5'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=14'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=15'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=9'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=10'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=11'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=12'
-[31Aug.2022 00:01:01.883] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=13'
-[31Aug.2022 00:01:01.884] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mana_extractor.json' missing model for variant: 'magicmod:mana_extractor#'
-[31Aug.2022 00:01:02.807] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:example_block#inventory' referenced from: magicmod:example_block#inventory: java.io.FileNotFoundException: magicmod:models/item/example_block.json
-[31Aug.2022 00:01:02.808] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:firewand1#inventory' referenced from: magicmod:firewand1#inventory: java.io.FileNotFoundException: magicmod:models/item/firewand1.json
-[31Aug.2022 00:01:02.808] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:firewand2#inventory' referenced from: magicmod:firewand2#inventory: java.io.FileNotFoundException: magicmod:models/item/firewand2.json
-[31Aug.2022 00:01:02.808] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:icewand1#inventory' referenced from: magicmod:icewand1#inventory: java.io.FileNotFoundException: magicmod:models/item/icewand1.json
-[31Aug.2022 00:01:02.808] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:icewand2#inventory' referenced from: magicmod:icewand2#inventory: java.io.FileNotFoundException: magicmod:models/item/icewand2.json
-[31Aug.2022 00:01:02.809] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:lightningwand1#inventory' referenced from: magicmod:lightningwand1#inventory: java.io.FileNotFoundException: magicmod:models/item/lightningwand1.json
-[31Aug.2022 00:01:02.809] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:lightningwand2#inventory' referenced from: magicmod:lightningwand2#inventory: java.io.FileNotFoundException: magicmod:models/item/lightningwand2.json
-[31Aug.2022 00:01:02.810] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:teleportwand1#inventory' referenced from: magicmod:teleportwand1#inventory: java.io.FileNotFoundException: magicmod:models/item/teleportwand1.json
-[31Aug.2022 00:01:02.810] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:teleportwand2#inventory' referenced from: magicmod:teleportwand2#inventory: java.io.FileNotFoundException: magicmod:models/item/teleportwand2.json
-[31Aug.2022 00:01:02.810] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:gapplewand1#inventory' referenced from: magicmod:gapplewand1#inventory: java.io.FileNotFoundException: magicmod:models/item/gapplewand1.json
-[31Aug.2022 00:01:02.810] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:gapplewand2#inventory' referenced from: magicmod:gapplewand2#inventory: java.io.FileNotFoundException: magicmod:models/item/gapplewand2.json
-[31Aug.2022 00:01:02.811] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:thrustwand1#inventory' referenced from: magicmod:thrustwand1#inventory: java.io.FileNotFoundException: magicmod:models/item/thrustwand1.json
-[31Aug.2022 00:01:02.811] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:thrustwand2#inventory' referenced from: magicmod:thrustwand2#inventory: java.io.FileNotFoundException: magicmod:models/item/thrustwand2.json
-[31Aug.2022 00:01:02.811] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:bindwand1#inventory' referenced from: magicmod:bindwand1#inventory: java.io.FileNotFoundException: magicmod:models/item/bindwand1.json
-[31Aug.2022 00:01:02.812] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:bindwand2#inventory' referenced from: magicmod:bindwand2#inventory: java.io.FileNotFoundException: magicmod:models/item/bindwand2.json
-[31Aug.2022 00:01:02.812] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:purplewizardboots#inventory' referenced from: magicmod:purplewizardboots#inventory: java.io.FileNotFoundException: magicmod:models/item/purplewizardboots.json
-[31Aug.2022 00:01:02.812] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:purplewizardlegs#inventory' referenced from: magicmod:purplewizardlegs#inventory: java.io.FileNotFoundException: magicmod:models/item/purplewizardlegs.json
-[31Aug.2022 00:01:02.812] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:purplewizardchest#inventory' referenced from: magicmod:purplewizardchest#inventory: java.io.FileNotFoundException: magicmod:models/item/purplewizardchest.json
-[31Aug.2022 00:01:02.813] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:purplewizardhelmet#inventory' referenced from: magicmod:purplewizardhelmet#inventory: java.io.FileNotFoundException: magicmod:models/item/purplewizardhelmet.json
-[31Aug.2022 00:01:02.813] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:grazinous#inventory' referenced from: magicmod:grazinous#inventory: java.io.FileNotFoundException: magicmod:models/item/grazinous.json
-[31Aug.2022 00:01:02.813] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:torintrin#inventory' referenced from: magicmod:torintrin#inventory: java.io.FileNotFoundException: magicmod:models/item/torintrin.json
-[31Aug.2022 00:01:02.814] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:mallumon#inventory' referenced from: magicmod:mallumon#inventory: java.io.FileNotFoundException: magicmod:models/item/mallumon.json
-[31Aug.2022 00:01:02.815] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:grazinousore#inventory' referenced from: magicmod:grazinousore#inventory: java.io.FileNotFoundException: magicmod:models/item/grazinousore.json
-[31Aug.2022 00:01:02.815] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:torintrinore#inventory' referenced from: magicmod:torintrinore#inventory: java.io.FileNotFoundException: magicmod:models/item/torintrinore.json
-[31Aug.2022 00:01:02.815] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:mallumonore#inventory' referenced from: magicmod:mallumonore#inventory: java.io.FileNotFoundException: magicmod:models/item/mallumonore.json
-[31Aug.2022 00:01:02.816] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:mana_extractor#inventory' referenced from: magicmod:mana_extractor#inventory: java.io.FileNotFoundException: magicmod:models/item/mana_extractor.json
-[31Aug.2022 00:01:03.103] [Worker-Main-6/ERROR] [net.minecraft.client.renderer.texture.TextureAtlas/]: Using missing texture, file magicmod:textures/misc/mana_water.png not found
-[31Aug.2022 00:01:03.208] [Worker-Main-9/WARN] [net.minecraft.client.renderer.texture.TextureAtlas/]: Texture magicmod:item/lightningwand with size 383x383 limits mip level from 4 to 0
-[31Aug.2022 00:01:04.334] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
-[31Aug.2022 00:01:04.334] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[31Aug.2022 00:01:04.358] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on Speakers (G432 Gaming Headset)
-[31Aug.2022 00:01:04.359] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
-[31Aug.2022 00:01:04.487] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x1024x4 minecraft:textures/atlas/blocks.png-atlas
-[31Aug.2022 00:01:04.494] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x128x4 minecraft:textures/atlas/signs.png-atlas
-[31Aug.2022 00:01:04.495] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[31Aug.2022 00:01:04.495] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[31Aug.2022 00:01:04.496] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[31Aug.2022 00:01:04.497] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[31Aug.2022 00:01:04.497] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[31Aug.2022 00:01:05.106] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[31Aug.2022 00:01:05.231] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[31Aug.2022 00:01:05.232] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[31Aug.2022 00:01:05.232] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[31Aug.2022 00:01:05.856] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
-[31Aug.2022 00:07:12.669] [Worker-Main-13/ERROR] [net.minecraft.tags.TagLoader/]: No key values in MapLike[{}]
-[31Aug.2022 00:07:12.669] [Worker-Main-13/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't read tag list minecraft:blaciteore from minecraft:tags/blocks/blaciteore.json in data pack main
+[01Sep.2022 18:02:48.175] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 1.19, --assetsDir, C:\Users\darry\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 43.0.11, --fml.mcVersion, 1.19.2, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20220805.130853]
+[01Sep.2022 18:02:48.178] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.8+10.0.8+main.0ef7e830 starting: java version 18.0.2 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
+[01Sep.2022 18:02:48.270] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/darry/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23120!/ Service=ModLauncher Env=CLIENT
+[01Sep.2022 18:02:48.493] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\darry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.19.2-43.0.11\56fde139f37fefbfed81bf4f4518ef19e103aa7f\javafmllanguage-1.19.2-43.0.11.jar is missing mods.toml file
+[01Sep.2022 18:02:48.496] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\darry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.19.2-43.0.11\e2474a774fb5f4fb5367a73cfd970ceaf9d88937\lowcodelanguage-1.19.2-43.0.11.jar is missing mods.toml file
+[01Sep.2022 18:02:48.498] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\darry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.19.2-43.0.11\b295e18c9b78ee26e69911f876385121efc3a028\mclanguage-1.19.2-43.0.11.jar is missing mods.toml file
+[01Sep.2022 18:02:48.500] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\darry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.19.2-43.0.11\4d20e75f2ae268510f75181dd90d6da0fa048eb5\fmlcore-1.19.2-43.0.11.jar is missing mods.toml file
+[01Sep.2022 18:02:48.550] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[01Sep.2022 18:02:49.339] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\darry\.gradle\caches\forge_gradle\assets, --assetIndex, 1.19]
+[01Sep.2022 18:02:51.373] [pool-3-thread-1/INFO] [net.minecraft.util.datafix.DataFixers/]: Building unoptimized datafixer
+[01Sep.2022 18:02:52.377] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResources/]: Assets URL 'union:/C:/Users/darry/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2/forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/assets/.mcassetsroot' uses unexpected schema
+[01Sep.2022 18:02:52.378] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResources/]: Assets URL 'union:/C:/Users/darry/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2/forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/data/.mcassetsroot' uses unexpected schema
+[01Sep.2022 18:02:52.396] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[01Sep.2022 18:02:52.399] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[01Sep.2022 18:02:52.469] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
+[01Sep.2022 18:02:52.793] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 43.0.11, for MC 1.19.2 with MCP 20220805.130853
+[01Sep.2022 18:02:52.794] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v43.0.11 Initialized
+[01Sep.2022 18:02:53.486] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: [magicmod]
+[01Sep.2022 18:02:53.554] [Render thread/INFO] [com.mojang.text2speech.NarratorWindows/]: Narrator library for x64 successfully loaded
+[01Sep.2022 18:02:53.573] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: Default, Mod Resources
+[01Sep.2022 18:02:53.593] [Worker-Main-2/INFO] [epicmagicmod.magicmod.main/]: HELLO FROM COMMON SETUP
+[01Sep.2022 18:02:53.593] [Worker-Main-2/INFO] [epicmagicmod.magicmod.main/]: DIRT BLOCK >> minecraft:dirt
+[01Sep.2022 18:02:53.701] [Worker-Main-9/ERROR] [net.minecraft.client.renderer.texture.TextureAtlas/]: Using missing texture, file magicmod:textures/mob_effect/mana_modify_effect.png not found
+[01Sep.2022 18:02:53.702] [Worker-Main-9/ERROR] [net.minecraft.client.renderer.texture.TextureAtlas/]: Using missing texture, file magicmod:textures/mob_effect/mana_cap_effect.png not found
+[01Sep.2022 18:02:53.800] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[01Sep.2022 18:02:53.842] [Worker-Main-4/INFO] [epicmagicmod.magicmod.main/]: HELLO FROM CLIENT SETUP
+[01Sep.2022 18:02:53.842] [Worker-Main-4/INFO] [epicmagicmod.magicmod.main/]: MINECRAFT NAME >> Dev
+[01Sep.2022 18:02:54.032] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 43.0.11 Target: 43.1.1
+[01Sep.2022 18:02:56.031] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/example_block.json' missing model for variant: 'magicmod:example_block#'
+[01Sep.2022 18:02:56.031] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinousore.json' missing model for variant: 'magicmod:grazinousore#'
+[01Sep.2022 18:02:56.032] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrinore.json' missing model for variant: 'magicmod:torintrinore#'
+[01Sep.2022 18:02:56.033] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumonore.json' missing model for variant: 'magicmod:mallumonore#'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=12'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=11'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=8'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=10'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=9'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=15'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=14'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=13'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=2'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=3'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=0'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=1'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=6'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=7'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=4'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/grazinous_source_block.json' missing model for variant: 'magicmod:grazinous_source_block#level=5'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=1'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=2'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=3'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=4'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=15'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=14'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=0'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=9'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=11'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=10'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=13'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=12'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=5'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=6'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=7'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/torintrin_source_block.json' missing model for variant: 'magicmod:torintrin_source_block#level=8'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=1'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=0'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=5'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=15'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=4'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=3'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=2'
+[01Sep.2022 18:02:56.034] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=9'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=11'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=8'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=12'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=7'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=13'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=6'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=14'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/blacite_source_block.json' missing model for variant: 'magicmod:blacite_source_block#level=10'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=0'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=4'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=3'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=2'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=1'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=8'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=7'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=6'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=5'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=14'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=15'
+[01Sep.2022 18:02:56.035] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=9'
+[01Sep.2022 18:02:56.036] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=10'
+[01Sep.2022 18:02:56.036] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=11'
+[01Sep.2022 18:02:56.036] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=12'
+[01Sep.2022 18:02:56.036] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mallumon_source_block.json' missing model for variant: 'magicmod:mallumon_source_block#level=13'
+[01Sep.2022 18:02:56.036] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Exception loading blockstate definition: 'magicmod:blockstates/mana_extractor.json' missing model for variant: 'magicmod:mana_extractor#'
+[01Sep.2022 18:02:56.908] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:example_block#inventory' referenced from: magicmod:example_block#inventory: java.io.FileNotFoundException: magicmod:models/item/example_block.json
+[01Sep.2022 18:02:56.909] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:firewand1#inventory' referenced from: magicmod:firewand1#inventory: java.io.FileNotFoundException: magicmod:models/item/firewand1.json
+[01Sep.2022 18:02:56.909] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:firewand2#inventory' referenced from: magicmod:firewand2#inventory: java.io.FileNotFoundException: magicmod:models/item/firewand2.json
+[01Sep.2022 18:02:56.910] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:icewand1#inventory' referenced from: magicmod:icewand1#inventory: java.io.FileNotFoundException: magicmod:models/item/icewand1.json
+[01Sep.2022 18:02:56.910] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:icewand2#inventory' referenced from: magicmod:icewand2#inventory: java.io.FileNotFoundException: magicmod:models/item/icewand2.json
+[01Sep.2022 18:02:56.910] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:lightningwand1#inventory' referenced from: magicmod:lightningwand1#inventory: java.io.FileNotFoundException: magicmod:models/item/lightningwand1.json
+[01Sep.2022 18:02:56.910] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:lightningwand2#inventory' referenced from: magicmod:lightningwand2#inventory: java.io.FileNotFoundException: magicmod:models/item/lightningwand2.json
+[01Sep.2022 18:02:56.911] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:teleportwand1#inventory' referenced from: magicmod:teleportwand1#inventory: java.io.FileNotFoundException: magicmod:models/item/teleportwand1.json
+[01Sep.2022 18:02:56.911] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:teleportwand2#inventory' referenced from: magicmod:teleportwand2#inventory: java.io.FileNotFoundException: magicmod:models/item/teleportwand2.json
+[01Sep.2022 18:02:56.912] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:gapplewand1#inventory' referenced from: magicmod:gapplewand1#inventory: java.io.FileNotFoundException: magicmod:models/item/gapplewand1.json
+[01Sep.2022 18:02:56.912] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:gapplewand2#inventory' referenced from: magicmod:gapplewand2#inventory: java.io.FileNotFoundException: magicmod:models/item/gapplewand2.json
+[01Sep.2022 18:02:56.912] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:thrustwand1#inventory' referenced from: magicmod:thrustwand1#inventory: java.io.FileNotFoundException: magicmod:models/item/thrustwand1.json
+[01Sep.2022 18:02:56.912] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:thrustwand2#inventory' referenced from: magicmod:thrustwand2#inventory: java.io.FileNotFoundException: magicmod:models/item/thrustwand2.json
+[01Sep.2022 18:02:56.913] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:bindwand1#inventory' referenced from: magicmod:bindwand1#inventory: java.io.FileNotFoundException: magicmod:models/item/bindwand1.json
+[01Sep.2022 18:02:56.913] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:bindwand2#inventory' referenced from: magicmod:bindwand2#inventory: java.io.FileNotFoundException: magicmod:models/item/bindwand2.json
+[01Sep.2022 18:02:56.913] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:purplewizardboots#inventory' referenced from: magicmod:purplewizardboots#inventory: java.io.FileNotFoundException: magicmod:models/item/purplewizardboots.json
+[01Sep.2022 18:02:56.913] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:purplewizardlegs#inventory' referenced from: magicmod:purplewizardlegs#inventory: java.io.FileNotFoundException: magicmod:models/item/purplewizardlegs.json
+[01Sep.2022 18:02:56.914] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:purplewizardchest#inventory' referenced from: magicmod:purplewizardchest#inventory: java.io.FileNotFoundException: magicmod:models/item/purplewizardchest.json
+[01Sep.2022 18:02:56.914] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:purplewizardhelmet#inventory' referenced from: magicmod:purplewizardhelmet#inventory: java.io.FileNotFoundException: magicmod:models/item/purplewizardhelmet.json
+[01Sep.2022 18:02:56.914] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:grazinous#inventory' referenced from: magicmod:grazinous#inventory: java.io.FileNotFoundException: magicmod:models/item/grazinous.json
+[01Sep.2022 18:02:56.914] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:torintrin#inventory' referenced from: magicmod:torintrin#inventory: java.io.FileNotFoundException: magicmod:models/item/torintrin.json
+[01Sep.2022 18:02:56.915] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:mallumon#inventory' referenced from: magicmod:mallumon#inventory: java.io.FileNotFoundException: magicmod:models/item/mallumon.json
+[01Sep.2022 18:02:56.916] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:grazinousore#inventory' referenced from: magicmod:grazinousore#inventory: java.io.FileNotFoundException: magicmod:models/item/grazinousore.json
+[01Sep.2022 18:02:56.916] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:torintrinore#inventory' referenced from: magicmod:torintrinore#inventory: java.io.FileNotFoundException: magicmod:models/item/torintrinore.json
+[01Sep.2022 18:02:56.916] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:mallumonore#inventory' referenced from: magicmod:mallumonore#inventory: java.io.FileNotFoundException: magicmod:models/item/mallumonore.json
+[01Sep.2022 18:02:56.917] [Worker-Main-12/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'magicmod:mana_extractor#inventory' referenced from: magicmod:mana_extractor#inventory: java.io.FileNotFoundException: magicmod:models/item/mana_extractor.json
+[01Sep.2022 18:02:57.148] [Worker-Main-9/ERROR] [net.minecraft.client.renderer.texture.TextureAtlas/]: Using missing texture, file magicmod:textures/misc/mana_water.png not found
+[01Sep.2022 18:02:57.155] [Worker-Main-13/ERROR] [net.minecraft.client.renderer.texture.TextureAtlas/]: Using missing texture, file minecraft:textures/blocks/dirt.png not found
+[01Sep.2022 18:02:57.243] [Worker-Main-12/WARN] [net.minecraft.client.renderer.texture.TextureAtlas/]: Texture magicmod:item/lightningwand with size 383x383 limits mip level from 4 to 0
+[01Sep.2022 18:02:58.243] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[01Sep.2022 18:02:58.243] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[01Sep.2022 18:02:58.262] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on Speakers (G432 Gaming Headset)
+[01Sep.2022 18:02:58.262] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[01Sep.2022 18:02:58.378] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x1024x4 minecraft:textures/atlas/blocks.png-atlas
+[01Sep.2022 18:02:58.384] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x128x4 minecraft:textures/atlas/signs.png-atlas
+[01Sep.2022 18:02:58.384] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[01Sep.2022 18:02:58.385] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[01Sep.2022 18:02:58.385] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[01Sep.2022 18:02:58.385] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[01Sep.2022 18:02:58.386] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[01Sep.2022 18:02:58.894] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[01Sep.2022 18:02:59.012] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[01Sep.2022 18:02:59.013] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[01Sep.2022 18:02:59.013] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[01Sep.2022 18:02:59.649] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
+[01Sep.2022 18:03:18.480] [Worker-Main-9/ERROR] [net.minecraft.tags.TagLoader/]: No key values in MapLike[{}]
+[01Sep.2022 18:03:18.480] [Worker-Main-9/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't read tag list minecraft:blaciteore from minecraft:tags/blocks/blaciteore.json in data pack main
 java.lang.RuntimeException: No key values in MapLike[{}]
 	at com.mojang.serialization.DataResult.lambda$getOrThrow$4(DataResult.java:100) ~[datafixerupper-5.0.28.jar%23147!/:?]
 	at com.mojang.datafixers.util.Either$Right.map(Either.java:99) ~[datafixerupper-5.0.28.jar%23147!/:?]
@@ -155,8 +156,8 @@ java.lang.RuntimeException: No key values in MapLike[{}]
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) [?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) [?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) [?:?]
-[31Aug.2022 00:07:12.709] [Worker-Main-13/ERROR] [net.minecraft.tags.TagLoader/]: Not a JSON object: null
-[31Aug.2022 00:07:12.709] [Worker-Main-13/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't read tag list minecraft:mineable/axe from minecraft:tags/blocks/mineable/axe.json in data pack main
+[01Sep.2022 18:03:18.519] [Worker-Main-9/ERROR] [net.minecraft.tags.TagLoader/]: Not a JSON object: null
+[01Sep.2022 18:03:18.520] [Worker-Main-9/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't read tag list minecraft:mineable/axe from minecraft:tags/blocks/mineable/axe.json in data pack main
 java.lang.RuntimeException: Not a JSON object: null
 	at com.mojang.serialization.DataResult.lambda$getOrThrow$4(DataResult.java:100) ~[datafixerupper-5.0.28.jar%23147!/:?]
 	at com.mojang.datafixers.util.Either$Right.map(Either.java:99) ~[datafixerupper-5.0.28.jar%23147!/:?]
@@ -171,8 +172,8 @@ java.lang.RuntimeException: Not a JSON object: null
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) [?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) [?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) [?:?]
-[31Aug.2022 00:07:12.711] [Worker-Main-13/ERROR] [net.minecraft.tags.TagLoader/]: Not a JSON object: null
-[31Aug.2022 00:07:12.711] [Worker-Main-13/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't read tag list minecraft:mineable/hoe from minecraft:tags/blocks/mineable/hoe.json in data pack main
+[01Sep.2022 18:03:18.521] [Worker-Main-9/ERROR] [net.minecraft.tags.TagLoader/]: Not a JSON object: null
+[01Sep.2022 18:03:18.521] [Worker-Main-9/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't read tag list minecraft:mineable/hoe from minecraft:tags/blocks/mineable/hoe.json in data pack main
 java.lang.RuntimeException: Not a JSON object: null
 	at com.mojang.serialization.DataResult.lambda$getOrThrow$4(DataResult.java:100) ~[datafixerupper-5.0.28.jar%23147!/:?]
 	at com.mojang.datafixers.util.Either$Right.map(Either.java:99) ~[datafixerupper-5.0.28.jar%23147!/:?]
@@ -187,8 +188,8 @@ java.lang.RuntimeException: Not a JSON object: null
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) [?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) [?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) [?:?]
-[31Aug.2022 00:07:12.713] [Worker-Main-13/ERROR] [net.minecraft.tags.TagLoader/]: Not a JSON object: null
-[31Aug.2022 00:07:12.713] [Worker-Main-13/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't read tag list minecraft:mineable/shovel from minecraft:tags/blocks/mineable/shovel.json in data pack main
+[01Sep.2022 18:03:18.527] [Worker-Main-9/ERROR] [net.minecraft.tags.TagLoader/]: Not a JSON object: null
+[01Sep.2022 18:03:18.527] [Worker-Main-9/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't read tag list minecraft:needs_diamond_tool from minecraft:tags/blocks/needs_diamond_tool.json in data pack main
 java.lang.RuntimeException: Not a JSON object: null
 	at com.mojang.serialization.DataResult.lambda$getOrThrow$4(DataResult.java:100) ~[datafixerupper-5.0.28.jar%23147!/:?]
 	at com.mojang.datafixers.util.Either$Right.map(Either.java:99) ~[datafixerupper-5.0.28.jar%23147!/:?]
@@ -203,8 +204,8 @@ java.lang.RuntimeException: Not a JSON object: null
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) [?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) [?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) [?:?]
-[31Aug.2022 00:07:12.719] [Worker-Main-13/ERROR] [net.minecraft.tags.TagLoader/]: Not a JSON object: null
-[31Aug.2022 00:07:12.719] [Worker-Main-13/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't read tag list minecraft:needs_diamond_tool from minecraft:tags/blocks/needs_diamond_tool.json in data pack main
+[01Sep.2022 18:03:18.529] [Worker-Main-9/ERROR] [net.minecraft.tags.TagLoader/]: Not a JSON object: null
+[01Sep.2022 18:03:18.529] [Worker-Main-9/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't read tag list minecraft:needs_netherite_tool from minecraft:tags/blocks/needs_netherite_tool.json in data pack main
 java.lang.RuntimeException: Not a JSON object: null
 	at com.mojang.serialization.DataResult.lambda$getOrThrow$4(DataResult.java:100) ~[datafixerupper-5.0.28.jar%23147!/:?]
 	at com.mojang.datafixers.util.Either$Right.map(Either.java:99) ~[datafixerupper-5.0.28.jar%23147!/:?]
@@ -219,92 +220,35 @@ java.lang.RuntimeException: Not a JSON object: null
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) [?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) [?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) [?:?]
-[31Aug.2022 00:07:12.720] [Worker-Main-13/ERROR] [net.minecraft.tags.TagLoader/]: Not a JSON object: null
-[31Aug.2022 00:07:12.720] [Worker-Main-13/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't read tag list minecraft:needs_netherite_tool from minecraft:tags/blocks/needs_netherite_tool.json in data pack main
-java.lang.RuntimeException: Not a JSON object: null
-	at com.mojang.serialization.DataResult.lambda$getOrThrow$4(DataResult.java:100) ~[datafixerupper-5.0.28.jar%23147!/:?]
-	at com.mojang.datafixers.util.Either$Right.map(Either.java:99) ~[datafixerupper-5.0.28.jar%23147!/:?]
-	at com.mojang.serialization.DataResult.getOrThrow(DataResult.java:93) ~[datafixerupper-5.0.28.jar%23147!/:?]
-	at net.minecraft.tags.TagLoader.load(TagLoader.java:62) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?]
-	at net.minecraft.tags.TagLoader.loadAndBuild(TagLoader.java:177) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?]
-	at net.minecraft.tags.TagManager.lambda$createLoader$4(TagManager.java:54) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) [?:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) [?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) [?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) [?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) [?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) [?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) [?:?]
-[31Aug.2022 00:07:13.209] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
-[31Aug.2022 00:07:13.838] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1179 advancements
-[31Aug.2022 00:07:14.153] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.19.2
-[31Aug.2022 00:07:14.153] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[31Aug.2022 00:07:14.413] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[31Aug.2022 00:07:16.792] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[31Aug.2022 00:07:16.792] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[31Aug.2022 00:07:16.792] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[31Aug.2022 00:07:16.792] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[31Aug.2022 00:07:16.792] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[31Aug.2022 00:07:16.923] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[31Aug.2022 00:07:17.436] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 77%
-[31Aug.2022 00:07:17.553] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
-[31Aug.2022 00:07:17.553] [Server thread/INFO] [epicmagicmod.magicmod.main/]: HELLO from server starting
-[31Aug.2022 00:07:17.568] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 3147 ms
-[31Aug.2022 00:07:17.612] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 8, from 10
-[31Aug.2022 00:07:17.614] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
-[31Aug.2022 00:07:17.723] [Render thread/WARN] [io.netty.util.internal.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
-[31Aug.2022 00:07:18.124] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
-[31Aug.2022 00:07:18.165] [Server thread/INFO] [net.minecraftforge.common.AdvancementLoadFix/]: Using new advancement loading for net.minecraft.server.PlayerAdvancements@1ee048e5
-[31Aug.2022 00:07:18.178] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:d804b600] logged in with entity id 22 at (-461.9644458393201, 95.2541440698021, -667.6999999880791)
-[31Aug.2022 00:07:18.252] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
-[31Aug.2022 00:07:19.406] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 167 advancements
-[31Aug.2022 00:14:01.516] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 170 advancements
-[31Aug.2022 00:19:28.978] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Set the time to 13000]
-[31Aug.2022 00:19:28.987] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Set the time to 13000
-[31Aug.2022 00:39:27.610] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev has made the advancement [Sneak 100]
-[31Aug.2022 00:39:27.613] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Dev has made the advancement [Sneak 100]
-[31Aug.2022 00:39:27.664] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 170 advancements
-[31Aug.2022 00:49:35.508] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Set the time to 13000]
-[31Aug.2022 00:49:35.516] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Set the time to 13000
-[31Aug.2022 00:56:47.057] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 171 advancements
-[31Aug.2022 01:02:52.160] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 173 advancements
-[31Aug.2022 01:02:56.037] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev has made the advancement [Diamonds!]
-[31Aug.2022 01:02:56.038] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Dev has made the advancement [Diamonds!]
-[31Aug.2022 01:02:56.063] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 184 advancements
-[31Aug.2022 01:03:02.762] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 187 advancements
-[31Aug.2022 01:06:31.708] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Set the world spawn point to -464, 97, -700 [0.0]]
-[31Aug.2022 01:06:31.709] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Set the world spawn point to -464, 97, -700 [0.0]
-[31Aug.2022 01:14:19.834] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Gave 1 [Structure Block] to Dev]
-[31Aug.2022 01:14:19.839] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Gave 1 [Structure Block] to Dev
-[31Aug.2022 01:15:19.428] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Structure 'minecraft:manatemple' is not available
-[31Aug.2022 01:15:24.988] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Size successfully detected for 'minecraft:manatemple'
-[31Aug.2022 01:15:30.382] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Size successfully detected for 'minecraft:manatemple'
-[31Aug.2022 01:15:39.179] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Structure saved as 'minecraft:manatemple'
-[31Aug.2022 01:15:51.456] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Structure 'minecraft:manatemple' position prepared
-[31Aug.2022 01:16:03.160] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Structure loaded from 'minecraft:manatemple'
-[31Aug.2022 01:17:45.403] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[31Aug.2022 01:17:45.416] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Im crying]'/minecraft:overworld
-[31Aug.2022 01:17:45.419] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Im crying]'/minecraft:the_nether
-[31Aug.2022 01:17:45.419] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Im crying]'/minecraft:the_end
-[31Aug.2022 01:18:11.453] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[31Aug.2022 01:18:11.464] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Im crying]'/minecraft:overworld
-[31Aug.2022 01:18:11.467] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Im crying]'/minecraft:the_nether
-[31Aug.2022 01:18:11.467] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Im crying]'/minecraft:the_end
-[31Aug.2022 01:18:17.704] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[31Aug.2022 01:18:17.708] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Im crying]'/minecraft:overworld
-[31Aug.2022 01:18:17.711] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Im crying]'/minecraft:the_nether
-[31Aug.2022 01:18:17.711] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Im crying]'/minecraft:the_end
-[31Aug.2022 01:18:18.060] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
-[31Aug.2022 01:18:18.060] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
-[31Aug.2022 01:18:18.073] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Stopping singleplayer server as player logged out
-[31Aug.2022 01:18:18.103] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
-[31Aug.2022 01:18:18.103] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
-[31Aug.2022 01:18:18.103] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
-[31Aug.2022 01:18:18.511] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Im crying]'/minecraft:overworld
-[31Aug.2022 01:18:18.590] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Im crying]'/minecraft:the_nether
-[31Aug.2022 01:18:18.591] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Im crying]'/minecraft:the_end
-[31Aug.2022 01:18:18.600] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (Im crying): All chunks are saved
-[31Aug.2022 01:18:18.600] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[31Aug.2022 01:18:18.600] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[31Aug.2022 01:18:18.600] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
-[31Aug.2022 01:18:19.003] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[01Sep.2022 18:03:18.988] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
+[01Sep.2022 18:03:19.590] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1179 advancements
+[01Sep.2022 18:03:19.908] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.19.2
+[01Sep.2022 18:03:19.908] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[01Sep.2022 18:03:20.100] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[01Sep.2022 18:03:22.021] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[01Sep.2022 18:03:22.021] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[01Sep.2022 18:03:22.021] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[01Sep.2022 18:03:22.021] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[01Sep.2022 18:03:22.130] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[01Sep.2022 18:03:22.669] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 88%
+[01Sep.2022 18:03:22.679] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[01Sep.2022 18:03:22.679] [Server thread/INFO] [epicmagicmod.magicmod.main/]: HELLO from server starting
+[01Sep.2022 18:03:22.694] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 2568 ms
+[01Sep.2022 18:03:22.755] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 8, from 10
+[01Sep.2022 18:03:22.756] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[01Sep.2022 18:03:22.830] [Render thread/WARN] [io.netty.util.internal.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
+[01Sep.2022 18:03:23.245] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
+[01Sep.2022 18:03:23.279] [Server thread/INFO] [net.minecraftforge.common.AdvancementLoadFix/]: Using new advancement loading for net.minecraft.server.PlayerAdvancements@cf88e0d
+[01Sep.2022 18:03:23.290] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:0af2f96d] logged in with entity id 453 at (-1114.394823912678, 67.0, -729.4395725582908)
+[01Sep.2022 18:03:23.335] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[01Sep.2022 18:03:24.074] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 65 advancements
+[01Sep.2022 18:04:38.381] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[01Sep.2022 18:04:38.381] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[01Sep.2022 18:04:38.400] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[01Sep.2022 18:04:39.305] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[01Sep.2022 18:04:39.401] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[01Sep.2022 18:04:39.402] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[01Sep.2022 18:04:39.412] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World (2)): All chunks are saved
+[01Sep.2022 18:04:39.412] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[01Sep.2022 18:04:39.412] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[01Sep.2022 18:04:39.412] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved

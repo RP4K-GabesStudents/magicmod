@@ -3,6 +3,8 @@ package epicmagicmod.magicmod.items.wands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -44,8 +46,18 @@ public class TeleportWand extends WandParent{
         if (rayHit.getType() != BlockHitResult.Type.MISS){
             //IF RAY HIT SOMETHING
             Vec3 hitLocation = rayHit.getLocation();
-
             player.teleportTo(hitLocation.x, hitLocation.y, hitLocation.z);
+
+            if(lvl == 1)
+            {
+                player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 1));
+            }
+            if(lvl >= 2)
+            {
+                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 1));
+            }
+
+
             return true;
         }
         return false;
@@ -60,6 +72,21 @@ public class TeleportWand extends WandParent{
             player.teleportTo(target.getX(), target.getY(), target.getZ());
             player.sendSystemMessage(Component.literal("TELEPORT HIT"));
             target.teleportTo(playerPos.x, playerPos.y, playerPos.z);
+
+            if(lvl == 1)
+            {
+                player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 1));
+            }
+            if(lvl >= 2)
+            {
+                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 1));
+                target.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 1));
+            }
+            if(lvl == 3)
+            {
+                target.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 1));
+            }
+
             return true;
 
         }

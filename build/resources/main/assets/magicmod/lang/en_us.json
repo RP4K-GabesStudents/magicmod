@@ -6,10 +6,10 @@
   "item.magicmod.blacite": "Blacite Shard",
   "item.magicmod.mallumon": "Mallumon Shard",
 
-  "item.magicmod.grazinous_mana_fluid": "Grazinous Bucket",
-  "item.magicmod.torintrin_mana_fluid": "Torintrin Bucket",
-  "item.magicmod.blacite_mana_fluid": "Blacite Bucket",
-  "item.magicmod.mallumon_mana_fluid": "Mallumon Bucket",
+  "item.magicmod.grazinousbucket": "Grazinous Bucket",
+  "item.magicmod.torintrinbucket": "Torintrin Bucket",
+  "item.magicmod.blacitebucket": "Blacite Bucket",
+  "item.magicmod.mallumonbucket": "Mallumon Bucket",
 
   "block.magicmod.grazinousore": "Grazinous Ore",
   "block.magicmod.torintrinore": "Torintrin Ore",

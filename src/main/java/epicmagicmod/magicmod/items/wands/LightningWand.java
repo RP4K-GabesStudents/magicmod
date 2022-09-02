@@ -73,7 +73,7 @@ public class LightningWand extends WandParent{
     public boolean mainAbility(Level level, Player player) {
         ply = player;
         boolean check = false;
-        for (Entity e : getEntitiesInAOE(level, player, rayLength, false, aoe)) {
+        for (Entity e : getEntitiesInAOE(level, player, rayLength, aoe)) {
             if (e instanceof LivingEntity le) {
                 //IF RAY HIT SOMETHING
                 for(int i = 0; i < aoe; i ++) {
