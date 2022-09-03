@@ -1,5 +1,6 @@
 package epicmagicmod.magicmod.items.wands;
 
+import epicmagicmod.magicmod.block.ShardOreItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -17,8 +18,8 @@ public class TeleportWand extends WandParent{
 
 
     final double rayLength = 100;
-    public TeleportWand(Properties properties, int mainManaUsage, int altManaUsage, int level) {
-        super(properties, mainManaUsage, altManaUsage, level);
+    public TeleportWand(Properties properties, int mainManaUsage, int altManaUsage, String name, float level, ShardOreItem.EOreType bound) {
+        super(properties, mainManaUsage, altManaUsage,  name,level,bound);
     }
 
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
@@ -44,17 +45,18 @@ public class TeleportWand extends WandParent{
         BlockHitResult rayHit = level.clip(rayCtx);
         //CHECK THE RESULTS
         if (rayHit.getType() != BlockHitResult.Type.MISS){
+            int lvl = getLVL(player.getItemInHand(InteractionHand.MAIN_HAND));
             //IF RAY HIT SOMETHING
             Vec3 hitLocation = rayHit.getLocation();
             player.teleportTo(hitLocation.x, hitLocation.y, hitLocation.z);
 
-            if(lvl == 1)
+            if(lvl <= 1)
             {
-                player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200 * (lvl + 1), lvl));
             }
             if(lvl >= 2)
             {
-                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200* (lvl + 1), lvl));
             }
 
 
@@ -72,19 +74,19 @@ public class TeleportWand extends WandParent{
             player.teleportTo(target.getX(), target.getY(), target.getZ());
             player.sendSystemMessage(Component.literal("TELEPORT HIT"));
             target.teleportTo(playerPos.x, playerPos.y, playerPos.z);
-
-            if(lvl == 1)
+            int lvl = getLVL(player.getItemInHand(InteractionHand.MAIN_HAND));
+            if(lvl <= 1)
             {
-                player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200* (lvl + 1), lvl));
+            }
+            if(lvl <= 2)
+            {
+                target.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200* (lvl + 1), lvl));
             }
             if(lvl >= 2)
             {
-                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 1));
-                target.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 1));
-            }
-            if(lvl == 3)
-            {
-                target.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200* (lvl + 1), lvl));
+                target.addEffect(new MobEffectInstance(MobEffects.JUMP, 200* (lvl + 1), lvl));
             }
 
             return true;

@@ -32,7 +32,6 @@ public class ModMessages {
     }
 
     public static <MSG> void sendToServer(MSG message){
-
         Instance.sendToServer(message);
     }
 

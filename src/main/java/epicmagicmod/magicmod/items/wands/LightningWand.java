@@ -1,5 +1,6 @@
 package epicmagicmod.magicmod.items.wands;
 
+import epicmagicmod.magicmod.block.ShardOreItem;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
@@ -21,7 +22,6 @@ public class LightningWand extends WandParent{
 
     final double rayLength = 100;
     final int aoe;
-    final int restrikeNum;
 
     int curTime;
 
@@ -30,10 +30,9 @@ public class LightningWand extends WandParent{
 
     Player ply;
 
-    public LightningWand(Properties properties, int mainManaUsage, int altManaUsage, int level, int aoe, int restrikeNum) {
-        super(properties, mainManaUsage, altManaUsage, level);
+    public LightningWand(Properties properties, int mainManaUsage, int altManaUsage, String name, float level, ShardOreItem.EOreType bound, int aoe) {
+        super(properties, mainManaUsage, altManaUsage,  name,level,bound);
         this.aoe=aoe;
-        this.restrikeNum = restrikeNum;
         curTime = 0;
     }
 
@@ -71,12 +70,13 @@ public class LightningWand extends WandParent{
 
     @Override
     public boolean mainAbility(Level level, Player player) {
+        int lvl = getLVL(player.getItemInHand(InteractionHand.MAIN_HAND));
         ply = player;
         boolean check = false;
-        for (Entity e : getEntitiesInAOE(level, player, rayLength, aoe)) {
+        for (Entity e : getEntitiesInAOE(level, player, rayLength, aoe + lvl)) {
             if (e instanceof LivingEntity le) {
                 //IF RAY HIT SOMETHING
-                for(int i = 0; i < aoe; i ++) {
+                for(int i = 0; i < aoe+ lvl; i ++) {
                     Vec3 hitLocation = le.getPosition(1f);
                     LightningBolt lightningBolt = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
                     lightningBolt.setPos(hitLocation);
@@ -88,7 +88,7 @@ public class LightningWand extends WandParent{
         if(check) {
             if (funcID == -1) {
                 funcID = 0;
-                amt = restrikeNum;
+                amt = Math.max(0, lvl-1);
                 curTime = 5;
             }
             return true;
@@ -106,12 +106,12 @@ public class LightningWand extends WandParent{
 
         if(rayHit.getType() != HitResult.Type.MISS) {
 
-            Vec3 hitLocation = new Vec3(rayHit.getLocation().x - aoe/2, rayHit.getLocation().y, rayHit.getLocation().z - aoe/2);
+            Vec3 hitLocation = new Vec3(rayHit.getLocation().x - (aoe+ lvl)/2, rayHit.getLocation().y, rayHit.getLocation().z - aoe/2);
 
-            for (int x = 0; x < aoe; x++)
+            for (int x = 0; x < aoe+ lvl; x++)
             {
 
-                for (int y = 0; y < aoe; y++)
+                for (int y = 0; y < aoe+ lvl; y++)
                 {
                     Vec3 trueHit = hitLocation.add(new Vec3(x, 0, y));
 
@@ -129,7 +129,7 @@ public class LightningWand extends WandParent{
 
             if(funcID==-1) {
                 funcID = 0;
-                amt = restrikeNum;
+                amt = Math.max(0, lvl-1);
                 curTime = 5;
             }
             return true;
@@ -139,8 +139,9 @@ public class LightningWand extends WandParent{
 
     @Override
     public boolean altAbility(Level level, Player player) {
+        int lvl = getLVL(player.getItemInHand(InteractionHand.MAIN_HAND));
         ply = player;
-        int range = aoe * 3;
+        int range = (aoe + lvl) * 3;
         Vec3 p = player.position();
         AABB inRange = new AABB(p.x - range, p.y - range, p.z - range, p.x + range, p.y + range, p.z + range);
         boolean ret = false;
@@ -158,7 +159,7 @@ public class LightningWand extends WandParent{
         }
         if(ret && funcID==-1) {
             funcID = 1;
-            amt = restrikeNum;
+            amt = Math.max(0, lvl-1);
             curTime = 5;
         }
         return ret;

@@ -27,11 +27,20 @@ public class ModConfiguredFeatures {
         CONFIGURED_FEATURE.register(eventBus);
     }
 
-    public static final Supplier<List<OreConfiguration.TargetBlockState>>OVERWORLD_ORES = Suppliers.memoize(()-> Arrays.asList(
+    public static final Supplier<List<OreConfiguration.TargetBlockState>>GRAZINOUS_ORES = Suppliers.memoize(()-> Arrays.asList(
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.GrazinousOre.get().defaultBlockState())
+    ));
 
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.BlaciteOre.get().defaultBlockState()),
-            OreConfiguration.target(new BlockMatchTest(Blocks.COPPER_ORE), ModBlocks.BlaciteOre.get().defaultBlockState())
+    public static final Supplier<List<OreConfiguration.TargetBlockState>>TORINTRIN_ORES = Suppliers.memoize(()-> Arrays.asList(
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.TorintrinOre.get().defaultBlockState())
+            ));
 
+    public static final Supplier<List<OreConfiguration.TargetBlockState>>NETHER_ORES = Suppliers.memoize(()-> Arrays.asList(
+            OreConfiguration.target(OreFeatures.NETHERRACK, ModBlocks.BlaciteOre.get().defaultBlockState())
+    ));
+
+    public static final Supplier<List<OreConfiguration.TargetBlockState>>END_ORES = Suppliers.memoize(()-> Arrays.asList(
+            OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE), ModBlocks.MallumonOre.get().defaultBlockState())
     ));
 
     public static final Supplier<List<OreConfiguration.TargetBlockState>> TROLL_GRASS = Suppliers.memoize(() -> List.of(
@@ -42,7 +51,10 @@ public class ModConfiguredFeatures {
             ()-> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(TROLL_GRASS.get(), 3))); // second is vein size
     //Ore may not be best but I'm lazy
 
-    public static final RegistryObject<ConfiguredFeature<?,?>>CONFIGURED_BLACITE = CONFIGURED_FEATURE.register("blaciteore",()->new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORES.get(),21 /*vein size*/)));
+    public static final RegistryObject<ConfiguredFeature<?,?>>CONFIGURED_GRAZINOUS = CONFIGURED_FEATURE.register("grazinousore",()->new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(GRAZINOUS_ORES.get(),6 /*vein size*/)));
+    public static final RegistryObject<ConfiguredFeature<?,?>>CONFIGURED_TORINTRIN = CONFIGURED_FEATURE.register("torintrinore",()->new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(TORINTRIN_ORES.get(),6 /*vein size*/)));
+    public static final RegistryObject<ConfiguredFeature<?,?>>CONFIGURED_BLACITE = CONFIGURED_FEATURE.register("blaciteore",()->new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(NETHER_ORES.get(),6 /*vein size*/)));
+    public static final RegistryObject<ConfiguredFeature<?,?>>CONFIGURED_MALLUMON = CONFIGURED_FEATURE.register("mallumonore",()->new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(END_ORES.get(),6 /*vein size*/)));
 
 
 

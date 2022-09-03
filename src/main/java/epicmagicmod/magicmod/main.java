@@ -69,7 +69,7 @@ public class main {
 
         // Register the Deferred Register to the mod event bus so items get registered
         ITEMS.register(modEventBus);
-        ModItems.register(modEventBus);
+
 
 
         // Register ourselves for server and other game events we are interested in
@@ -83,6 +83,7 @@ public class main {
         ModMenuType.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModPotions.register(modEventBus);
+        ModItems.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

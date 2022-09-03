@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "magicmod:item/blacitebucket"
+    "layer0": "magicmod:ore-shards/blacitebucket"
   }
 }

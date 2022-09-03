@@ -2,7 +2,7 @@
 
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "magicmod:item/lightningwand"
+    "layer0": "magicmod:wand/lightning"
   }
 
 }

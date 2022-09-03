@@ -38,10 +38,29 @@ public class ModPlacedFeatures {
 
     }
 
+    public static final RegistryObject<PlacedFeature>GRAZINOUS_ORE_PLACED = PLACED_FEATURE.register("grazinous_ore_placed", ()->new PlacedFeature(
+            ModConfiguredFeatures.CONFIGURED_GRAZINOUS.getHolder().get(),
+            commonOrePlacement(6, HeightRangePlacement.uniform(VerticalAnchor.absolute(-200), VerticalAnchor.absolute(0)))
+    ));
+
+    public static final RegistryObject<PlacedFeature>TORINTRIN_ORE_PLACED = PLACED_FEATURE.register("torintrin_ore_placed", ()->new PlacedFeature(
+
+            ModConfiguredFeatures.CONFIGURED_TORINTRIN.getHolder().get(),
+            commonOrePlacement(6, HeightRangePlacement.uniform(VerticalAnchor.absolute(-200), VerticalAnchor.absolute(0)))
+
+    ));
+
     public static final RegistryObject<PlacedFeature>BLACITE_ORE_PLACED = PLACED_FEATURE.register("blacite_ore_placed", ()->new PlacedFeature(
 
             ModConfiguredFeatures.CONFIGURED_BLACITE.getHolder().get(),
-            commonOrePlacement(21, HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80)))
+            commonOrePlacement(6, HeightRangePlacement.uniform(VerticalAnchor.absolute(60), VerticalAnchor.absolute(120)))
+
+    ));
+
+    public static final RegistryObject<PlacedFeature>MALLUMON_ORE_PLACED = PLACED_FEATURE.register("mallumon_ore_placed", ()->new PlacedFeature(
+
+            ModConfiguredFeatures.CONFIGURED_MALLUMON.getHolder().get(),
+            commonOrePlacement(6, HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80)))
 
     ));
 

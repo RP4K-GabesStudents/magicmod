@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 public class ManaExtractionScreen extends AbstractContainerScreen<ManaExtractionMenu>{
 
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(main.MODID, "textures/gui/mana_extractor_gui.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(main.MODID, "textures/gui/upgrade_altar_gui.png");
 
     public ManaExtractionScreen(ManaExtractionMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
@@ -26,7 +26,7 @@ public class ManaExtractionScreen extends AbstractContainerScreen<ManaExtraction
     protected void init() {
         super.init();
         imageWidth = 176; // 176 by def
-        imageHeight = 166; // 166 by def
+        imageHeight = 182; // 166 by def
     }
 
     @Override

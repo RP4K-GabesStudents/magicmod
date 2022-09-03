@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "magicmod:block/blaciteore"
+    "all": "magicmod:ore-shards/blacite_ore"
   }
 
 

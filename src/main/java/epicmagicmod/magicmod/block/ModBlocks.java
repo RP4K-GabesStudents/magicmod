@@ -42,13 +42,13 @@ public class ModBlocks {
     //Register as Blocks.Register and then create an item ore variant
     //------------------------------------------------------------------ORES
     public static final RegistryObject<Block>GrazinousOre = BLOCKS.register("grazinousore", ()->new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(5).requiresCorrectToolForDrops(), UniformInt.of(10, 20)));
-    public static final RegistryObject<Item>GrazinousOreItem = ModItems.ITEMS.register("grazinousore", ()-> new ShardOreItem(GrazinousOre.get(), new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB), 4, 2, 48, ShardOreItem.EOreType.Granizous));
+    public static final RegistryObject<ShardOreItem>GrazinousOreItem = ModItems.ITEMS.register("grazinousore", ()-> new ShardOreItem(GrazinousOre.get(), new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB), 4, 2, 48, ShardOreItem.EOreType.Granizous));
     public static final RegistryObject<Block>TorintrinOre = BLOCKS.register("torintrinore", ()->new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(3).requiresCorrectToolForDrops(), UniformInt.of(10, 20)));
-    public static final RegistryObject<Item>TorintrinOreItem = ModItems.ITEMS.register("torintrinore", ()-> new ShardOreItem(TorintrinOre.get(), new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB), 4, 3, 36, ShardOreItem.EOreType.Torintrin));
+    public static final RegistryObject<ShardOreItem>TorintrinOreItem = ModItems.ITEMS.register("torintrinore", ()-> new ShardOreItem(TorintrinOre.get(), new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB), 4, 3, 36, ShardOreItem.EOreType.Torintrin));
     public static final RegistryObject<Block>BlaciteOre = BLOCKS.register("blaciteore", ()->new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6).requiresCorrectToolForDrops(), UniformInt.of(20, 40)));
-    public static final RegistryObject<Item>BlaciteOreItem = ModItems.ITEMS.register("blaciteore", ()-> new ShardOreItem(BlaciteOre.get(), new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB), 3, 2, 84, ShardOreItem.EOreType.Blacite));
+    public static final RegistryObject<ShardOreItem>BlaciteOreItem = ModItems.ITEMS.register("blaciteore", ()-> new ShardOreItem(BlaciteOre.get(), new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB), 3, 2, 84, ShardOreItem.EOreType.Blacite));
     public static final RegistryObject<Block>MallumonOre = BLOCKS.register("mallumonore", ()->new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(8).requiresCorrectToolForDrops(), UniformInt.of(50, 100)));
-    public static final RegistryObject<Item>MallumonOreItem = ModItems.ITEMS.register("mallumonore", ()-> new ShardOreItem(MallumonOre.get(), new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB), 3, 1, 120, ShardOreItem.EOreType.Mallumon));
+    public static final RegistryObject<ShardOreItem>MallumonOreItem = ModItems.ITEMS.register("mallumonore", ()-> new ShardOreItem(MallumonOre.get(), new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB), 3, 1, 120, ShardOreItem.EOreType.Mallumon));
 
     public static final RegistryObject<Block> GRASS = BLOCKS.register("grass", () -> new EpicDirt(BlockBehaviour.Properties.of(Material.GRASS).strength(0.6F).sound(SoundType.GRASS)));
 

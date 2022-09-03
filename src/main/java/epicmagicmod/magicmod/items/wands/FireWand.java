@@ -1,5 +1,6 @@
 package epicmagicmod.magicmod.items.wands;
 
+import epicmagicmod.magicmod.block.ShardOreItem;
 import epicmagicmod.magicmod.entity.MyFireball;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -15,8 +16,8 @@ import net.minecraft.world.phys.Vec3;
 public class FireWand extends WandParent{
 
 
-    public FireWand(Properties properties, int mainManaUsage, int altManaUsage, int level) {
-        super(properties, mainManaUsage, altManaUsage, level);
+    public FireWand(Properties properties, int mainManaUsage, int altManaUsage, String name, float level , ShardOreItem.EOreType bound) {
+        super(properties, mainManaUsage, altManaUsage, name, level,bound);
     }
 
 
@@ -50,18 +51,19 @@ public class FireWand extends WandParent{
 
     private void LaunchEntity(Level level, Player player, boolean breakBlocks)
     {
+        int lvl = getLVL(player.getItemInHand(InteractionHand.MAIN_HAND));
         float xRot = player.getViewXRot(0f);
         float yRot = player.getViewYRot(0f);
 
-        float ang = 25; // 25 deg
+        float ang = 10; // 25 deg
 
         int randomExplosion = 0;
 
-        for(int i = 0; i < lvl; i++) {
+        for(int i = 0; i < lvl+1; i++) {
             randomExplosion += RandomSource.createNewThreadLocalInstance().nextInt(1, 4);
         }
 
-        for(int y = -lvl+1; y < lvl; y++)
+        for(int y = -(lvl+1)+1; y < lvl+1; y++)
         {
             //I'm too lazy to do a rotation matrix here. Deal with this.
             float curY = yRot + y * ang;

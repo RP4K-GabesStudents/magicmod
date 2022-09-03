@@ -1,5 +1,6 @@
 package epicmagicmod.magicmod.items.wands;
 
+import epicmagicmod.magicmod.block.ShardOreItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -23,8 +24,8 @@ public class BindWand extends WandParent{
     Player ply;
 
 
-    public BindWand(Properties properties, int mainManaUsage, int altManaUsage, int level) {
-        super(properties, mainManaUsage, altManaUsage, level);
+    public BindWand(Properties properties, int mainManaUsage, int altManaUsage, String name, float level, ShardOreItem.EOreType bound) {
+        super(properties, mainManaUsage, altManaUsage, name, level,bound);
     }
 
     @Override
@@ -39,7 +40,7 @@ public class BindWand extends WandParent{
         super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
         if(!pLevel.isClientSide() && A != null && B != null)
         {
-            if(A.isDeadOrDying() || B.isDeadOrDying() || (lvl == 1  && ply.isDeadOrDying()))
+            if(A.isDeadOrDying() || B.isDeadOrDying() || (getLVL(pStack) <= 1  && ply.isDeadOrDying()))
             {
                 Logger.getAnonymousLogger().info("Killed entities");
                 A.kill();
@@ -48,7 +49,7 @@ public class BindWand extends WandParent{
                 A = null;
                 B = null;
 
-                if(lvl == 1 ) {
+                if(getLVL(pStack) <= 1 ) {
                     ply.kill();
                     ply = null;
                 }
@@ -71,12 +72,12 @@ public class BindWand extends WandParent{
 
         if(target != null) {
 
-            if(!CanCast(target))
+            if(!CanCast(player, target))
             {
                 player.sendSystemMessage(Component.literal("THIS WAND IS NOT POWERFUL ENOUGH TO BIND TO: " + target.getDisplayName().getString()));
                 return false;
             }
-            if(lvl == 1)
+            if(getLVL(player.getItemInHand(InteractionHand.MAIN_HAND)) <= 1)
             {
                 ply = player;
                 player.sendSystemMessage(Component.literal("Set target to: " + target.getDisplayName().getString() + " AND YOU DUE TO LOW POWER WAND"));
@@ -106,12 +107,12 @@ public class BindWand extends WandParent{
         LivingEntity target = getLookAtTarget(level, player, RayLength, false);
         if(target != null) {
 
-            if(!CanCast(target))
+            if(!CanCast(player, target))
             {
                 player.sendSystemMessage(Component.literal("THIS WAND IS NOT POWERFUL ENOUGH TO BIND TO: " + target.getDisplayName().getString()));
                 return false;
             }
-            if(lvl == 1)
+            if(getLVL(player.getItemInHand(InteractionHand.MAIN_HAND)) <= 1)
             {
                 ply = player;
                 player.sendSystemMessage(Component.literal("Set target to: " + target.getDisplayName().getString() + " AND YOU DUE TO LOW POWER WAND"));

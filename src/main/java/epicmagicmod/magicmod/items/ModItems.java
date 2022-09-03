@@ -3,6 +3,7 @@ package epicmagicmod.magicmod.items;
 
 import epicmagicmod.magicmod.block.ManaLiquidBlock;
 import epicmagicmod.magicmod.block.ModBlocks;
+import epicmagicmod.magicmod.block.ShardOreItem;
 import epicmagicmod.magicmod.fluid.ModFluids;
 import epicmagicmod.magicmod.items.armor.ModArmorMaterials;
 import epicmagicmod.magicmod.items.utilities.TimeDial;
@@ -30,42 +31,44 @@ public class ModItems {
     //-----------------------------------------------------------------WANDS-----------------------------------------------------------------
 
     //COMPLETED
-    public static final RegistryObject<Item>FIREWANDA = ITEMS.register("firewand", ()->new FireWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.UNCOMMON), 10000, 2500, 1));
-    public static final RegistryObject<Item>FIREWANDB = ITEMS.register("firewand1", ()->new FireWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.RARE), 50000, 1000, 2)); // Shoots a 2D circle of fire balls, (8 total) also gives user 50 ticks of fire resistance and resistance. Also increases force of wand
-    public static final RegistryObject<Item>FIREWANDC = ITEMS.register("firewand2", ()->new FireWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.EPIC), 100000, 0, 3));
+    public static final RegistryObject<Item>FIREWAND = ITEMS.register("firewand", ()->new FireWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1), 10000, 2500, "Fire Wand", 1.25f, ShardOreItem.EOreType.Blacite));// Shoots a 2D circle of fire balls, (8 total) also gives user 50 ticks of fire resistance and resistance. Also increases force of wand
 
     //COMPLETED
-    public static final RegistryObject<Item>ICEWANDA = ITEMS.register("icewand", ()->new IceWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.UNCOMMON), 1000, 25000, 1, 60, 300));
-    public static final RegistryObject<Item>ICEWANDB = ITEMS.register("icewand1", ()->new IceWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.RARE), 2000, 35000, 2, 90, 450 )); // increaes range and size, Alt attack now gives mining fatigue
-    public static final RegistryObject<Item>ICEWANDC = ITEMS.register("icewand2", ()->new IceWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.EPIC), 5000, 45000, 3, 120, 600)); // increases range and size, both also now give blindness to affected entities
+    public static final RegistryObject<Item>ICEWAND = ITEMS.register("icewand", ()->new IceWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1), 1000, 25000,  "Ice Wand", 0.75f, ShardOreItem.EOreType.Granizous, 60, 300));
+    // increaes range and size, Alt attack now gives mining fatigue
+    // increases range and size, both also now give blindness to affected entities
 
     //COMPLETED
-    public static final RegistryObject<Item>LIGHTNINGWANDA = ITEMS.register("lightningwand", ()->new LightningWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.UNCOMMON), 10000, 10000, 1, 1,0));
-    public static final RegistryObject<Item>LIGHTNINGWANDB = ITEMS.register("lightningwand1", ()->new LightningWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.RARE), 20000, 20000, 2, 2, 1)); // Increases AOE
-    public static final RegistryObject<Item>LIGHTNINGWANDC = ITEMS.register("lightningwand2", ()->new LightningWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.EPIC), 50000, 50000, 3, 3, 2)); // Increases AOE, Lightning now strikes the same place 3 times
+    public static final RegistryObject<Item>LIGHTNINGWAND = ITEMS.register("lightningwand", ()->new LightningWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1), 10000, 10000, "Lightning Wand", 1.5f, ShardOreItem.EOreType.Torintrin, 1));
+    // Increases AOE
+    // Increases AOE, Lightning now strikes the same place 3 times
 
     //COMPLETED
-    public static final RegistryObject<Item>TELEPORTWANDA = ITEMS.register("teleportwand", ()->new TeleportWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.UNCOMMON), 20000, 50000, 1));
-    public static final RegistryObject<Item>TELEPORTWANDB = ITEMS.register("teleportwand1", ()->new TeleportWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.RARE), 10000, 40000, 2)); // gives speed boost and jump boost on teleport (for both entities) -- Removes Naseua effect
-    public static final RegistryObject<Item>TELEPORTWANDC = ITEMS.register("teleportwand2", ()->new TeleportWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.EPIC), 1000, 25000, 3)); // Also allows TPing of Bosses -- Also gives swapped entites nasuea
+    public static final RegistryObject<Item>TELEPORTWAND = ITEMS.register("teleportwand", ()->new TeleportWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1), 20000, 50000, "Teleport Wand", 0.6f, ShardOreItem.EOreType.Torintrin));
+    // gives speed boost and jump boost on teleport (for both entities) -- Removes Naseua effect
+    // Also allows TPing of Bosses -- Also gives swapped entites nasuea
 
     //COMPLETED
-    public static final RegistryObject<Item>GAPPLEWANDA = ITEMS.register("gapplewand", ()->new GappleWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.UNCOMMON), 10000, 2500, 1)); // Fully heals health bar
-    public static final RegistryObject<Item>GAPPLEWANDB = ITEMS.register("gapplewand1", ()->new GappleWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.RARE), 10000, 2500, 2)); // Full heals hunger bar
-    public static final RegistryObject<Item>GAPPLEWANDC = ITEMS.register("gapplewand2", ()->new GappleWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.EPIC), 10000, 2500, 3)); //Gives Resistance, Absorption and Regeneration
+    public static final RegistryObject<Item>GAPPLEWAND = ITEMS.register("gapplewand", ()->new GappleWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1), 10000, 2500, "GApple Wand",0.9f, ShardOreItem.EOreType.Granizous)); // Fully heals health bar
+    // Full heals hunger bar
+    //Gives Resistance, Absorption and Regeneration
 
     //COMPLETED
-    public static final RegistryObject<Item>THRUSTWANDA = ITEMS.register("thrustwand", ()->new ThrustWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.UNCOMMON), 2500, 1000, 1,1, 1)); // Throws user up or down, [when thrown down, gives the user increased jump height -- to prevent fall death]
-    public static final RegistryObject<Item>THRUSTWANDB = ITEMS.register("thrustwand1", ()->new ThrustWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.RARE), 10000, 10000, 2, 2,2)); // Wand no longer affects user
-    public static final RegistryObject<Item>THRUSTWANDC = ITEMS.register("thrustwand2", ()->new ThrustWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.EPIC), 10000, 10000, 3,4, 3)); // Increased thrust force
+    public static final RegistryObject<Item>THRUSTWAND = ITEMS.register("thrustwand", ()->new ThrustWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1), 2500, 1000, "Thrust Wand",1.15f, ShardOreItem.EOreType.Mallumon, 1, 1)); // Throws user up or down, [when thrown down, gives the user increased jump height -- to prevent fall death]
+    // Wand no longer affects user
+    // Increased thrust force
 
     //COMPLETED
-    public static final RegistryObject<Item>BINDWANDA = ITEMS.register("bindwand", ()->new BindWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.UNCOMMON), 25000, 25000, 1)); // Bind Two Targets
-    public static final RegistryObject<Item>BINDWANDB = ITEMS.register("bindwand1", ()->new BindWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.RARE), 50000, 50000, 2)); // Wand no longer binds to the player as well as the two targeted entities
-    public static final RegistryObject<Item>BINDWANDC = ITEMS.register("bindwand2", ()->new BindWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).rarity(Rarity.EPIC), 100000, 100000, 3)); // Can target bosses
+    public static final RegistryObject<Item>BINDWAND = ITEMS.register("bindwand", ()->new BindWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1), 25000, 25000, "Bind Wand",2f, ShardOreItem.EOreType.Mallumon)); // Bind Two Targets
+    // Wand no longer binds to the player as well as the two targeted entities
+    // Can target bosses
 
     //SYLVRS REQUEST -- Clock that changes night to day
-    public static final RegistryObject<Item>TIMEDIAL = ITEMS.register("timedial", ()->new TimeDial(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB)));
+    public static final RegistryObject<Item>TIMEDIAL = ITEMS.register("timedial", ()->new TimeDial(new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.CREATIVETAB_TAB)));
+
+    //SYLVRS REQUEST -- Clock that changes night to day
+    public static final RegistryObject<Item>WANDCORE = ITEMS.register("wandcore", ()->new Item(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.CREATIVETAB_TAB)));
+
 
     //-----------------------------------------------------------------ARMORS-----------------------------------------------------------------
     public static final RegistryObject<Item>PURPLE_WIZARD_ROBE_BOOTS = ITEMS.register("purplewizardboots", ()->new ArmorItem(ModArmorMaterials.ROBES, EquipmentSlot.FEET, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));

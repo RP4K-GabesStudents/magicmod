@@ -6,9 +6,12 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.LargeFireball;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+
+import java.util.List;
 
 public class MyFireball extends LargeFireball {
 
@@ -25,15 +28,31 @@ public class MyFireball extends LargeFireball {
     protected void onHit(HitResult pResult) {
         //super.onHit(pResult);
         if (!this.level.isClientSide) {
-            this.level.explode(null, this.getX(), this.getY(), this.getZ(), (float) explosionPower, breakBlocks, breakBlocks ? Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.NONE);
-            this.discard();
+
+            List<Entity> ent = this.level.getEntities(this, new AABB(pResult.getLocation().x -1, pResult.getLocation().y -1,pResult.getLocation().z -1,pResult.getLocation().x +1,pResult.getLocation().y +1,pResult.getLocation().z +1));
+
+            if(ent.size() == 0)
+            {
+                this.level.explode(null, this.getX(), this.getY(), this.getZ(), (float) explosionPower, breakBlocks, breakBlocks ? Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.NONE);
+                this.discard();
+                return;
+            }
+
+            for(Entity e : ent) {
+
+                if(!(e instanceof MyFireball)) {
+                    this.level.explode(null, this.getX(), this.getY(), this.getZ(), (float) explosionPower, breakBlocks, breakBlocks ? Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.NONE);
+                    this.discard();
+                    return;
+                }
+            }
         }
     }
 
     @Override
     protected void onHitEntity(EntityHitResult pResult) {
         //super.onHitEntity(pResult);
-        if (!this.level.isClientSide) {
+        if (!this.level.isClientSide && !(pResult.getEntity() instanceof MyFireball)) {
             Entity entity = pResult.getEntity();
             Entity entity1 = this.getOwner();
             if(breakBlocks)

@@ -2,6 +2,7 @@ package epicmagicmod.magicmod.items.wands;
 
 
 import epicmagicmod.magicmod.block.ModBlocks;
+import epicmagicmod.magicmod.block.ShardOreItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -69,8 +70,8 @@ public class IceWand extends WandParent{
 
 
 
-    public IceWand(Properties properties, int mainManaUsage, int altManaUsage, int level, int mainDuration, int altDuration) {
-        super(properties, mainManaUsage, altManaUsage, level);
+    public IceWand(Properties properties, int mainManaUsage, int altManaUsage, String name, float multi, ShardOreItem.EOreType bound, int mainDuration, int altDuration) {
+        super(properties, mainManaUsage, altManaUsage,  name,multi,bound);
         this.mainDuration = mainDuration;
         this.altDuration = altDuration;
     }
@@ -83,7 +84,8 @@ public class IceWand extends WandParent{
     @Override
     public boolean mainAbility(Level level, Player player) {
         //(x,y,z,x,y,z) middle is the player
-        int f = lvl * 2;
+        int lvl = getLVL(player.getItemInHand(InteractionHand.MAIN_HAND));
+        int f = (lvl+1) * 2;
         BlockPos playerPos = player.blockPosition();
 
         AABB area = new AABB(playerPos.getX()-f, playerPos.getY()-1, playerPos.getZ()-f, playerPos.getX()+f, playerPos.getY()+2, playerPos.getZ()+f);
@@ -93,10 +95,10 @@ public class IceWand extends WandParent{
             if (e instanceof LivingEntity living){
              //   player.sendSystemMessage(Component.literal("we did a different thing hopefully to" + living.getName()));
 
-                living.forceAddEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, mainDuration, lvl * 2), living);
-                if(lvl == 3)
+                living.forceAddEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (int)(mainDuration * costMult * (lvl+1)), (lvl+1) * 2), living);
+                if(lvl >= 2)
                 {
-                    living.forceAddEffect(new MobEffectInstance(MobEffects.BLINDNESS, mainDuration, lvl), living);
+                    living.forceAddEffect(new MobEffectInstance(MobEffects.BLINDNESS, (int)(mainDuration * costMult * (lvl+1)), lvl), living);
                 }
             }
 
@@ -104,7 +106,7 @@ public class IceWand extends WandParent{
         Stack<BlockState> blockStates = new Stack<>();
         HashSet<BlockPos> pos = new HashSet<>(BuildWall(player.position().add(new Vec3(0,f - 1,0)), new Vec3(0,-1,0), f + 1));
         //investigate manhattan block pos
-        CreateBlockSet(level, blockStates,  pos, mainDuration);
+        CreateBlockSet(level, blockStates,  pos, (int)(mainDuration * costMult * (lvl+1)));
         return blockStates.size() != 0;
     }
 
@@ -142,7 +144,6 @@ public class IceWand extends WandParent{
 
     public void ResetBlocks(Level level, SavedBlocks s)
     {
-        int i =0;
        // Logger.getAnonymousLogger().info("Attempting Destroy");
         while(s.oldPos.size() > 0)
         {
@@ -152,7 +153,6 @@ public class IceWand extends WandParent{
             if(B == Blocks.PACKED_ICE ) {
                 //Logger.getAnonymousLogger().info("Settings block at (" + pos.getX() + ", " + pos.getY() + ", " + pos.getZ() + ") to: " + s.old.get(i).getBlock().getName() + " --> " + i);
                 level.setBlockAndUpdate(pos, state);
-                i++;
             }
         }
         savedBlocks.remove(s);
@@ -162,15 +162,15 @@ public class IceWand extends WandParent{
     public boolean altAbility(Level level, Player player) {
         //Player other = (Player) GetLookAtTarget(level, player, rayLength,true);
         LivingEntity other = getLookAtTarget(level, player, rayLength,false); // DEBUG
+        int lvl = getLVL(player.getItemInHand(InteractionHand.MAIN_HAND));
+        if(lvl >= 1)
+        {
+            other.forceAddEffect(new MobEffectInstance(MobEffects.DIG_SPEED, (int)(altDuration * costMult * (lvl+1)), lvl), other);
+        }
 
         if(lvl >= 2)
         {
-            other.forceAddEffect(new MobEffectInstance(MobEffects.DIG_SPEED, altDuration, lvl), other);
-        }
-
-        if(lvl == 3)
-        {
-            other.forceAddEffect(new MobEffectInstance(MobEffects.BLINDNESS, altDuration, 1), other);
+            other.forceAddEffect(new MobEffectInstance(MobEffects.BLINDNESS, (int)(altDuration * costMult * (lvl+1)), 0), other);
         }
 
 
@@ -179,7 +179,7 @@ public class IceWand extends WandParent{
             //1+ x*2 where X is the distance... distance
             //This forces all spheres to be dist of 3,5,7...
 
-            int dist = lvl+1;
+            int dist = lvl+2;
 
             int trueDist = 1 + dist * 2;
 
@@ -201,7 +201,7 @@ public class IceWand extends WandParent{
             blockPoses.addAll(BuildWall(playerPos, new Vec3(0,0,-1), trueDist));
 
             //investigate manhattan block pos
-            CreateBlockSet(level, blockStates, blockPoses, altDuration);
+            CreateBlockSet(level, blockStates, blockPoses, (int)(altDuration * costMult * (lvl+1)));
 
             return true;
         }

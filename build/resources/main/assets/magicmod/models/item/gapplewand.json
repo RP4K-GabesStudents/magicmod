@@ -2,7 +2,7 @@
 
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "magicmod:item/gapplewand"
+    "layer0": "magicmod:wand/saturation"
   }
 
 

@@ -1,8 +1,14 @@
 package epicmagicmod.magicmod.items.wands;
 
+import epicmagicmod.magicmod.block.ModBlocks;
+import epicmagicmod.magicmod.block.ShardOreItem;
+import epicmagicmod.magicmod.fluid.fluids.ManaFluid;
 import epicmagicmod.magicmod.mana.PlayerManaProvider;
+import net.minecraft.core.Direction;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -10,37 +16,147 @@ import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
+import org.checkerframework.checker.units.qual.C;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.logging.Logger;
 
 
 public abstract class WandParent extends Item {
 
 
-    private final int mainManaUsage;
-    private final int altManaUsage;
+    private int mainManaUsage;
 
-    protected final int lvl;
+    protected int getMainManaUsage(ItemStack is)
+    {
+        return (int)(mainManaUsage * (getLVL(is)+1) * costMult);
+    }
 
-    public WandParent(Properties properties, int mainManaUsage, int altManaUsage, int level) {
+    private int altManaUsage;
+
+    protected int getAltManaUsage(ItemStack is)
+    {
+        return (int)(altManaUsage * (getLVL(is)+1) * costMult);
+    }
+
+    String name;
+    protected int getLVL(ItemStack is){
+
+        if(!is.hasTag())
+            return 0;
+
+        return is.getTag().getInt("testlvl");
+    }
+
+    private ShardOreItem.EOreType bound;
+    private ShardOreItem item;
+
+    public Item getShard()
+    {
+        if(item == null)
+        {
+            setOreItem();
+        }
+        return item.getShard();
+    }
+
+    public ManaFluid getFluid()
+    {
+        if(item == null)
+        {
+            setOreItem();
+        }
+        return item.getFluid();
+    }
+
+    private void setOreItem()
+    {
+        switch (bound) {
+            case Blacite -> item = ModBlocks.BlaciteOreItem.get();
+            case Granizous -> item = ModBlocks.GrazinousOreItem.get();
+            case Mallumon -> item = ModBlocks.MallumonOreItem.get();
+            case Torintrin -> item = ModBlocks.TorintrinOreItem.get();
+        }
+    }
+
+    protected final float costMult;
+
+    public WandParent(Properties properties, int mainManaUsage, int altManaUsage, String name, float costMult, ShardOreItem.EOreType bound) {
         super(properties);
         this.mainManaUsage = mainManaUsage;
         this.altManaUsage = altManaUsage;
-        this.lvl = level;
+        this.costMult = costMult;
+        this.name = name;
+        this.bound = bound;
+
+    }
+
+    @Override
+    public Rarity getRarity(ItemStack pStack) {
+        return switch (getLVL(pStack))
+        {
+            case 0 -> Rarity.COMMON;
+            case 1 -> Rarity.UNCOMMON;
+            case 2 -> Rarity.RARE;
+            default -> Rarity.EPIC;
+        };
+    }
+
+    private static ItemStack LevelUpWand(ItemStack is)
+    {
+        int lvl = 0;
+        if(is.hasTag()) {
+            Logger.getAnonymousLogger().info("BEFORE: " + is.getTag().getInt("testlvl"));
+
+            lvl = is.getTag().getInt("testlvl");
+        }
+        CompoundTag nbtData = new CompoundTag();
+
+        nbtData.putInt("testlvl", lvl+1);
+        is.setTag(nbtData);
+
+        Logger.getAnonymousLogger().info("AFTER: " + is.getTag().getInt("testlvl"));
+
+
+        return is;
     }
 
 
+
+
+    @Override
+    public Component getName(ItemStack pStack) {
+
+        return switch (getLVL(pStack))
+                {
+                    case 0 -> Component.literal(name);
+                    case 1 -> Component.literal("Novice " + name);
+                    case 2 -> Component.literal("Adept "+ name);
+                    default -> Component.literal("Empowered " + name + " LV. " + (getLVL(pStack)-2));
+                };
+    }
+
+    @Override
+    public boolean isFoil(ItemStack pStack) {
+        return getLVL(pStack) >= 3;
+    }
+
     // this is what all wands must do to shoot
     public final void activate(Level level, Player player){
-
         if(level.isClientSide()){
             return;
         }
@@ -48,11 +164,11 @@ public abstract class WandParent extends Item {
 
             if(!player.isCrouching())
             {
-                if (playerMana.getMana() >= mainManaUsage || player.isCreative()){
+                if (playerMana.getMana() >= getMainManaUsage(player.getItemInHand(InteractionHand.MAIN_HAND)) || player.isCreative()){
 
                     if(mainAbility(level, player)) {
                         player.sendSystemMessage(Component.literal("MAIN ATTACK"));
-                        playerMana.augmentMana(-mainManaUsage, (ServerPlayer) player);
+                        playerMana.augmentMana(-getMainManaUsage(player.getItemInHand(InteractionHand.MAIN_HAND)), (ServerPlayer) player);
                     }
                     else
                     {
@@ -62,12 +178,13 @@ public abstract class WandParent extends Item {
             }
             else
             {
-                if (playerMana.getMana() >= mainManaUsage || player.isCreative()){
+                if (playerMana.getMana() >= getAltManaUsage(player.getItemInHand(InteractionHand.MAIN_HAND)) || player.isCreative()){
 
                     if(altAbility(level, player)) {
                         player.sendSystemMessage(Component.literal("ALT ATTACK"));
 
-                        playerMana.augmentMana(-mainManaUsage, (ServerPlayer) player);
+                        playerMana.augmentMana(-getAltManaUsage(player.getItemInHand(InteractionHand.MAIN_HAND)), (ServerPlayer) player);
+                        //player.setItemInHand(InteractionHand.MAIN_HAND, LevelUpWand(player.getItemInHand(InteractionHand.MAIN_HAND)));
                     }
                     else{
                         player.sendSystemMessage(Component.literal("ALT ATTACK MISSED"));
@@ -81,7 +198,7 @@ public abstract class WandParent extends Item {
     {
         //RAY END POINT - TO WHERE IT WILL TRAVEL TO
         Vec3 playerRotation = player.getViewVector(1f).normalize();
-        Vec3 rayPath = playerRotation.scale(rayLength * lvl);
+        Vec3 rayPath = playerRotation.scale(rayLength * getLVL(player.getItemInHand(InteractionHand.MAIN_HAND)));
 
         Vec3 from = player.getEyePosition(0);
         Vec3 to = from.add(rayPath);
@@ -145,7 +262,7 @@ public abstract class WandParent extends Item {
     {
         //RAY END POINT - TO WHERE IT WILL TRAVEL TO
         Vec3 playerRotation = player.getViewVector(1f).normalize();
-        Vec3 rayPath = playerRotation.scale(rayLength * this.lvl);
+        Vec3 rayPath = playerRotation.scale(rayLength * this.getLVL(player.getItemInHand(InteractionHand.MAIN_HAND)));
 
         Vec3 from = player.getEyePosition(0);
         Vec3 to = from.add(rayPath);
@@ -182,9 +299,9 @@ public abstract class WandParent extends Item {
     }
 
 
-    protected boolean CanCast(LivingEntity target) {
+    protected boolean CanCast(Player player, LivingEntity target) {
 
-        if(lvl == 1)
+        if(getLVL(player.getItemInHand(InteractionHand.MAIN_HAND)) == 1)
         {
             if (target instanceof Player)
             {
@@ -192,7 +309,7 @@ public abstract class WandParent extends Item {
             }
         }
 
-        if(lvl <= 2)
+        if(getLVL(player.getItemInHand(InteractionHand.MAIN_HAND)) <= 2)
         {
             if(target instanceof WitherBoss || target instanceof EnderDragon)
             {

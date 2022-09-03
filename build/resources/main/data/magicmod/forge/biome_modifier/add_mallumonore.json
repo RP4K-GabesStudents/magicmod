@@ -1,0 +1,10 @@
+{
+
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_end",
+  "features": "magicmod:mallumon_ore_placed",
+  "step": "raw_generation"
+
+
+
+}
