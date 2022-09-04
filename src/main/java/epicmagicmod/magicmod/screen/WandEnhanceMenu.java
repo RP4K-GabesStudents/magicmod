@@ -1,58 +1,70 @@
 package epicmagicmod.magicmod.screen;
 
 import epicmagicmod.magicmod.block.ModBlocks;
-import epicmagicmod.magicmod.block.ShardOreItem;
-import epicmagicmod.magicmod.block.entity.ManaExtractorBlockEntity;
+import epicmagicmod.magicmod.block.entity.WandEnhanceBlockEntity;
 import epicmagicmod.magicmod.items.ModItems;
-import epicmagicmod.magicmod.items.wands.WandParent;
+import net.minecraft.core.Vec3i;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.CapabilityItemHandler;
+
+import java.util.logging.Logger;
 
 
 public class WandEnhanceMenu extends AbstractContainerMenu {
 
 
 
-    public final ManaExtractorBlockEntity blockEntity;
+    public final WandEnhanceBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
+
+    public static final Vec3i[] LOCATIONS = new Vec3i[]
+            {
+                  new Vec3i(80,34,0),
+                    new Vec3i(47,6,0),
+                    new Vec3i(80,0,0),
+                    new Vec3i(113,6,0),
+                    new Vec3i(27,34,0),
+                    new Vec3i(47, 62,0),
+                    new Vec3i(80,68,0),
+                    new Vec3i(113, 62,0),
+                    new Vec3i(133, 34,0)
+            };
 
 
 
 
 
     protected WandEnhanceMenu(int pContainerId, Inventory inv, FriendlyByteBuf data) {
-        this(pContainerId, inv, inv.player.level.getBlockEntity(data.readBlockPos()), new SimpleContainerData(6));
+        this(pContainerId, inv, inv.player.level.getBlockEntity(data.readBlockPos()), new SimpleContainerData(12));
     }
 
     public WandEnhanceMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data){
-        super(ModMenuType.MANA_MENU.get(), pContainerId);
-        checkContainerSize(inv, 6);
-        blockEntity = (ManaExtractorBlockEntity) entity;
+        super(ModMenuType.WAND_MENU.get(), pContainerId);
+        checkContainerSize(inv, 9);
+        blockEntity = (WandEnhanceBlockEntity) entity;
         level = inv.player.level;
         this.data = data;
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
         blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(iItemHandler -> {
-            addSlot(new RestrictedSlot(iItemHandler, 0, 79, 40, new Item[0], WandParent.class)); // WAND
-            addSlot(new RestrictedSlot(iItemHandler, 1, 46, 12, new Item[] {ModItems.WANDCORE.get()}, null));
-            addSlot(new RestrictedSlot(iItemHandler, 2, 79, 6, new Item[] {ModItems.WANDCORE.get()}, null));
-            addSlot(new RestrictedSlot(iItemHandler, 3, 112, 12, new Item[] {ModItems.WANDCORE.get()}, null));
-            addSlot(new RestrictedSlot(iItemHandler, 4, 26, 40, new Item[] {ModItems.GRAZINOUS_SHARD.get(), ModItems.TORINTRIN_SHARD.get(), ModItems.BLACITE_SHARD.get(), ModItems.MALLUMON_SHARD.get()}, null));
-            addSlot(new RestrictedSlot(iItemHandler, 5, 46, 68, new Item[] {ModItems.GRAZINOUS_MANA_BUCKET.get(), ModItems.TORINTRIN_MANA_BUCKET.get(), ModItems.BLACITE_MANA_BUCKET.get(), ModItems.MALLUMON_MANA_BUCKET.get()}, null));
-            addSlot(new RestrictedSlot(iItemHandler, 4, 79, 74, new Item[] {ModItems.GRAZINOUS_SHARD.get(), ModItems.TORINTRIN_SHARD.get(), ModItems.BLACITE_SHARD.get(), ModItems.MALLUMON_SHARD.get()}, null));
-            addSlot(new RestrictedSlot(iItemHandler, 5, 112, 168, new Item[] {ModItems.GRAZINOUS_MANA_BUCKET.get(), ModItems.TORINTRIN_MANA_BUCKET.get(), ModItems.BLACITE_MANA_BUCKET.get(), ModItems.MALLUMON_MANA_BUCKET.get()}, null));
-            addSlot(new RestrictedSlot(iItemHandler, 4, 132, 40, new Item[] {ModItems.GRAZINOUS_SHARD.get(), ModItems.TORINTRIN_SHARD.get(), ModItems.BLACITE_SHARD.get(), ModItems.MALLUMON_SHARD.get()}, null));
+            addSlot(new RestrictedSlot(iItemHandler, 0, LOCATIONS[0].getX(), LOCATIONS[0].getY(), new Item[] {ModItems.FIREWAND.get(), ModItems.GAPPLEWAND.get(), ModItems.BINDWAND.get(), ModItems.ICEWAND.get(), ModItems.LIGHTNINGWAND.get(), ModItems.TELEPORTWAND.get(), ModItems.THRUSTWAND.get()})); // WAND
+            addSlot(new RestrictedSlot(iItemHandler, 1, LOCATIONS[1].getX(), LOCATIONS[1].getY(), new Item[] {ModItems.WANDCORE.get()}));
+            addSlot(new RestrictedSlot(iItemHandler, 2, LOCATIONS[2].getX(), LOCATIONS[2].getY(), new Item[] {ModItems.WANDCORE.get()}));
+            addSlot(new RestrictedSlot(iItemHandler, 3, LOCATIONS[3].getX(), LOCATIONS[3].getY(), new Item[] {ModItems.WANDCORE.get()}));
+            addSlot(new RestrictedSlot(iItemHandler, 4, LOCATIONS[4].getX(), LOCATIONS[4].getY(), new Item[] {ModItems.GRAZINOUS_SHARD.get(), ModItems.TORINTRIN_SHARD.get(), ModItems.BLACITE_SHARD.get(), ModItems.MALLUMON_SHARD.get()}));
+            addSlot(new RestrictedSlot(iItemHandler, 5, LOCATIONS[5].getX(), LOCATIONS[5].getY(), new Item[] {ModItems.GRAZINOUS_MANA_BUCKET.get(), ModItems.TORINTRIN_MANA_BUCKET.get(), ModItems.BLACITE_MANA_BUCKET.get(), ModItems.MALLUMON_MANA_BUCKET.get()}));
+            addSlot(new RestrictedSlot(iItemHandler, 6, LOCATIONS[6].getX(), LOCATIONS[6].getY(), new Item[] {ModItems.GRAZINOUS_SHARD.get(), ModItems.TORINTRIN_SHARD.get(), ModItems.BLACITE_SHARD.get(), ModItems.MALLUMON_SHARD.get()}));
+            addSlot(new RestrictedSlot(iItemHandler, 7, LOCATIONS[7].getX(), LOCATIONS[7].getY(), new Item[] {ModItems.GRAZINOUS_MANA_BUCKET.get(), ModItems.TORINTRIN_MANA_BUCKET.get(), ModItems.BLACITE_MANA_BUCKET.get(), ModItems.MALLUMON_MANA_BUCKET.get()}));
+            addSlot(new RestrictedSlot(iItemHandler, 8, LOCATIONS[8].getX(), LOCATIONS[8].getY(), new Item[] {ModItems.GRAZINOUS_SHARD.get(), ModItems.TORINTRIN_SHARD.get(), ModItems.BLACITE_SHARD.get(), ModItems.MALLUMON_SHARD.get()}));
         });
         addDataSlots(data);
     }
@@ -62,7 +74,7 @@ public class WandEnhanceMenu extends AbstractContainerMenu {
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 86 + i * 18));
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 92 + i * 18));
             }
         }
     }
@@ -123,13 +135,13 @@ public class WandEnhanceMenu extends AbstractContainerMenu {
 
     private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
+            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 150));
         }
     }
 
     @Override
     public boolean stillValid(Player pPlayer) {
-        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), pPlayer, ModBlocks.MANA_EXTRACTOR.get());
+        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), pPlayer, ModBlocks.WAND_ALTAR.get());
     }
 
     public boolean isCrafting()
@@ -141,22 +153,19 @@ public class WandEnhanceMenu extends AbstractContainerMenu {
     {
         int progress = data.get(0);
         int max = data.get(1);
-        int arrowSize = 18;
+        int arrowSize = 92;
         return  max != 0 && progress != 0 ? progress * arrowSize / max : 0;
     }
 
-    public boolean getValidItem(int idx)
+    public int getValidItem(int idx)
     {
-        int progress = data.get(2);
-        int max = data.get(3);
-        int arrowSize = 64;
-        return true;
+        return data.get(idx);
         //return  max != 0 && progress != 0 ? progress * arrowSize / max : 0;
     }
 
     public int getFluidColor()
     {
-        return data.get(4);
+        return data.get(2);
     }
 
 }

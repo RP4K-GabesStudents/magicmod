@@ -21,7 +21,7 @@ public class ModMenuType {
 
     }
     public static final RegistryObject<MenuType<ManaExtractionMenu>>MANA_MENU = registerMenuType(ManaExtractionMenu::new, "mana_extraction_menu");
-
+    public static final RegistryObject<MenuType<WandEnhanceMenu>>WAND_MENU = registerMenuType(WandEnhanceMenu::new, "wand_altar");
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>>registerMenuType(IContainerFactory<T> factory, String name){
 
         return MENUS.register(name, ()-> IForgeMenuType.create(factory));

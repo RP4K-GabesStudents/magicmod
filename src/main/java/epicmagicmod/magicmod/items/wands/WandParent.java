@@ -116,7 +116,7 @@ public abstract class WandParent extends Item {
         };
     }
 
-    private static ItemStack LevelUpWand(ItemStack is)
+    public static ItemStack LevelUpWand(ItemStack is)
     {
         int lvl = 0;
         if(is.hasTag()) {
@@ -323,8 +323,6 @@ public abstract class WandParent extends Item {
 
     public abstract boolean mainAbility(Level level, Player player);
     public abstract boolean altAbility(Level level, Player player);
-
-
 
 
 }

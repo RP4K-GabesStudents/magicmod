@@ -11,6 +11,7 @@ import epicmagicmod.magicmod.networking.ModMessages;
 import epicmagicmod.magicmod.potion.ModPotions;
 import epicmagicmod.magicmod.screen.ManaExtractionScreen;
 import epicmagicmod.magicmod.screen.ModMenuType;
+import epicmagicmod.magicmod.screen.WandEnhanceScreen;
 import epicmagicmod.magicmod.util.BetterBrewingRecipe;
 import epicmagicmod.magicmod.world.feature.ModConfiguredFeatures;
 import epicmagicmod.magicmod.world.feature.ModPlacedFeatures;
@@ -143,7 +144,7 @@ public class main {
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MALLUMON_MANA.get(), RenderType.solid());
 
             MenuScreens.register(ModMenuType.MANA_MENU.get(), ManaExtractionScreen::new);
-
+            MenuScreens.register(ModMenuType.WAND_MENU.get(), WandEnhanceScreen::new);
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());

@@ -13,12 +13,12 @@ import net.minecraft.world.entity.player.Inventory;
 import java.util.logging.Logger;
 
 
-public class WandEnhanceScreen extends AbstractContainerScreen<ManaExtractionMenu>{
+public class WandEnhanceScreen extends AbstractContainerScreen<WandEnhanceMenu>{
 
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(main.MODID, "textures/gui/mana_extractor_gui.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(main.MODID, "textures/gui/upgrade_altar_gui.png");
 
-    public WandEnhanceScreen(ManaExtractionMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public WandEnhanceScreen(WandEnhanceMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
 
@@ -26,7 +26,7 @@ public class WandEnhanceScreen extends AbstractContainerScreen<ManaExtractionMen
     protected void init() {
         super.init();
         imageWidth = 176; // 176 by def
-        imageHeight = 166; // 166 by def
+        imageHeight = 182; // 166 by def
     }
 
     @Override
@@ -38,31 +38,39 @@ public class WandEnhanceScreen extends AbstractContainerScreen<ManaExtractionMen
         int y = (height-imageHeight)/2;
 
         this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
-        renderProgressArrow(pPoseStack, x, y);
 
 
-        RenderSystem.setShaderColor(
-                FastColor.ARGB32.red(menu.getFluidColor()) / 255f,
-                FastColor.ARGB32.green(menu.getFluidColor()) /255f,
-                FastColor.ARGB32.blue(menu.getFluidColor()) / 255f,
-                FastColor.ARGB32.alpha(menu.getFluidColor()) / 255f);
-        renderFluidBar(pPoseStack, x, y);
-
-    }
-
-    private void renderProgressArrow(PoseStack pPoseStack, int x, int y) {
-        if(menu.isCrafting())
-        {
-            blit(pPoseStack, x + 49, y + 19, 176, 0, 8,menu.getScaledArrowProgress());
-            blit(pPoseStack, x + 78, y + 19, 176, 0, 8,menu.getScaledArrowProgress());
+        if(!menu.isCrafting()) {
+            for (int i = 0; i < 9; i++) // each inventory idx
+            {
+                switch (menu.getValidItem(i + 3)) {
+                    case -1 -> RenderSystem.setShaderColor(0.54f, 0.0963f, 0.081f, 1f);
+                    case 0 -> RenderSystem.setShaderColor(0f, 0f, 0f, 0.2f);
+                    case 1 -> RenderSystem.setShaderColor(0.453f, 1f, 0.330f, 1f);
+                }
+                blit(pPoseStack, x + WandEnhanceMenu.LOCATIONS[i].getX() - 8, y + WandEnhanceMenu.LOCATIONS[i].getY(), imageWidth, 0, 32, 32);
+            }
         }
-    }
+        else
+        {
+            for (int i = 0; i < 9; i++) // each inventory idx
+            {
+                RenderSystem.setShaderColor(
+                        FastColor.ARGB32.red(menu.getFluidColor()) / 255f,
+                        FastColor.ARGB32.green(menu.getFluidColor()) /255f,
+                        FastColor.ARGB32.blue(menu.getFluidColor()) / 255f,
+                       FastColor.ARGB32.alpha(menu.getFluidColor()) / 255f);
 
-    private void renderFluidBar(PoseStack pPoseStack, int x, int y) {
-        Logger.getAnonymousLogger().info("TEST: " + (18+(64-menu.getScaledFluidProgress())));
+                blit(pPoseStack, x+32, y - menu.getProgress(), 0, imageHeight+32, imageWidth, menu.getProgress());
+                blit(pPoseStack, x + WandEnhanceMenu.LOCATIONS[i].getX() - 8, y + WandEnhanceMenu.LOCATIONS[i].getY() - menu.getProgress(), imageWidth, 0, 32, 32-92+menu.getProgress());
+            }
+        }
 
-        //When PV is end - cur it goes up... (13+64-scale)
-        blit(pPoseStack, x + 156, y + 77 - menu.getScaledFluidProgress(), 176, 18, 8, menu.getScaledFluidProgress());
+        //renderProgressArrow(pPoseStack, x, y);
+
+
+
+
     }
 
     @Override

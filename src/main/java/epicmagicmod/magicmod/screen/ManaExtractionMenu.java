@@ -41,8 +41,8 @@ public class ManaExtractionMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(iItemHandler -> {
-            addSlot(new RestrictedSlot(iItemHandler, 0, 59, 14, null, ShardOreItem.class));
-            addSlot(new RestrictedSlot(iItemHandler, 1, 134, 14, new Item[] {Items.BUCKET}, null));
+            addSlot(new RestrictedSlot(iItemHandler, 0, 59, 14, new Item[] {ModBlocks.GrazinousOreItem.get(), ModBlocks.TorintrinOreItem.get(), ModBlocks.BlaciteOreItem.get(), ModBlocks.MallumonOreItem.get() }));
+            addSlot(new RestrictedSlot(iItemHandler, 1, 134, 14, new Item[] {Items.BUCKET}));
             addSlot(new RestrictedSlot(iItemHandler, 2, 35, 60));
             addSlot(new RestrictedSlot(iItemHandler, 3, 59, 60));
             addSlot(new RestrictedSlot(iItemHandler, 4, 83, 60));

@@ -98,5 +98,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> MANA_EXTRACTOR = registerBlock("mana_extractor",
             ()-> new ManaExtractorBlock(BlockBehaviour.Properties.of(Material.STONE).strength(3).requiresCorrectToolForDrops()), ModCreativeModeTab.CREATIVETAB_TAB);
 
+    public static final RegistryObject<Block> WAND_ALTAR = registerBlock("wand_altar",
+            ()-> new WandEnhanceBlock(BlockBehaviour.Properties.of(Material.SCULK).strength(9999).requiresCorrectToolForDrops()), ModCreativeModeTab.CREATIVETAB_TAB);
 
 }

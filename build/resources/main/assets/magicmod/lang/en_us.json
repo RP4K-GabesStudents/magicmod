@@ -17,6 +17,7 @@
   "block.magicmod.mallumonore": "Mallumon Ore",
 
   "item.magicmod.timedial": "Sylvrs' Time Dial",
+  "item.magicmod.wandcore": "Wand Core",
 
   "item.magicmod.firewand": "Novice Fire Wand",
   "item.magicmod.firewand1": "Adept Fire Wand",
@@ -52,7 +53,7 @@
   "item.magicmod.purplewizardhelmet": "Novice Hood",
 
   "block.magicmod.mana_extractor" : "Shard Extractor",
-
+  "block.magicmod.wand_altar" : "Wand Altar",
 
   "item.minecraft.potion.effect.mana_modify_potion": "Potion of Mana Regeneration",
   "item.minecraft.splash_potion.effect.mana_modify_potion": "Splash Potion of Mana Regeneration",
