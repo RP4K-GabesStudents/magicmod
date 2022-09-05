@@ -153,7 +153,7 @@ public class WandEnhanceMenu extends AbstractContainerMenu {
     {
         int progress = data.get(0);
         int max = data.get(1);
-        int arrowSize = 92;
+        int arrowSize = 76;
         return  max != 0 && progress != 0 ? progress * arrowSize / max : 0;
     }
 

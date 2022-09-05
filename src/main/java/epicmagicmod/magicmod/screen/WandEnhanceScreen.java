@@ -60,10 +60,17 @@ public class WandEnhanceScreen extends AbstractContainerScreen<WandEnhanceMenu>{
                         FastColor.ARGB32.green(menu.getFluidColor()) /255f,
                         FastColor.ARGB32.blue(menu.getFluidColor()) / 255f,
                        FastColor.ARGB32.alpha(menu.getFluidColor()) / 255f);
-
-                blit(pPoseStack, x+32, y - menu.getProgress(), 0, imageHeight+32, imageWidth, menu.getProgress());
-                blit(pPoseStack, x + WandEnhanceMenu.LOCATIONS[i].getX() - 8, y + WandEnhanceMenu.LOCATIONS[i].getY() - menu.getProgress(), imageWidth, 0, 32, 32-92+menu.getProgress());
+                int prog = getMenu().getProgress();
+                Logger.getAnonymousLogger().info(i + ": " + (71-prog) + "<" + (WandEnhanceMenu.LOCATIONS[i].getY() + 32) );
+                if(71-prog < WandEnhanceMenu.LOCATIONS[i].getY() + 32) {
+                    int sum =  (WandEnhanceMenu.LOCATIONS[i].getY() + 32) - (71-prog);
+                    Logger.getAnonymousLogger().info(i + ": " + sum );
+                    blit(pPoseStack, x + WandEnhanceMenu.LOCATIONS[i].getX() - 8, y + WandEnhanceMenu.LOCATIONS[i].getY(), imageWidth, 0, 32, sum);
+                }
             }
+            //blit(pPoseStack, x + WandEnhanceMenu.LOCATIONS[i].getX() - 8, y + WandEnhanceMenu.LOCATIONS[i].getY() - menu.getProgress(), imageWidth, 0, 32, 32-92+menu.getProgress());
+            //Circular Fill
+            blit(pPoseStack, x+32, y+14, 0, imageHeight, 118, menu.getProgress());
         }
 
         //renderProgressArrow(pPoseStack, x, y);
