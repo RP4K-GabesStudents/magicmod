@@ -19,9 +19,9 @@ public class ModPotions {
             () -> new Potion(new MobEffectInstance(ModEffects.MANA_MODIFY_EFFECT.get(), 900, 0)));
     public static final RegistryObject<Potion> MANA_MODIFY_POTION_2 = POTIONS.register("mana_modify_potion_2",
             () -> new Potion(new MobEffectInstance(ModEffects.MANA_MODIFY_EFFECT.get(), 600, 1)));
-    public static final RegistryObject<Potion> MANA_CAP_POTION = POTIONS.register("mana_cap_potion",
+    public static final RegistryObject<Potion> SPEEDY_POTION = POTIONS.register("speedy_potion",
             () -> new Potion(new MobEffectInstance(ModEffects.MANA_CAP_EFFECT.get(), 12000, 0)));
-    public static final RegistryObject<Potion> MANA_CAP_POTION_2 = POTIONS.register("mana_cap_potion_2",
+    public static final RegistryObject<Potion> SPEEDY_POTION_2 = POTIONS.register("speedy_potion_2",
             () -> new Potion(new MobEffectInstance(ModEffects.MANA_CAP_EFFECT.get(), 9000, 1)));
 
 
