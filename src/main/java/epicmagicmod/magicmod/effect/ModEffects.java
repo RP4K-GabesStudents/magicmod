@@ -15,7 +15,7 @@ public class ModEffects {
     public static final RegistryObject<MobEffect> MANA_MODIFY_EFFECT = MOB_EFFECTS.register("mana_modify_effect",
             () -> new ManaModifyEffect(MobEffectCategory.BENEFICIAL, 10371829));
     public static final RegistryObject<MobEffect> MANA_CAP_EFFECT = MOB_EFFECTS.register("mana_cap_effect",
-            () -> new ManaCapEffect(MobEffectCategory.BENEFICIAL, 13696768));
+            () -> new SpeedyEffect(MobEffectCategory.BENEFICIAL, 13696768));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
