@@ -72,16 +72,16 @@
 
   "effect.magicmod.mana_modify_effect": "Mana Regen",
 
-  "item.minecraft.potion.effect.speedy_effect": "Potion of Enhanced Speed",
-  "item.minecraft.splash_potion.effect.speedy_effect": "Splash Potion of Enhanced Speed",
-  "item.minecraft.lingering_potion.effect.speedy_effect": "Lingering Potion of Enhanced Speed",
+  "item.minecraft.potion.effect.speedy_potion": "Potion of Enhanced Speed",
+  "item.minecraft.splash_potion.effect.speedy_potion": "Splash Potion of Enhanced Speed",
+  "item.minecraft.lingering_potion.effect.speedy_potion": "Lingering Potion of Enhanced Speed",
 
-  "item.minecraft.potion.effect.speedy_effect_2": "Potion of Enhanced Speed",
-  "item.minecraft.splash_potion.effect.speedy_effect_2": "Splash Potion of Enhanced Speed",
-  "item.minecraft.lingering_potion.effect.speedy_effect_2": "Lingering Potion of Enhanced Speed",
+  "item.minecraft.potion.effect.speedy_potion_2": "Potion of Enhanced Speed",
+  "item.minecraft.splash_potion.effect.speedy_potion_2": "Splash Potion of Enhanced Speed",
+  "item.minecraft.lingering_potion.effect.speedy_potion_2": "Lingering Potion of Enhanced Speed",
 
-  "item.minecraft.tipped_arrow.effect.speedy_effect": "Arrow of Enhanced Speed",
-  "item.minecraft.tipped_arrow.effect.speedy_effect_2": "Arrow of Enhanced Speed",
+  "item.minecraft.tipped_arrow.effect.speedy_potion": "Arrow of Enhanced Speed",
+  "item.minecraft.tipped_arrow.effect.speedy_potion_2": "Arrow of Enhanced Speed",
 
-  "effect.magicmod.speedy_effect": "Enhanced Speed"
+  "effect.magicmod.mana_cap_effect": "Enhanced Speed"
 }
