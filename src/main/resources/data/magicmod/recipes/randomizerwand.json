@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ACA",
+    "BHB",
+    " S "
+  ],
+  "key": {
+    "A": {
+      "item": "magicmod:grazinous"
+    },
+    "B": {
+      "item": "magicmod:torintrin"
+    },
+    "C": {
+      "item": "magicmod:blacite"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "H":
+    {
+      "item" : "magicmod:wandcore"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:randomizerwand"
+  }
+
+
+}

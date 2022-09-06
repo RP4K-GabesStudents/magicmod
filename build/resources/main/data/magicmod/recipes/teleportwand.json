@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "B",
-    "S",
-    "S"
+    "ABA",
+    " H ",
+    " S "
   ],
   "key": {
     "B": {
@@ -11,8 +11,15 @@
     },
     "S": {
       "item": "minecraft:end_rod"
-    }
-  },
+    },
+    "H":
+    {
+      "item" : "magicmod:wandcore"
+    },
+    "A": {
+    "item": "magicmod:torintrin"
+  }
+},
 
   "result": {
     "item": "magicmod:teleportwand"

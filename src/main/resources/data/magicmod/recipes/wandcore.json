@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SBS",
+    "BHB",
+    "SBS"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "S": {
+      "item": "minecraft:copper_ingot"
+    },
+    "H":
+    {
+      "item" : "minecraft:diamond"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:wandcore"
+  }
+
+
+}

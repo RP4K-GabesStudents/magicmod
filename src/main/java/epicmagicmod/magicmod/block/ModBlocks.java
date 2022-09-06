@@ -95,10 +95,10 @@ public class ModBlocks {
     //Change texture
 
 
-    public static final RegistryObject<Block> MANA_EXTRACTOR = registerBlock("mana_extractor",
+    public static final RegistryObject<Block> MANA_EXTRACTOR = registerBlock("manaextractor",
             ()-> new ManaExtractorBlock(BlockBehaviour.Properties.of(Material.STONE).strength(3).requiresCorrectToolForDrops()), ModCreativeModeTab.CREATIVETAB_TAB);
 
-    public static final RegistryObject<Block> WAND_ALTAR = registerBlock("wand_altar",
+    public static final RegistryObject<Block> WAND_ALTAR = registerBlock("wandaltar",
             ()-> new WandEnhanceBlock(BlockBehaviour.Properties.of(Material.SCULK).strength(9999).requiresCorrectToolForDrops()), ModCreativeModeTab.CREATIVETAB_TAB);
 
 }

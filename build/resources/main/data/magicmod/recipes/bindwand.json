@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SBS",
+    "HHH",
+    " S "
+  ],
+  "key": {
+    "B": {
+      "item": "magicmod:mallumon"
+    },
+    "S": {
+      "item": "minecraft:obsidian"
+    },
+    "H":
+    {
+      "item" : "magicmod:wandcore"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:bindwand"
+  }
+
+
+}

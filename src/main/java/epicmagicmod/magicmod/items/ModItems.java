@@ -31,37 +31,45 @@ public class ModItems {
     //-----------------------------------------------------------------WANDS-----------------------------------------------------------------
 
     //COMPLETED
-    public static final RegistryObject<Item>FIREWAND = ITEMS.register("firewand", ()->new FireWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1), 10000, 2500, "Fire Wand", 1.25f, ShardOreItem.EOreType.Blacite));// Shoots a 2D circle of fire balls, (8 total) also gives user 50 ticks of fire resistance and resistance. Also increases force of wand
+    public static final RegistryObject<Item>FIREWAND = ITEMS.register("firewand", ()->new FireWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 10000, 2500, "Fire Wand", 1.25f, ShardOreItem.EOreType.Blacite));// Shoots a 2D circle of fire balls, (8 total) also gives user 50 ticks of fire resistance and resistance. Also increases force of wand
 
     //COMPLETED
-    public static final RegistryObject<Item>ICEWAND = ITEMS.register("icewand", ()->new IceWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1), 1000, 25000,  "Ice Wand", 0.75f, ShardOreItem.EOreType.Granizous, 60, 300));
+    public static final RegistryObject<Item>ICEWAND = ITEMS.register("icewand", ()->new IceWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 1000, 25000,  "Ice Wand", 0.75f, ShardOreItem.EOreType.Granizous, 60, 300));
     // increaes range and size, Alt attack now gives mining fatigue
     // increases range and size, both also now give blindness to affected entities
 
     //COMPLETED
-    public static final RegistryObject<Item>LIGHTNINGWAND = ITEMS.register("lightningwand", ()->new LightningWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1), 10000, 10000, "Lightning Wand", 1.5f, ShardOreItem.EOreType.Torintrin, 1));
+    public static final RegistryObject<Item>LIGHTNINGWAND = ITEMS.register("lightningwand", ()->new LightningWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 10000, 10000, "Lightning Wand", 1.5f, ShardOreItem.EOreType.Torintrin, 1));
     // Increases AOE
     // Increases AOE, Lightning now strikes the same place 3 times
 
     //COMPLETED
-    public static final RegistryObject<Item>TELEPORTWAND = ITEMS.register("teleportwand", ()->new TeleportWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1), 20000, 50000, "Teleport Wand", 0.6f, ShardOreItem.EOreType.Torintrin));
+    public static final RegistryObject<Item>TELEPORTWAND = ITEMS.register("teleportwand", ()->new TeleportWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 20000, 50000, "Teleport Wand", 0.6f, ShardOreItem.EOreType.Torintrin));
     // gives speed boost and jump boost on teleport (for both entities) -- Removes Naseua effect
     // Also allows TPing of Bosses -- Also gives swapped entites nasuea
 
     //COMPLETED
-    public static final RegistryObject<Item>GAPPLEWAND = ITEMS.register("gapplewand", ()->new GappleWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1), 10000, 2500, "GApple Wand",0.9f, ShardOreItem.EOreType.Granizous)); // Fully heals health bar
+    public static final RegistryObject<Item>GAPPLEWAND = ITEMS.register("gapplewand", ()->new GappleWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 10000, 2500, "GApple Wand",0.9f, ShardOreItem.EOreType.Granizous)); // Fully heals health bar
     // Full heals hunger bar
     //Gives Resistance, Absorption and Regeneration
 
     //COMPLETED
-    public static final RegistryObject<Item>THRUSTWAND = ITEMS.register("thrustwand", ()->new ThrustWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1), 2500, 1000, "Thrust Wand",1.15f, ShardOreItem.EOreType.Mallumon, 1, 1)); // Throws user up or down, [when thrown down, gives the user increased jump height -- to prevent fall death]
+    public static final RegistryObject<Item>THRUSTWAND = ITEMS.register("thrustwand", ()->new ThrustWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 2500, 1000, "Thrust Wand",1.15f, ShardOreItem.EOreType.Mallumon, 1, 1)); // Throws user up or down, [when thrown down, gives the user increased jump height -- to prevent fall death]
     // Wand no longer affects user
     // Increased thrust force
 
     //COMPLETED
-    public static final RegistryObject<Item>BINDWAND = ITEMS.register("bindwand", ()->new BindWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1), 25000, 25000, "Bind Wand",2f, ShardOreItem.EOreType.Mallumon)); // Bind Two Targets
+    public static final RegistryObject<Item>BINDWAND = ITEMS.register("bindwand", ()->new BindWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 25000, 25000, "Bind Wand",2f, ShardOreItem.EOreType.Mallumon)); // Bind Two Targets
     // Wand no longer binds to the player as well as the two targeted entities
     // Can target bosses
+
+    public static final RegistryObject<Item>RANDOMIZERWAND = ITEMS.register("randomizerwand", ()->new BindWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 25000, 25000, "Randomizer Wand",2f, ShardOreItem.EOreType.Granizous)); // Bind Two Targets
+
+    public static final RegistryObject<Item>LIFESTEALWAND = ITEMS.register("lifestealwand", ()->new BindWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 25000, 25000, "Lifesteal Wand",2f, ShardOreItem.EOreType.Mallumon)); // Bind Two Targets
+
+    public static final RegistryObject<Item>SUMMONINGWAND = ITEMS.register("summoningwand", ()->new BindWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 25000, 25000, "Summoning Wand",2f, ShardOreItem.EOreType.Mallumon)); // Bind Two Targets
+
+
 
     //SYLVRS REQUEST -- Clock that changes night to day
     public static final RegistryObject<Item>TIMEDIAL = ITEMS.register("timedial", ()->new TimeDial(new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.CREATIVETAB_TAB)));

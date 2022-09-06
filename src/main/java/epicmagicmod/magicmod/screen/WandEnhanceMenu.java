@@ -14,8 +14,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 
-import java.util.logging.Logger;
-
 
 public class WandEnhanceMenu extends AbstractContainerMenu {
 
@@ -56,7 +54,7 @@ public class WandEnhanceMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(iItemHandler -> {
-            addSlot(new RestrictedSlot(iItemHandler, 0, LOCATIONS[0].getX(), LOCATIONS[0].getY(), new Item[] {ModItems.FIREWAND.get(), ModItems.GAPPLEWAND.get(), ModItems.BINDWAND.get(), ModItems.ICEWAND.get(), ModItems.LIGHTNINGWAND.get(), ModItems.TELEPORTWAND.get(), ModItems.THRUSTWAND.get()})); // WAND
+            addSlot(new RestrictedSlot(iItemHandler, 0, LOCATIONS[0].getX(), LOCATIONS[0].getY(), new Item[] {ModItems.FIREWAND.get(), ModItems.GAPPLEWAND.get(), ModItems.BINDWAND.get(), ModItems.ICEWAND.get(), ModItems.LIGHTNINGWAND.get(), ModItems.TELEPORTWAND.get(), ModItems.THRUSTWAND.get(), ModItems.SUMMONINGWAND.get(), ModItems.RANDOMIZERWAND.get(), ModItems.LIFESTEALWAND.get()})); // WAND
             addSlot(new RestrictedSlot(iItemHandler, 1, LOCATIONS[1].getX(), LOCATIONS[1].getY(), new Item[] {ModItems.WANDCORE.get()}));
             addSlot(new RestrictedSlot(iItemHandler, 2, LOCATIONS[2].getX(), LOCATIONS[2].getY(), new Item[] {ModItems.WANDCORE.get()}));
             addSlot(new RestrictedSlot(iItemHandler, 3, LOCATIONS[3].getX(), LOCATIONS[3].getY(), new Item[] {ModItems.WANDCORE.get()}));

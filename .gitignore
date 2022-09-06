@@ -40,3 +40,6 @@ run/options.txt
 run/logs/debug.log
 run/logs/latest.log
 run/usercache.json
+.gradle/7.4.2/fileHashes/fileHashes.bin
+.gradle/7.4.2/fileHashes/fileHashes.lock
+.gradle/7.4.2/fileHashes/resourceHashesCache.bin

@@ -47,13 +47,17 @@
   "item.magicmod.bindwand1": "Adept Bind Wand",
   "item.magicmod.bindwand2": "Empowered Bind Wand",
 
+  "item.magicmod.randomizerwand": "Randomizer Wand",
+  "item.magicmod.lifestealwand": "Life steal Wand",
+  "item.magicmod.summoningwand": "Summoning Wand",
+
   "item.magicmod.purplewizardboots": "Novice Boots",
   "item.magicmod.purplewizardlegs": "Novice Leggings",
   "item.magicmod.purplewizardchest": "Novice Robe",
   "item.magicmod.purplewizardhelmet": "Novice Hood",
 
-  "block.magicmod.mana_extractor" : "Shard Extractor",
-  "block.magicmod.wand_altar" : "Wand Altar",
+  "block.magicmod.manaextractor" : "Shard Extractor",
+  "block.magicmod.wandaltar" : "Wand Altar",
 
   "item.minecraft.potion.effect.mana_modify_potion": "Potion of Mana Regeneration",
   "item.minecraft.splash_potion.effect.mana_modify_potion": "Splash Potion of Mana Regeneration",

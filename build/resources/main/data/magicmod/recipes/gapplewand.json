@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    " H ",
+    " S "
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "H":
+    {
+      "item" : "magicmod:wandcore"
+    },
+    "A": {
+      "item": "magicmod:grazinous"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:gapplewand"
+  }
+
+
+}

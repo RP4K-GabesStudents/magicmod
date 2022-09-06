@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SBS",
+    "BHB",
+    "SBS"
+  ],
+  "key": {
+    "B": {
+      "item": "magicmod:wandcore"
+    },
+    "S": {
+      "item": "minecraft:copper_block"
+    },
+    "H":
+    {
+      "item" : "minecraft:redstone_block"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:manaextractor"
+  }
+
+
+}

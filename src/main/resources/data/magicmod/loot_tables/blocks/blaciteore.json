@@ -2,14 +2,11 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": {
-        "min": 1,
-        "max": 4
-      },
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "magicmod:blacite"
+          "name": "magicmod:blaciteore"
         }
       ]
     }

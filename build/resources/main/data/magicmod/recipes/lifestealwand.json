@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "H",
+    "B"
+  ],
+  "key": {
+    "B": {
+      "item": "magicmodend:mallumon"
+    },
+    "A": {
+      "item": "minecraft:end_crystal"
+    },
+    "H":
+    {
+      "item" : "magicmod:wandcore"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:lifestealwand"
+  }
+
+
+}

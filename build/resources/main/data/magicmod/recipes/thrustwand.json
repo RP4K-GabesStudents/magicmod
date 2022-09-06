@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BHB",
+    " B "
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:end_rod"
+    },
+    "H":
+    {
+      "item" : "magicmod:wandcore"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:thrustwand"
+  }
+
+
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    " H ",
+    " S "
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:lightning_rod"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "H":
+    {
+      "item" : "magicmod:wandcore"
+    },
+    "A": {
+      "item": "magicmod:torintrin"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:lightningwand"
+  }
+
+
+}

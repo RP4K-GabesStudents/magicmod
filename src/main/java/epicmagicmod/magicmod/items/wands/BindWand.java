@@ -1,6 +1,7 @@
 package epicmagicmod.magicmod.items.wands;
 
 import epicmagicmod.magicmod.block.ShardOreItem;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -18,10 +19,53 @@ public class BindWand extends WandParent{
 
     private final int RayLength = 100;
 
+    Player ply;
+
+
+    /*
+    private void setBound(ItemStack is, LivingEntity target, boolean isA)
+    {
+        LivingEntity A = getA(is);
+        LivingEntity B = getB(is);
+        if(isA)
+        {
+            A = target;
+
+        }
+        else
+        {
+            B = target;
+        }
+        CompoundTag nbtData = new CompoundTag();
+
+        nbtData.put("A", A.serializeNBT());
+        nbtData.put("B", B.serializeNBT());
+        is.setTag(nbtData);
+
+        Logger.getAnonymousLogger().info("AFTER: " + is.getTag().getInt("testlvl"));
+    }
+
+    private LivingEntity getA(ItemStack is)
+    {
+        if(!is.hasTag())
+            return null;
+
+        return is.getTag().("A");
+    }
+
+    private LivingEntity getB(ItemStack is)
+    {
+        if(!is.hasTag())
+            return null;
+
+        return is.getTag().getInt("B");
+    }
+
+*/
+
     LivingEntity A;
     LivingEntity B;
 
-    Player ply;
 
 
     public BindWand(Properties properties, int mainManaUsage, int altManaUsage, String name, float level, ShardOreItem.EOreType bound) {
@@ -136,7 +180,5 @@ public class BindWand extends WandParent{
 
         return false;
     }
-
-
 
 }

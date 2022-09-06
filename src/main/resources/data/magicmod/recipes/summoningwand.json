@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    " H ",
+    " B "
+  ],
+  "key": {
+    "B": {
+      "item": "magicmod:mallumon"
+    },
+    "H":
+    {
+      "item" : "magicmod:wandcore"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:thrustwand"
+  }
+
+
+}

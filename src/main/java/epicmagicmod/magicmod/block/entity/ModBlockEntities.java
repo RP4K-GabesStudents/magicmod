@@ -19,11 +19,11 @@ public class ModBlockEntities {
     }
 
     public static final RegistryObject<BlockEntityType<ManaExtractorBlockEntity>>MANA_EXTRACTOR =
-            BLOCK_ENTITY.register("mana_extractor",
+            BLOCK_ENTITY.register("manaextractor",
                     ()-> BlockEntityType.Builder.of(ManaExtractorBlockEntity::new, ModBlocks.MANA_EXTRACTOR.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<WandEnhanceBlockEntity>>WAND_ENHANCER =
-            BLOCK_ENTITY.register("wand_altar",
+            BLOCK_ENTITY.register("wandaltar",
                     ()-> BlockEntityType.Builder.of(WandEnhanceBlockEntity::new, ModBlocks.WAND_ALTAR.get()).build(null));
 
 

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "magicmod:shardprocessor/blast_furnace_front",
+    "side": "magicmod:shardprocessor/blast_furnace_side",
+    "top": "magicmod:shardprocessor/blast_furnace_top_bottom"
+  }
+}
