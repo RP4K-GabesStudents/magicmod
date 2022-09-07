@@ -63,11 +63,11 @@ public class ModItems {
     // Wand no longer binds to the player as well as the two targeted entities
     // Can target bosses
 
-    public static final RegistryObject<Item>RANDOMIZERWAND = ITEMS.register("randomizerwand", ()->new BindWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 25000, 25000, "Randomizer Wand",2f, ShardOreItem.EOreType.Granizous)); // Bind Two Targets
+    public static final RegistryObject<Item>RANDOMIZERWAND = ITEMS.register("randomizerwand", ()->new RandomizerWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 25000, 25000, "Randomizer Wand",2f, ShardOreItem.EOreType.Granizous)); // Bind Two Targets
 
-    public static final RegistryObject<Item>LIFESTEALWAND = ITEMS.register("lifestealwand", ()->new BindWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 25000, 25000, "Lifesteal Wand",2f, ShardOreItem.EOreType.Mallumon)); // Bind Two Targets
+    public static final RegistryObject<Item>LIFESTEALWAND = ITEMS.register("lifestealwand", ()->new LifeStealWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 25000, 25000, "Lifesteal Wand",2f, ShardOreItem.EOreType.Mallumon)); // Bind Two Targets
 
-    public static final RegistryObject<Item>SUMMONINGWAND = ITEMS.register("summoningwand", ()->new BindWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 25000, 25000, "Summoning Wand",2f, ShardOreItem.EOreType.Mallumon)); // Bind Two Targets
+    public static final RegistryObject<Item>SUMMONINGWAND = ITEMS.register("summoningwand", ()->new SummoningWand(new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1).fireResistant(), 25000, 25000, "Summoning Wand",2f, ShardOreItem.EOreType.Mallumon)); // Bind Two Targets
 
 
 
