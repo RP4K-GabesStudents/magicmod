@@ -7,13 +7,10 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 
-public class SpeedyEffect extends MobEffect {
-
-
-    protected SpeedyEffect(MobEffectCategory pCategory, int pColor) {
+public class DeathAuraEffect extends MobEffect {
+    protected DeathAuraEffect(MobEffectCategory pCategory, int pColor) {
         super(pCategory, pColor);
     }
-
 
     @Override
     public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
@@ -23,17 +20,13 @@ public class SpeedyEffect extends MobEffect {
                 switch(pAmplifier){
 
                     case 0:
-                        pLivingEntity.forceAddEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 2), pLivingEntity);
-                        pLivingEntity.forceAddEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 5, 1), pLivingEntity);
                         break;
 
 
                     case 1:
-                        pLivingEntity.forceAddEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 4), pLivingEntity);
-                        pLivingEntity.forceAddEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 5, 2), pLivingEntity);
-                        pLivingEntity.forceAddEffect(new MobEffectInstance(MobEffects.REGENERATION, 5, 1), pLivingEntity);
-                        pLivingEntity.forceAddEffect(new MobEffectInstance(MobEffects.JUMP, 5, 5), pLivingEntity);
+                        pLivingEntity.forceAddEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 5, 1), pLivingEntity);
                         break;
+
 
                 }
 
@@ -47,6 +40,4 @@ public class SpeedyEffect extends MobEffect {
     public boolean isDurationEffectTick(int pDuration, int pAmplifier) {
         return true;
     }
-
-
 }
