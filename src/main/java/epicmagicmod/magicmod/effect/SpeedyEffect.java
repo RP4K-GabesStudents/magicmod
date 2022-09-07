@@ -1,6 +1,5 @@
 package epicmagicmod.magicmod.effect;
 
-import epicmagicmod.magicmod.mana.PlayerManaProvider;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
