@@ -23,6 +23,10 @@ public class ModPotions {
             () -> new Potion(new MobEffectInstance(ModEffects.MANA_CAP_EFFECT.get(), 12000, 0)));
     public static final RegistryObject<Potion> SPEEDY_POTION_2 = POTIONS.register("speedy_potion_2",
             () -> new Potion(new MobEffectInstance(ModEffects.MANA_CAP_EFFECT.get(), 9000, 1)));
+    public static final RegistryObject<Potion> DEATH_AURA_POTION = POTIONS.register("death_aura_potion",
+            () -> new Potion(new MobEffectInstance(ModEffects.DEATH_AURA_EFFECT.get(), 900, 0)));
+    public static final RegistryObject<Potion> DEATH_AURA_POTION_2 = POTIONS.register("death_aura_potion_2",
+            () -> new Potion(new MobEffectInstance(ModEffects.DEATH_AURA_EFFECT.get(), 400, 1)));
 
 
     public static void register(IEventBus eventBus) {

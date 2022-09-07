@@ -83,5 +83,18 @@
   "item.minecraft.tipped_arrow.effect.speedy_potion": "Arrow of Enhanced Speed",
   "item.minecraft.tipped_arrow.effect.speedy_potion_2": "Arrow of Enhanced Speed",
 
-  "effect.magicmod.mana_cap_effect": "Enhanced Speed"
+  "effect.magicmod.mana_cap_effect": "Enhanced Speed",
+
+  "item.minecraft.potion.effect.death_aura_potion": "Potion of Death Aura",
+  "item.minecraft.splash_potion.effect.death_aura_potion": "Splash Potion of Death Aura",
+  "item.minecraft.lingering_potion.effect.death_aura_potion": "Lingering Potion of Death Aura",
+
+  "item.minecraft.potion.effect.death_aura_potion_2": "Potion of Death Aura",
+  "item.minecraft.splash_potion.effect.death_aura_potion_2": "Splash Potion of Death Aura",
+  "item.minecraft.lingering_potion.effect.death_aura_potion_2": "Lingering Potion of Death Aura",
+
+  "item.minecraft.tipped_arrow.effect.death_aura_potion": "Arrow of Death Aura",
+  "item.minecraft.tipped_arrow.effect.death_aura_potion_2": "Arrow of Death Aura",
+
+  "effect.magicmod.death_aura_effect": "Death Aura"
 }

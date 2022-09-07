@@ -54,7 +54,7 @@ public class DeathAuraEffect extends MobEffect{
                 living.forceAddEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 2, 4), living);
                 living.forceAddEffect(new MobEffectInstance(MobEffects.BLINDNESS, 2, 2), living);
                 living.forceAddEffect(new MobEffectInstance(MobEffects.CONFUSION, 2, 1), living);
-                living.forceAddEffect(new MobEffectInstance(MobEffects.WITHER, 2, 2), living);
+                living.forceAddEffect(new MobEffectInstance(MobEffects.POISON, 2, 2), living);
                 living.forceAddEffect(new MobEffectInstance(MobEffects.BAD_OMEN, 2, 1), living);
                 living.forceAddEffect(new MobEffectInstance(MobEffects.WEAKNESS, 2, 3), living);
                 living.forceAddEffect(new MobEffectInstance(MobEffects.UNLUCK, 2, 2), living);
