@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "H H",
+    "SWS",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:leather"
+    },
+    "S": {
+      "item": "magicmod:grazinous"
+    },
+    "H":
+    {
+      "item" : "magicmod:torintrin"
+    },
+    "W":
+    {
+      "item" : "magicmod:wandcore"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:adeptchestplate"
+  }
+
+
+}

@@ -1,0 +1,23 @@
+{
+
+  "structures": [
+    {
+      "structure": "magicmod:surfaceresearchbuilding",
+      "weight": 1
+    }
+
+
+  ],
+  "placement": {
+
+    "type": "minecraft:random_spread",
+    "salt": 612666,
+    "spacing": 8,
+    "separation": 4
+  }
+
+
+
+
+
+}

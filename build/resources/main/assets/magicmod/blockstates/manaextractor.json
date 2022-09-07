@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "magicmod:block/manaextractor",
+      "y": 90
+    },
+    "facing=north": {
       "model": "magicmod:block/manaextractor"
+    },
+    "facing=south": {
+      "model": "magicmod:block/manaextractor",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "magicmod:block/manaextractor",
+      "y": 270
     }
   }
 }

@@ -1,7 +1,6 @@
 package epicmagicmod.magicmod.items;
 
 
-import epicmagicmod.magicmod.block.ManaLiquidBlock;
 import epicmagicmod.magicmod.block.ModBlocks;
 import epicmagicmod.magicmod.block.ShardOreItem;
 import epicmagicmod.magicmod.fluid.ModFluids;
@@ -12,6 +11,7 @@ import epicmagicmod.magicmod.items.wands.*;
 import epicmagicmod.magicmod.main;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.DyeableArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -79,10 +79,15 @@ public class ModItems {
 
 
     //-----------------------------------------------------------------ARMORS-----------------------------------------------------------------
-    public static final RegistryObject<Item>PURPLE_WIZARD_ROBE_BOOTS = ITEMS.register("purplewizardboots", ()->new ArmorItem(ModArmorMaterials.ROBES, EquipmentSlot.FEET, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));
-    public static final RegistryObject<Item>PURPLE_WIZARD_ROBE_LEGS = ITEMS.register("purplewizardlegs", ()->new ArmorItem(ModArmorMaterials.ROBES, EquipmentSlot.LEGS, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));
-    public static final RegistryObject<Item>PURPLE_WIZARD_ROBE_CHEST = ITEMS.register("purplewizardchest", ()->new ArmorItem(ModArmorMaterials.ROBES, EquipmentSlot.CHEST, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));
-    public static final RegistryObject<Item>PURPLE_WIZARD_ROBE_HELMET = ITEMS.register("purplewizardhelmet", ()->new ArmorItem(ModArmorMaterials.ROBES, EquipmentSlot.HEAD, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));
+    public static final RegistryObject<Item>ADEPT_BOOTS = ITEMS.register("adeptboots", ()->new DyeableArmorItem(ModArmorMaterials.ADEPT, EquipmentSlot.FEET, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));
+    public static final RegistryObject<Item>ADEPT_LEGS = ITEMS.register("adeptleggings", ()->new DyeableArmorItem(ModArmorMaterials.ADEPT, EquipmentSlot.LEGS, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));
+    public static final RegistryObject<Item>ADEPT_CHEST = ITEMS.register("adeptchestplate", ()->new DyeableArmorItem(ModArmorMaterials.ADEPT, EquipmentSlot.CHEST, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));
+    public static final RegistryObject<Item>ADEPT_HELMET = ITEMS.register("adepthelmet", ()->new DyeableArmorItem(ModArmorMaterials.ADEPT, EquipmentSlot.HEAD, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item>EMPOWERED_BOOTS = ITEMS.register("empoweredboots", ()->new ArmorItem(ModArmorMaterials.EMPOWERED, EquipmentSlot.FEET, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));
+    public static final RegistryObject<Item>EMPOWERED_LEGS = ITEMS.register("empoweredleggings", ()->new ArmorItem(ModArmorMaterials.EMPOWERED, EquipmentSlot.LEGS, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));
+    public static final RegistryObject<Item>EMPOWERED_CHEST = ITEMS.register("empoweredchestplate", ()->new ArmorItem(ModArmorMaterials.EMPOWERED, EquipmentSlot.CHEST, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));
+    public static final RegistryObject<Item>EMPOWERED_HELMET = ITEMS.register("empoweredhelmet", ()->new ArmorItem(ModArmorMaterials.EMPOWERED, EquipmentSlot.HEAD, new Item.Properties().tab(ModCreativeModeTab.CREATIVETAB_TAB).stacksTo(1)));
 
 
     //-----------------------------------------------------------------SHARDS & BUCKETS-----------------------------------------------------------------

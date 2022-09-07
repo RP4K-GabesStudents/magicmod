@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "SWS",
+    "   "
+  ],
+  "key": {
+    "B": {
+      "item": "magicmod:blacite"
+    },
+    "S": {
+      "item": "minecraft:diamond"
+    },
+    "W":
+    {
+      "item" : "magicmod:wandcore"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:wandcore"
+  }
+
+
+}

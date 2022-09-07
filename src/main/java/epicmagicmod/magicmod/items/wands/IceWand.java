@@ -37,6 +37,7 @@ public class IceWand extends WandParent{
         {
                 Blocks.PACKED_ICE,
                 ModBlocks.MANA_EXTRACTOR.get(),
+                ModBlocks.WAND_ALTAR.get(),
                 Blocks.CHEST,
                 Blocks.TRAPPED_CHEST,
                 Blocks.SHULKER_BOX,

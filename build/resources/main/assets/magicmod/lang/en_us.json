@@ -51,10 +51,15 @@
   "item.magicmod.lifestealwand": "Life steal Wand",
   "item.magicmod.summoningwand": "Summoning Wand",
 
-  "item.magicmod.purplewizardboots": "Novice Boots",
-  "item.magicmod.purplewizardlegs": "Novice Leggings",
-  "item.magicmod.purplewizardchest": "Novice Robe",
-  "item.magicmod.purplewizardhelmet": "Novice Hood",
+  "item.magicmod.adeptboots": "Adept Boots",
+  "item.magicmod.adeptleggings": "Adept Leggings",
+  "item.magicmod.adeptchestplate": "Adept Chestplate",
+  "item.magicmod.adepthelmet": "Adept Helmet",
+
+  "item.magicmod.empoweredboots": "Empowered Boots",
+  "item.magicmod.empoweredleggings": "Empowered Leggings",
+  "item.magicmod.empoweredchestplate": "Empowered Chestplate",
+  "item.magicmod.empoweredhelmet": "Empowered Helmet",
 
   "block.magicmod.manaextractor" : "Shard Extractor",
   "block.magicmod.wandaltar" : "Wand Altar",
@@ -83,5 +88,18 @@
   "item.minecraft.tipped_arrow.effect.speedy_potion": "Arrow of Enhanced Speed",
   "item.minecraft.tipped_arrow.effect.speedy_potion_2": "Arrow of Enhanced Speed",
 
-  "effect.magicmod.mana_cap_effect": "Enhanced Speed"
+  "effect.magicmod.mana_cap_effect": "Enhanced Speed",
+
+  "item.minecraft.potion.effect.death_aura_potion": "Potion of Death Aura",
+  "item.minecraft.splash_potion.effect.death_aura_potion": "Splash Potion of Death Aura",
+  "item.minecraft.lingering_potion.effect.death_aura_potion": "Lingering Potion of Death Aura",
+
+  "item.minecraft.potion.effect.death_aura_potion_2": "Potion of Death Aura",
+  "item.minecraft.splash_potion.effect.death_aura_potion_2": "Splash Potion of Death Aura",
+  "item.minecraft.lingering_potion.effect.death_aura_potion_2": "Lingering Potion of Death Aura",
+
+  "item.minecraft.tipped_arrow.effect.death_aura_potion": "Arrow of Death Aura",
+  "item.minecraft.tipped_arrow.effect.death_aura_potion_2": "Arrow of Death Aura",
+
+  "effect.magicmod.death_aura_effect": "Death Aura"
 }

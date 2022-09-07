@@ -1,0 +1,23 @@
+{
+
+  "structures": [
+    {
+      "structure": "magicmod:manatemplebuilding",
+      "weight": 1
+    }
+
+
+  ],
+  "placement": {
+
+    "type": "minecraft:random_spread",
+    "salt": 6126,
+    "spacing": 8,
+    "separation": 4
+  }
+
+
+
+
+
+}

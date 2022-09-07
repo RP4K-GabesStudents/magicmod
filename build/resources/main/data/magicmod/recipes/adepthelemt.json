@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "HHH",
+    "SBS"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:diamond"
+    },
+    "S": {
+      "item": "magicmod:grazinous"
+    },
+    "H":
+    {
+      "item" : "magicmod:torintrin"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:adepthelmet"
+  }
+
+
+}

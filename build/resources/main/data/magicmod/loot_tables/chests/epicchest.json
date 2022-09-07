@@ -1,0 +1,99 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "min": 13,
+        "max": 26
+      },
+      "bonus_rolls": 3,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 24,
+          "name": "minecraft:gunpowder"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "magicmod:timedial"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 8,
+          "name": "minecraft:blaze_rod"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "magicmod:wandcore"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 12,
+          "name": "minecraft:stick"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 12,
+          "name": "minecraft:experience_bottle"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 12,
+          "name": "minecraft:dirt"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "minecraft:diamond"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "magicmod:grazinousore"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "magicmod:torintrinore"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "magicmod:blaciteore"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "minecraft:netherite_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "magicmod:adepthelmet"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "magicmod:adeptchestplate"
+        },{
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "magicmod:adeptleggings"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "magicmod:adeptboots"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "magicmod:mallumonore"
+        }
+
+      ]
+    }
+  ]
+}

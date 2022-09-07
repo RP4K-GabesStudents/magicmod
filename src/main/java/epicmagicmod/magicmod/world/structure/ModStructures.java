@@ -18,9 +18,15 @@ public class ModStructures {
 
     }
 
-    public static final RegistryObject<StructureType<ExampleStructure>>EXAMPLE_STRUCTURE = STRUCTURES.register("example_structure", ()-> ()-> ExampleStructure.CODEC);
+    public static final RegistryObject<StructureType<Tent>>TENT = STRUCTURES.register("tent_structure", ()-> ()-> Tent.CODEC);
 
-    public static final RegistryObject<StructureType<EndCastle>>END_CASTLE = STRUCTURES.register("end_castle", ()-> ()-> EndCastle.CODEC);
+    public static final RegistryObject<StructureType<DomTomb>>DOM_TOMB = STRUCTURES.register("dom_tomb_structure", ()-> ()-> DomTomb.CODEC);
+
+    public static final RegistryObject<StructureType<UndergroundStation>>UNDERGROUND_STATION = STRUCTURES.register("underground_station_structure", ()-> ()-> UndergroundStation.CODEC);
+
+    public static final RegistryObject<StructureType<SurfaceStation>>SURFACE_STATION = STRUCTURES.register("surface_station_structure", ()-> ()-> SurfaceStation.CODEC);
+
+    public static final RegistryObject<StructureType<ManaTemple>>MANA_TEMPLE = STRUCTURES.register("mana_temple_structure", ()-> ()-> ManaTemple.CODEC);
 
 
     public static final RegistryObject<StructureType<Moyai>>MOYAI = STRUCTURES.register("moyai_structure", ()-> ()-> Moyai.CODEC);

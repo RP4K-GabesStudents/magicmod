@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MWM",
+    "BWB",
+    "S S"
+  ],
+  "key": {
+    "M": {
+      "item": "magicmod:mallumon"
+    },
+    "B": {
+      "item": "magicmod:blacite"
+    },
+    "S": {
+      "item": "minecraft:diamond"
+    },
+    "W":
+    {
+      "item" : "magicmod:wandcore"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:wandcore"
+  }
+
+
+}

@@ -1,0 +1,23 @@
+{
+
+  "structures": [
+    {
+      "structure": "magicmod:tentbuilding",
+      "weight": 1
+    }
+
+
+  ],
+  "placement": {
+
+    "type": "minecraft:random_spread",
+    "salt": 616,
+    "spacing": 3,
+    "separation": 1
+  }
+
+
+
+
+
+}

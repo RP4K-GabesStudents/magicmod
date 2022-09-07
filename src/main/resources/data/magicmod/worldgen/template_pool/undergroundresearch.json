@@ -1,0 +1,23 @@
+{
+
+  "name": "magicmod:undergroundstation",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "magicmod:craftingbuilding",
+        "processors": "magicmod:randomized_blocks",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+
+    }
+  ]
+
+
+
+
+
+
+}

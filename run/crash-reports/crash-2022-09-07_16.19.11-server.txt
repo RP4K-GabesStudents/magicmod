@@ -1,0 +1,188 @@
+---- Minecraft Crash Report ----
+// This doesn't make any sense!
+
+Time: 2022-09-07 16:19:11
+Description: Exception generating new chunk
+
+java.lang.ClassCastException: class epicmagicmod.magicmod.world.structure.ModStructures$$Lambda$4664/0x00000008016d5378 cannot be cast to class net.minecraft.core.Holder (epicmagicmod.magicmod.world.structure.ModStructures$$Lambda$4664/0x00000008016d5378 is in module magicmod@0.0NONE of loader 'TRANSFORMER' @7544ac86; net.minecraft.core.Holder is in module minecraft@1.19.2 of loader 'TRANSFORMER' @7544ac86)
+	at epicmagicmod.magicmod.world.structure.structures.Tent.extraSpawnChecks(Tent.java:73) ~[%23188!/:?] {re:classloading}
+	at epicmagicmod.magicmod.world.structure.structures.Tent.findGenerationPoint(Tent.java:86) ~[%23188!/:?] {re:classloading}
+	at net.minecraft.world.level.levelgen.structure.Structure.generate(Structure.java:84) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading,xf:fml:forge:structure}
+	at net.minecraft.world.level.chunk.ChunkGenerator.tryGenerateStructure(ChunkGenerator.java:590) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at net.minecraft.world.level.chunk.ChunkGenerator.lambda$createStructures$18(ChunkGenerator.java:546) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[?:?] {}
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[?:?] {}
+	at java.util.AbstractList$RandomAccessSpliterator.forEachRemaining(AbstractList.java:720) ~[?:?] {}
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[?:?] {}
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[?:?] {}
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[?:?] {}
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[?:?] {}
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?] {}
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[?:?] {}
+	at net.minecraft.world.level.chunk.ChunkGenerator.createStructures(ChunkGenerator.java:533) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at net.minecraft.world.level.chunk.ChunkStatus.lambda$static$2(ChunkStatus.java:56) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.chunk.ChunkStatus.generate(ChunkStatus.java:269) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ChunkMap.lambda$scheduleChunkGeneration$25(ChunkMap.java:638) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at com.mojang.datafixers.util.Either$Left.map(Either.java:38) ~[datafixerupper-5.0.28.jar%23147!/:?] {}
+	at net.minecraft.server.level.ChunkMap.lambda$scheduleChunkGeneration$27(ChunkMap.java:636) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?] {}
+	at net.minecraft.server.level.ChunkTaskPriorityQueueSorter.lambda$message$1(ChunkTaskPriorityQueueSorter.java:51) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at net.minecraft.util.thread.ProcessorMailbox.pollTask(ProcessorMailbox.java:86) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at net.minecraft.util.thread.ProcessorMailbox.pollUntil(ProcessorMailbox.java:138) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at net.minecraft.util.thread.ProcessorMailbox.run(ProcessorMailbox.java:94) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1395) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?] {}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at epicmagicmod.magicmod.world.structure.structures.Tent.extraSpawnChecks(Tent.java:73) ~[%23188!/:?] {re:classloading}
+	at epicmagicmod.magicmod.world.structure.structures.Tent.findGenerationPoint(Tent.java:86) ~[%23188!/:?] {re:classloading}
+	at net.minecraft.world.level.levelgen.structure.Structure.generate(Structure.java:84) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading,xf:fml:forge:structure}
+	at net.minecraft.world.level.chunk.ChunkGenerator.tryGenerateStructure(ChunkGenerator.java:590) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at net.minecraft.world.level.chunk.ChunkGenerator.lambda$createStructures$18(ChunkGenerator.java:546) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[?:?] {}
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[?:?] {}
+	at java.util.AbstractList$RandomAccessSpliterator.forEachRemaining(AbstractList.java:720) ~[?:?] {}
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[?:?] {}
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[?:?] {}
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[?:?] {}
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[?:?] {}
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?] {}
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[?:?] {}
+	at net.minecraft.world.level.chunk.ChunkGenerator.createStructures(ChunkGenerator.java:533) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at net.minecraft.world.level.chunk.ChunkStatus.lambda$static$2(ChunkStatus.java:56) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.chunk.ChunkStatus.generate(ChunkStatus.java:269) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ChunkMap.lambda$scheduleChunkGeneration$25(ChunkMap.java:638) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at com.mojang.datafixers.util.Either$Left.map(Either.java:38) ~[datafixerupper-5.0.28.jar%23147!/:?] {}
+	at net.minecraft.server.level.ChunkMap.lambda$scheduleChunkGeneration$27(ChunkMap.java:636) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?] {}
+	at net.minecraft.server.level.ChunkTaskPriorityQueueSorter.lambda$message$1(ChunkTaskPriorityQueueSorter.java:51) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at net.minecraft.util.thread.ProcessorMailbox.pollTask(ProcessorMailbox.java:86) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at net.minecraft.util.thread.ProcessorMailbox.pollUntil(ProcessorMailbox.java:138) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at net.minecraft.util.thread.ProcessorMailbox.run(ProcessorMailbox.java:94) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+-- Chunk to be generated --
+Details:
+	Location: -6,-9
+	Position hash: -34359738374
+	Generator: net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator@656f9bca
+Stacktrace:
+	at net.minecraft.server.level.ChunkMap.lambda$scheduleChunkGeneration$25(ChunkMap.java:638) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at com.mojang.datafixers.util.Either$Left.map(Either.java:38) ~[datafixerupper-5.0.28.jar%23147!/:?] {}
+	at net.minecraft.server.level.ChunkMap.lambda$scheduleChunkGeneration$27(ChunkMap.java:636) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?] {}
+	at net.minecraft.server.level.ChunkTaskPriorityQueueSorter.lambda$message$1(ChunkTaskPriorityQueueSorter.java:51) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at net.minecraft.util.thread.ProcessorMailbox.pollTask(ProcessorMailbox.java:86) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at net.minecraft.util.thread.ProcessorMailbox.pollUntil(ProcessorMailbox.java:138) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at net.minecraft.util.thread.ProcessorMailbox.run(ProcessorMailbox.java:94) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading}
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1395) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?] {}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?] {}
+
+
+-- Affected level --
+Details:
+	All players: 0 total; []
+	Chunk stats: 625
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (8,64,8), Section: (at 8,0,8 in 0,4,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 0 game time, 0 day time
+	Level name: New World
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Known server brands: forge
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.createLevels(MinecraftServer.java:350) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.loadLevel(MinecraftServer.java:303) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.initServer(IntegratedServer.java:65) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:643) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:244) ~[forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1.19.2-recomp.jar%23183!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:833) [?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.19.2
+	Minecraft Version ID: 1.19.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 18.0.2.1, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 391046912 bytes (372 MiB) / 788529152 bytes (752 MiB) up to 8531214336 bytes (8136 MiB)
+	CPUs: 16
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i7-10870H CPU @ 2.20GHz
+	Identifier: Intel64 Family 6 Model 165 Stepping 2
+	Microarchitecture: unknown
+	Frequency (GHz): 2.21
+	Number of physical packages: 1
+	Number of physical CPUs: 8
+	Number of logical CPUs: 16
+	Graphics card #0 name: NVIDIA GeForce RTX 3080 Laptop GPU
+	Graphics card #0 vendor: NVIDIA (0x10de)
+	Graphics card #0 VRAM (MB): 4095.00
+	Graphics card #0 deviceId: 0x24dc
+	Graphics card #0 versionInfo: DriverVersion=30.0.15.1169
+	Graphics card #1 name: Intel(R) UHD Graphics
+	Graphics card #1 vendor: Intel Corporation (0x8086)
+	Graphics card #1 VRAM (MB): 1024.00
+	Graphics card #1 deviceId: 0x9bc4
+	Graphics card #1 versionInfo: DriverVersion=27.20.100.9664
+	Memory slot #0 capacity (MB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 3.20
+	Memory slot #1 type: DDR4
+	Virtual memory max (MB): 37392.16
+	Virtual memory used (MB): 20121.16
+	Swap memory total (MB): 4864.00
+	Swap memory used (MB): 76.85
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	Server Running: true
+	Player Count: 0 / 8; []
+	Data Packs: vanilla, mod:magicmod, mod:forge
+	World Generation: Experimental
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'; Server brand changed to 'forge'
+	Launched Version: MOD_DEV
+	ModLauncher: 10.0.8+10.0.8+main.0ef7e830
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.3.jar eventbus PLUGINSERVICE 
+		fmlloader-1.19.2-43.0.11.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.19.2-43.0.11.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.19.2-43.0.11.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.19.2-43.0.11.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.19.2-43.0.11.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.8.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.8.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		forge-1.19.2-43.0.11_mapped_parchment_2022.08.14-1|Minecraft                     |minecraft                     |1.19.2              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		main                                              |Sorcerers of Eldinburg        |magicmod                      |0.0NONE             |DONE      |Manifest: NOSIGNATURE
+		                                                  |Forge                         |forge                         |43.0.11             |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: e97a27a3-06b6-45dc-a4a1-94de48f492ef
+	FML: 43.0
+	Forge: net.minecraftforge:43.0.11

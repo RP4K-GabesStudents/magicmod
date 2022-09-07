@@ -1,9 +1,3 @@
 {
-  "parent": "magicmod:block/manaextractors"
-
-
-
-
-
-
+  "parent": "magicmod:block/manaextractor"
 }

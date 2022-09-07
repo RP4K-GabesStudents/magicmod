@@ -72,7 +72,7 @@
 
           "input_predicate": {
             "block": "minecraft:lava",
-            "probability": 0.25,
+            "probability": 1,
             "predicate_type": "minecraft:random_block_match"
           },
           "location_predicate": {

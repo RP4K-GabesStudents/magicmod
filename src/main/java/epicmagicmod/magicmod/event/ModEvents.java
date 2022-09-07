@@ -17,6 +17,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GrassColor;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
@@ -77,32 +78,24 @@ public class ModEvents {
    @SubscribeEvent
    public static void onArmorEvent(LivingEquipmentChangeEvent event){
 
-        if (event.getEntity() instanceof Player player && event.getSlot().getIndex() != 0){
+        if (event.getEntity() instanceof Player ply){
 
-            event.getEntity().getCapability(PlayerManaProvider.PLAYER_MANA).ifPresent(mana ->{
-
-                if (event.getTo().getItem() instanceof ArmorItem armorItem && armorItem.getMaterial() instanceof ModArmorMaterials mat){
-
-                    mana.MAX_MANA += mat.MANA_CAP_INCREASE [armorItem.getSlot().getIndex()];
-                    mana.augmentMana(0, (ServerPlayer) player);
-                    player.sendSystemMessage(Component.literal("mana" + mana.MAX_MANA));
-                }
-                if (event.getFrom().getItem() instanceof ArmorItem armorItem && armorItem.getMaterial() instanceof ModArmorMaterials mat){
-
-                    mana.MAX_MANA -= mat.MANA_CAP_INCREASE [armorItem.getSlot().getIndex()];
-                    mana.augmentMana(0, (ServerPlayer) player);
-                    player.sendSystemMessage(Component.literal("mana" + mana.MAX_MANA));
-
-                }
-
-
-
-            });
-
+                ply.getCapability(PlayerManaProvider.PLAYER_MANA).ifPresent(playerMana -> {
+                    int SetMax = playerMana.DEFAULT_MAX_MANA;
+                    for (ItemStack is : ply.getArmorSlots()) {
+                        if (is.getItem() instanceof ArmorItem item && item.getMaterial() instanceof  ModArmorMaterials mat) {
+                            SetMax += mat.MANA_CAP_INCREASE[item.getSlot().getIndex()];
+                        }
+                    }
+                    playerMana.MAX_MANA = SetMax;
+                    playerMana.augmentMana(0, (ServerPlayer) ply);
+                });
         }
 
+    }
 
-   }
+
+
 
    @SubscribeEvent
    public static void onLivingDeath(LivingDeathEvent event){

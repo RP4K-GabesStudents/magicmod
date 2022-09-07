@@ -1,0 +1,23 @@
+{
+
+  "structures": [
+    {
+      "structure": "magicmod:domtombbuilding",
+      "weight": 1
+    }
+
+
+  ],
+  "placement": {
+
+    "type": "minecraft:random_spread",
+    "salt": 6166366,
+    "spacing": 32,
+    "separation": 24
+  }
+
+
+
+
+
+}

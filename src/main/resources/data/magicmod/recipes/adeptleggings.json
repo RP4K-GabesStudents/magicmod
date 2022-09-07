@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "HBH",
+    "BBB",
+    "S S"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:leather"
+    },
+    "S": {
+      "item": "magicmod:grazinous"
+    },
+    "H":
+    {
+      "item" : "magicmod:torintrin"
+    }
+  },
+
+  "result": {
+    "item": "magicmod:adeptleggings"
+  }
+
+
+}
