@@ -101,5 +101,18 @@
   "item.minecraft.tipped_arrow.effect.death_aura_potion": "Arrow of Death Aura",
   "item.minecraft.tipped_arrow.effect.death_aura_potion_2": "Arrow of Death Aura",
 
-  "effect.magicmod.death_aura_effect": "Death Aura"
+  "effect.magicmod.death_aura_effect": "Death Aura",
+
+  "item.minecraft.potion.effect.fire_effect_potion": "Potion of Fire Aura",
+  "item.minecraft.splash_potion.effect.fire_effect_potion": "Splash Potion of Fire Aura",
+  "item.minecraft.lingering_potion.effect.fire_effect_potion": "Lingering Potion of Fire Aura",
+
+  "item.minecraft.potion.effect.fire_effect_potion_2": "Potion of Fire Aura",
+  "item.minecraft.splash_potion.effect.fire_effect_potion_2": "Splash Potion of Fire Aura",
+  "item.minecraft.lingering_potion.effect.fire_effect_potion_2": "Lingering Potion of Fire Aura",
+
+  "item.minecraft.tipped_arrow.effect.fire_effect_potion": "Arrow of Fire Aura",
+  "item.minecraft.tipped_arrow.effect.fire_effect_potion_2": "Arrow of Fire Aura",
+
+  "effect.magicmod.fire_effect": "Fire Aura"
 }

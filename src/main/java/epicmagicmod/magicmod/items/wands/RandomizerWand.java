@@ -11,6 +11,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 public class RandomizerWand extends WandParent{
     public RandomizerWand(Properties properties, int mainManaUsage, int altManaUsage, String name, float costMult, ShardOreItem.EOreType bound) {
@@ -56,7 +57,9 @@ public class RandomizerWand extends WandParent{
 
     @Override
     public boolean mainAbility(Level level, Player player) {
-
+        Logger.getAnonymousLogger().info("Logged");
+        if(level.isClientSide())
+            return false;
         List<Entity> ents = getEntitiesInAOE(level, player, 100, 1 + getLVL(player.getItemInHand(InteractionHand.MAIN_HAND)));
         if(ents.size() == 0)
             return false;
@@ -72,6 +75,8 @@ public class RandomizerWand extends WandParent{
 
     @Override
     public boolean altAbility(Level level, Player player) {
+        if(level.isClientSide())
+            return false;
         List<Entity> ents = getEntitiesInAOE(level, player, 100, 1 + getLVL(player.getItemInHand(InteractionHand.MAIN_HAND)));
         if(ents.size() == 0)
             return false;
