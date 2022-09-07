@@ -33,4 +33,5 @@ public class ModStructures {
     public static final RegistryObject<StructureType<Rusty>>RUSTY = STRUCTURES.register("rusty_structure", ()-> ()-> Rusty.CODEC);
     public static final RegistryObject<StructureType<Sylvr>>SYLVER = STRUCTURES.register("sylvr_structure", ()-> ()-> Sylvr.CODEC);
 
+    public static final RegistryObject<StructureType<ArcherTower>>ARCHER_TOWER = STRUCTURES.register("archer_tower_structure", ()-> ()-> ArcherTower.CODEC);
 }

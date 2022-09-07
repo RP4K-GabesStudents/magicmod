@@ -2,7 +2,7 @@
 
   "structures": [
     {
-      "structure": "magicmod:surfaceresearchbuilding",
+      "structure": "magicmod:archertowerbuilding",
       "weight": 1
     }
 
@@ -11,9 +11,9 @@
   "placement": {
 
     "type": "minecraft:random_spread",
-    "salt": 612666,
-    "spacing": 8,
-    "separation": 4
+    "salt": 6166366,
+    "spacing": 32,
+    "separation": 24
   }
 
 
