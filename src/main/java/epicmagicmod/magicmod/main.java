@@ -98,22 +98,20 @@ public class main {
         BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.MANA_MODIFY_POTION.get(),
                 ModItems.GRAZINOUS_SHARD.get(), ModPotions.MANA_MODIFY_POTION_2.get()));
 
-        /*
         BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
-                ModItems.TORINTRIN_MANA_BUCKET.get(), ModPotions.LIGHTNING_POTION.get()));
-        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.LIGHTNING_POTION.get(),
-                ModItems.TORINTRIN_SHARD.get(), ModPotions.LIGHTNING_POTION_2.get()));
+                ModItems.TORINTRIN_MANA_BUCKET.get(), ModPotions.SPEEDY_POTION.get()));
+        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.SPEEDY_POTION.get(),
+                ModItems.TORINTRIN_SHARD.get(), ModPotions.SPEEDY_POTION_2.get()));
 
         BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
-                ModItems.BLACITE_MANA_BUCKET.get(), ModPotions.BLAST_PUNCH_POTION.get()));
-        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLAST_PUNCH_POTION.get(),
-                ModItems.BLACITE_SHARD.get(), ModPotions.BLAST_PUNCH_POTION_2.get()));
+                ModItems.BLACITE_MANA_BUCKET.get(), ModPotions.FIRE_POTION.get()));
+        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.FIRE_POTION.get(),
+                ModItems.BLACITE_SHARD.get(), ModPotions.FIRE_POTION_2.get()));
 
         BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
-                ModItems.MALLUMON_MANA_BUCKET.get(), ModPotions.DARKNESS_POTION.get()));
-        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.DARKNESS_POTION.get(),
-                ModItems.MALLUMON_SHARD.get(), ModPotions.DARKNESS_POTION_2.get()));
-         */
+                ModItems.MALLUMON_MANA_BUCKET.get(), ModPotions.DEATH_AURA_POTION.get()));
+        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.DEATH_AURA_POTION.get(),
+                ModItems.MALLUMON_SHARD.get(), ModPotions.DEATH_AURA_POTION_2.get()));
     }
 
 

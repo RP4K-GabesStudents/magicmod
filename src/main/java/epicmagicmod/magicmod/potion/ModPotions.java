@@ -28,6 +28,11 @@ public class ModPotions {
     public static final RegistryObject<Potion> DEATH_AURA_POTION_2 = POTIONS.register("death_aura_potion_2",
             () -> new Potion(new MobEffectInstance(ModEffects.DEATH_AURA_EFFECT.get(), 400, 1)));
 
+    public static final RegistryObject<Potion> FIRE_POTION = POTIONS.register("fire_aura_potion",
+            () -> new Potion(new MobEffectInstance(ModEffects.FIRE_EFFECT.get(), 900, 0)));
+    public static final RegistryObject<Potion> FIRE_POTION_2 = POTIONS.register("fire_aura_potion_2",
+            () -> new Potion(new MobEffectInstance(ModEffects.FIRE_EFFECT.get(), 400, 1)));
+
 
     public static void register(IEventBus eventBus) {
         POTIONS.register(eventBus);
