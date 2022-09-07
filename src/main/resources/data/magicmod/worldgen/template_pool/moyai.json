@@ -1,0 +1,23 @@
+{
+
+  "name": "magicmod:moyai",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "magicmod:moyai",
+        "processors": "magicmod:randomized_blocks",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+
+    }
+  ]
+
+
+
+
+
+
+}

@@ -1,8 +1,7 @@
 package epicmagicmod.magicmod.world.structure;
 
 import epicmagicmod.magicmod.main;
-import epicmagicmod.magicmod.world.structure.structures.EndCastle;
-import epicmagicmod.magicmod.world.structure.structures.ExampleStructure;
+import epicmagicmod.magicmod.world.structure.structures.*;
 import net.minecraft.core.Registry;
 import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,5 +23,8 @@ public class ModStructures {
     public static final RegistryObject<StructureType<EndCastle>>END_CASTLE = STRUCTURES.register("end_castle", ()-> ()-> EndCastle.CODEC);
 
 
+    public static final RegistryObject<StructureType<Moyai>>MOYAI = STRUCTURES.register("moyai_structure", ()-> ()-> Moyai.CODEC);
+    public static final RegistryObject<StructureType<Rusty>>RUSTY = STRUCTURES.register("rusty_structure", ()-> ()-> Rusty.CODEC);
+    public static final RegistryObject<StructureType<Sylvr>>SYLVER = STRUCTURES.register("sylvr_structure", ()-> ()-> Sylvr.CODEC);
 
 }

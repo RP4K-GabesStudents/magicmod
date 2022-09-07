@@ -2,8 +2,16 @@
 
   "replace": false,
   "values": [
-    "magicmod:blaciteore"
+
+     "#minecraft:is_overworld"
+
   ]
+
+
+
+
+
+
 
 
 }

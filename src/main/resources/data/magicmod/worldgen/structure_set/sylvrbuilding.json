@@ -1,0 +1,23 @@
+{
+
+  "structures": [
+    {
+      "structure": "magicmod:sylvrbuilding",
+      "weight": 1
+    }
+
+
+  ],
+  "placement": {
+
+    "type": "minecraft:random_spread",
+    "salt": 334444445,
+    "spacing": 64,
+    "separation": 48
+  }
+
+
+
+
+
+}

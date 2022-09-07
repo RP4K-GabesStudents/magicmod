@@ -1,0 +1,23 @@
+{
+
+  "structures": [
+    {
+      "structure": "magicmod:rustybuilding",
+      "weight": 1
+    }
+
+
+  ],
+  "placement": {
+
+    "type": "minecraft:random_spread",
+    "salt": 5555555523,
+    "spacing": 64,
+    "separation": 48
+  }
+
+
+
+
+
+}

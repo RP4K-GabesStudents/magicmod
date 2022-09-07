@@ -77,6 +77,12 @@
     },
     "done": true
   },
+  "minecraft:nether/root": {
+    "criteria": {
+      "entered_nether": "2022-09-06 22:51:40 -0400"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/yellow_concrete_powder": {
     "criteria": {
       "has_gravel": "2022-08-27 13:14:00 -0400"
@@ -98,6 +104,12 @@
   "minecraft:recipes/food/bread": {
     "criteria": {
       "has_wheat": "2022-08-30 01:11:14 -0400"
+    },
+    "done": true
+  },
+  "minecraft:nether/find_fortress": {
+    "criteria": {
+      "fortress": "2022-09-06 22:51:55 -0400"
     },
     "done": true
   },
@@ -212,6 +224,12 @@
   "minecraft:recipes/transportation/spruce_boat": {
     "criteria": {
       "in_water": "2022-09-02 14:06:29 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/flint_and_steel": {
+    "criteria": {
+      "has_obsidian": "2022-09-06 22:51:27 -0400"
     },
     "done": true
   },
@@ -395,6 +413,12 @@
     },
     "done": true
   },
+  "minecraft:story/form_obsidian": {
+    "criteria": {
+      "obsidian": "2022-09-06 22:51:27 -0400"
+    },
+    "done": true
+  },
   "minecraft:recipes/brewing/brewing_stand": {
     "criteria": {
       "has_blaze_rod": "2022-08-17 16:52:57 -0400"
@@ -527,9 +551,12 @@
       "minecraft:taiga": "2022-08-30 01:09:46 -0400",
       "minecraft:river": "2022-08-17 16:56:02 -0400",
       "minecraft:stony_shore": "2022-08-30 01:09:15 -0400",
+      "minecraft:snowy_plains": "2022-09-06 22:46:30 -0400",
       "minecraft:grove": "2022-08-30 01:10:08 -0400",
+      "minecraft:swamp": "2022-09-06 22:50:08 -0400",
       "minecraft:cold_ocean": "2022-08-30 01:11:36 -0400",
       "minecraft:forest": "2022-08-18 11:59:33 -0400",
+      "minecraft:ice_spikes": "2022-09-06 22:45:44 -0400",
       "minecraft:old_growth_spruce_taiga": "2022-08-30 01:09:54 -0400",
       "minecraft:meadow": "2022-08-30 01:49:18 -0400",
       "minecraft:plains": "2022-08-17 16:52:52 -0400"
@@ -605,6 +632,12 @@
   "minecraft:recipes/building_blocks/green_concrete_powder": {
     "criteria": {
       "has_gravel": "2022-08-27 13:14:00 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/enchanting_table": {
+    "criteria": {
+      "has_obsidian": "2022-09-06 22:51:27 -0400"
     },
     "done": true
   },
@@ -723,6 +756,12 @@
     },
     "done": true
   },
+  "minecraft:story/enter_the_nether": {
+    "criteria": {
+      "entered_nether": "2022-09-06 22:51:40 -0400"
+    },
+    "done": true
+  },
   "minecraft:story/enter_the_end": {
     "criteria": {
       "entered_end": "2022-08-27 13:13:57 -0400"
@@ -752,6 +791,13 @@
       "has_mutton": "2022-08-27 13:14:00 -0400"
     },
     "done": true
+  },
+  "minecraft:nether/explore_nether": {
+    "criteria": {
+      "minecraft:nether_wastes": "2022-09-06 22:51:40 -0400",
+      "minecraft:warped_forest": "2022-09-06 22:51:55 -0400"
+    },
+    "done": false
   },
   "minecraft:recipes/combat/diamond_boots": {
     "criteria": {

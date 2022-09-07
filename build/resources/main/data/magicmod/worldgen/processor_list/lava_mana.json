@@ -1,0 +1,105 @@
+{
+
+  "processors":[
+
+    {
+
+      "processor_type": "minecraft:rule",
+      "rules": [
+
+        {
+          "input_predicate": {
+            "block": "minecraft:lava",
+            "probability": 0.25,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+
+            "predicate_type": "minecraft:always_true"
+
+          },
+          "output_state": {
+
+            "Name": "magicmod:grazinous_source_block"
+
+          }
+
+
+        },
+        {
+
+          "input_predicate": {
+            "block": "minecraft:lava",
+            "probability": 0.25,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+
+            "predicate_type": "minecraft:always_true"
+
+          },
+          "output_state": {
+
+            "Name": "magicmod:torintrin_source_block"
+
+          }
+
+
+
+        },
+        {
+
+          "input_predicate": {
+            "block": "minecraft:lava",
+            "probability": 0.25,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+
+            "predicate_type": "minecraft:always_true"
+
+          },
+          "output_state": {
+
+            "Name": "magicmod:blacite_source_block"
+
+          }
+
+
+
+        },
+        {
+
+          "input_predicate": {
+            "block": "minecraft:lava",
+            "probability": 0.25,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+
+            "predicate_type": "minecraft:always_true"
+
+          },
+          "output_state": {
+
+            "Name": "magicmod:mallumon_source_block"
+
+          }
+
+
+
+        }
+
+
+      ]
+
+
+    }
+
+]
+
+
+
+
+
+}
